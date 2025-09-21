@@ -1,0 +1,426 @@
+"""
+网络数据处理模块
+
+提供数据包分析、统计计算和流量分析功能。
+"""
+
+import threading
+from typing import Dict, List, Any, Optional, Tuple
+from datetime import datetime, timedelta
+from collections import defaultdict, deque
+import logging
+import statistics
+
+from ..config.settings import Settings
+from ..storage.data_manager import DataManager
+
+
+class DataProcessor:
+    """网络数据处理类"""
+    
+    def __init__(self, settings: Settings, data_manager: DataManager):
+        """
+        初始化数据处理器
+        
+        Args:
+            settings: 配置对象
+            data_manager: 数据管理器
+        """
+        self.settings = settings
+        self.data_manager = data_manager
+        self.logger = logging.getLogger(__name__)
+        
+        # 线程安全锁
+        self._lock = threading.RLock()
+        
+        # 实时统计数据
+        self._packet_stats = {
+            'total_packets': 0,
+            'total_bytes': 0,
+            'protocol_counts': defaultdict(int),
+            'protocol_bytes': defaultdict(int),
+            'ip_counts': defaultdict(int),
+            'port_counts': defaultdict(int),
+            'start_time': None,
+            'last_update': None
+        }
+        
+        # 流量统计（时间窗口）
+        self._traffic_window = deque(maxlen=300)  # 保留5分钟的数据（每秒一个点）
+        self._current_second_stats = {
+            'timestamp': None,
+            'packet_count': 0,
+            'byte_count': 0
+        }
+        
+        # 连接跟踪
+        self._connections = {}  # (src_ip, dst_ip, src_port, dst_port, protocol) -> connection_info
+        
+        # 异常检测
+        self._baseline_stats = {
+            'avg_packet_rate': 0.0,
+            'avg_byte_rate': 0.0,
+            'protocol_distribution': {},
+            'port_distribution': {}
+        }
+    
+    def process_packet(self, packet_info: Dict[str, Any]) -> None:
+        """
+        处理单个数据包
+        
+        Args:
+            packet_info: 数据包信息字典
+        """
+        with self._lock:
+            try:
+                # 更新基础统计
+                self._update_basic_stats(packet_info)
+                
+                # 更新流量统计
+                self._update_traffic_stats(packet_info)
+                
+                # 更新连接跟踪
+                self._update_connection_tracking(packet_info)
+                
+                # 存储数据包到数据库
+                self._store_packet(packet_info)
+                
+                # 检测异常
+                self._detect_anomalies(packet_info)
+                
+            except Exception as e:
+                self.logger.error(f"处理数据包失败: {e}")
+    
+    def _update_basic_stats(self, packet_info: Dict[str, Any]) -> None:
+        """更新基础统计信息"""
+        timestamp = packet_info.get('timestamp', datetime.now())
+        length = packet_info.get('length', 0)
+        protocol = packet_info.get('protocol', 'Unknown')
+        src_ip = packet_info.get('src_ip')
+        dst_ip = packet_info.get('dst_ip')
+        src_port = packet_info.get('src_port')
+        dst_port = packet_info.get('dst_port')
+        
+        # 更新总计数
+        self._packet_stats['total_packets'] += 1
+        self._packet_stats['total_bytes'] += length
+        self._packet_stats['last_update'] = timestamp
+        
+        if self._packet_stats['start_time'] is None:
+            self._packet_stats['start_time'] = timestamp
+        
+        # 更新协议统计
+        self._packet_stats['protocol_counts'][protocol] += 1
+        self._packet_stats['protocol_bytes'][protocol] += length
+        
+        # 更新IP统计
+        if src_ip:
+            self._packet_stats['ip_counts'][src_ip] += 1
+        if dst_ip:
+            self._packet_stats['ip_counts'][dst_ip] += 1
+        
+        # 更新端口统计
+        if src_port:
+            self._packet_stats['port_counts'][src_port] += 1
+        if dst_port:
+            self._packet_stats['port_counts'][dst_port] += 1
+    
+    def _update_traffic_stats(self, packet_info: Dict[str, Any]) -> None:
+        """更新流量统计信息"""
+        timestamp = packet_info.get('timestamp', datetime.now())
+        length = packet_info.get('length', 0)
+        
+        # 获取当前秒的时间戳
+        current_second = timestamp.replace(microsecond=0)
+        
+        # 如果是新的一秒，保存上一秒的数据并重置
+        if (self._current_second_stats['timestamp'] is None or 
+            current_second != self._current_second_stats['timestamp']):
+            
+            if self._current_second_stats['timestamp'] is not None:
+                self._traffic_window.append({
+                    'timestamp': self._current_second_stats['timestamp'],
+                    'packet_count': self._current_second_stats['packet_count'],
+                    'byte_count': self._current_second_stats['byte_count']
+                })
+            
+            self._current_second_stats = {
+                'timestamp': current_second,
+                'packet_count': 0,
+                'byte_count': 0
+            }
+        
+        # 更新当前秒的统计
+        self._current_second_stats['packet_count'] += 1
+        self._current_second_stats['byte_count'] += length
+    
+    def _update_connection_tracking(self, packet_info: Dict[str, Any]) -> None:
+        """更新连接跟踪信息"""
+        src_ip = packet_info.get('src_ip')
+        dst_ip = packet_info.get('dst_ip')
+        src_port = packet_info.get('src_port')
+        dst_port = packet_info.get('dst_port')
+        protocol = packet_info.get('protocol')
+        timestamp = packet_info.get('timestamp', datetime.now())
+        length = packet_info.get('length', 0)
+        
+        if not all([src_ip, dst_ip, protocol]):
+            return
+        
+        # 创建连接键（双向）
+        conn_key1 = (src_ip, dst_ip, src_port, dst_port, protocol)
+        conn_key2 = (dst_ip, src_ip, dst_port, src_port, protocol)
+        
+        # 查找现有连接
+        conn_key = None
+        if conn_key1 in self._connections:
+            conn_key = conn_key1
+        elif conn_key2 in self._connections:
+            conn_key = conn_key2
+        else:
+            conn_key = conn_key1
+            self._connections[conn_key] = {
+                'start_time': timestamp,
+                'last_seen': timestamp,
+                'packet_count': 0,
+                'byte_count': 0,
+                'src_ip': src_ip,
+                'dst_ip': dst_ip,
+                'src_port': src_port,
+                'dst_port': dst_port,
+                'protocol': protocol
+            }
+        
+        # 更新连接信息
+        conn_info = self._connections[conn_key]
+        conn_info['last_seen'] = timestamp
+        conn_info['packet_count'] += 1
+        conn_info['byte_count'] += length
+    
+    def _store_packet(self, packet_info: Dict[str, Any]) -> None:
+        """存储数据包到数据库"""
+        try:
+            # 构造数据包数据
+            packet_data = {
+                'timestamp': packet_info.get('timestamp', datetime.now()),
+                'src_ip': packet_info.get('src_ip', ''),
+                'dst_ip': packet_info.get('dst_ip', ''),
+                'src_port': packet_info.get('src_port', 0),
+                'dst_port': packet_info.get('dst_port', 0),
+                'protocol': packet_info.get('protocol', 'Unknown'),
+                'length': packet_info.get('length', 0),
+                'summary': packet_info.get('summary', '')
+            }
+            
+            # 保存到数据库
+            self.data_manager.save_packet(packet_data)
+            
+        except Exception as e:
+            self.logger.error(f"存储数据包失败: {e}")
+    
+    def _detect_anomalies(self, packet_info: Dict[str, Any]) -> None:
+        """检测网络异常"""
+        # 简单的异常检测逻辑
+        # 可以根据需要扩展更复杂的检测算法
+        
+        try:
+            # 检测异常大的数据包
+            length = packet_info.get('length', 0)
+            if length > 9000:  # 超过标准MTU
+                self.logger.warning(f"检测到异常大的数据包: {length} 字节")
+            
+            # 检测异常端口
+            src_port = packet_info.get('src_port')
+            dst_port = packet_info.get('dst_port')
+            
+            suspicious_ports = [1234, 31337, 12345, 54321]  # 常见恶意软件端口
+            if src_port in suspicious_ports or dst_port in suspicious_ports:
+                self.logger.warning(f"检测到可疑端口活动: {src_port} -> {dst_port}")
+                
+        except Exception as e:
+            self.logger.debug(f"异常检测失败: {e}")
+    
+    def get_current_stats(self) -> Dict[str, Any]:
+        """
+        获取当前统计信息
+        
+        Returns:
+            当前统计信息字典
+        """
+        with self._lock:
+            stats = self._packet_stats.copy()
+            
+            # 计算速率
+            if stats['start_time'] and stats['last_update']:
+                duration = (stats['last_update'] - stats['start_time']).total_seconds()
+                if duration > 0:
+                    stats['packet_rate'] = stats['total_packets'] / duration
+                    stats['byte_rate'] = stats['total_bytes'] / duration
+                else:
+                    stats['packet_rate'] = 0.0
+                    stats['byte_rate'] = 0.0
+            else:
+                stats['packet_rate'] = 0.0
+                stats['byte_rate'] = 0.0
+            
+            # 转换defaultdict为普通dict
+            stats['protocol_counts'] = dict(stats['protocol_counts'])
+            stats['protocol_bytes'] = dict(stats['protocol_bytes'])
+            stats['ip_counts'] = dict(stats['ip_counts'])
+            stats['port_counts'] = dict(stats['port_counts'])
+            
+            return stats
+    
+    def get_traffic_history(self, minutes: int = 5) -> List[Dict[str, Any]]:
+        """
+        获取流量历史数据
+        
+        Args:
+            minutes: 获取最近几分钟的数据
+            
+        Returns:
+            流量历史数据列表
+        """
+        with self._lock:
+            cutoff_time = datetime.now() - timedelta(minutes=minutes)
+            
+            history = []
+            for data_point in self._traffic_window:
+                if data_point['timestamp'] >= cutoff_time:
+                    history.append(data_point.copy())
+            
+            return history
+    
+    def get_top_talkers(self, limit: int = 10) -> List[Tuple[str, int]]:
+        """
+        获取流量最大的IP地址
+        
+        Args:
+            limit: 返回的数量限制
+            
+        Returns:
+            (IP地址, 数据包数量) 的列表，按数量降序排列
+        """
+        with self._lock:
+            sorted_ips = sorted(
+                self._packet_stats['ip_counts'].items(),
+                key=lambda x: x[1],
+                reverse=True
+            )
+            return sorted_ips[:limit]
+    
+    def get_protocol_distribution(self) -> Dict[str, float]:
+        """
+        获取协议分布百分比
+        
+        Returns:
+            协议分布字典，键为协议名，值为百分比
+        """
+        with self._lock:
+            total_packets = self._packet_stats['total_packets']
+            if total_packets == 0:
+                return {}
+            
+            distribution = {}
+            for protocol, count in self._packet_stats['protocol_counts'].items():
+                distribution[protocol] = (count / total_packets) * 100
+            
+            return distribution
+    
+    def get_active_connections(self, timeout_minutes: int = 5) -> List[Dict[str, Any]]:
+        """
+        获取活跃连接列表
+        
+        Args:
+            timeout_minutes: 连接超时时间（分钟）
+            
+        Returns:
+            活跃连接列表
+        """
+        with self._lock:
+            cutoff_time = datetime.now() - timedelta(minutes=timeout_minutes)
+            
+            active_connections = []
+            for conn_key, conn_info in self._connections.items():
+                if conn_info['last_seen'] >= cutoff_time:
+                    active_connections.append(conn_info.copy())
+            
+            # 按字节数排序
+            active_connections.sort(key=lambda x: x['byte_count'], reverse=True)
+            
+            return active_connections
+    
+    def reset_stats(self) -> None:
+        """重置所有统计信息"""
+        with self._lock:
+            self._packet_stats = {
+                'total_packets': 0,
+                'total_bytes': 0,
+                'protocol_counts': defaultdict(int),
+                'protocol_bytes': defaultdict(int),
+                'ip_counts': defaultdict(int),
+                'port_counts': defaultdict(int),
+                'start_time': None,
+                'last_update': None
+            }
+            
+            self._traffic_window.clear()
+            self._current_second_stats = {
+                'timestamp': None,
+                'packet_count': 0,
+                'byte_count': 0
+            }
+            
+            self._connections.clear()
+            
+            self.logger.info("统计信息已重置")
+    
+    def calculate_baseline(self, hours: int = 1) -> Dict[str, Any]:
+        """
+        计算基线统计信息
+        
+        Args:
+            hours: 计算基线的时间范围（小时）
+            
+        Returns:
+            基线统计信息
+        """
+        try:
+            # 从数据库获取历史数据
+            end_time = datetime.now()
+            start_time = end_time - timedelta(hours=hours)
+            
+            packets = self.data_manager.get_packets_by_time_range(start_time, end_time)
+            
+            if not packets:
+                return {}
+            
+            # 计算基线指标
+            total_packets = len(packets)
+            total_bytes = sum(p.get('length', 0) for p in packets)
+            duration_hours = hours
+            
+            baseline = {
+                'avg_packet_rate': total_packets / (duration_hours * 3600),
+                'avg_byte_rate': total_bytes / (duration_hours * 3600),
+                'total_packets': total_packets,
+                'total_bytes': total_bytes,
+                'time_range': f"{start_time.isoformat()} - {end_time.isoformat()}"
+            }
+            
+            # 计算协议分布
+            protocol_counts = defaultdict(int)
+            for packet in packets:
+                protocol_counts[packet.get('protocol', 'Unknown')] += 1
+            
+            baseline['protocol_distribution'] = {
+                protocol: (count / total_packets) * 100
+                for protocol, count in protocol_counts.items()
+            }
+            
+            self._baseline_stats = baseline
+            return baseline
+            
+        except Exception as e:
+            self.logger.error(f"计算基线统计失败: {e}")
+            return {}
