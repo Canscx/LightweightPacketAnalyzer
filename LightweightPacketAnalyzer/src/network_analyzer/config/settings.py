@@ -13,11 +13,14 @@ from dotenv import load_dotenv
 class Settings:
     """应用程序配置管理类"""
     
-    def __init__(self):
+    def __init__(self, config_file: Optional[str] = None):
         """
         初始化配置
+        
+        Args:
+            config_file: 可选的配置文件路径，默认使用.env
         """
-        self.env_file = ".env"
+        self.env_file = config_file or ".env"
         self._load_env_file()
         self._init_default_settings()
     
@@ -41,6 +44,7 @@ class Settings:
         self.MAX_PACKET_COUNT = int(os.getenv("MAX_PACKET_COUNT", "10000"))
         
         # 数据存储配置
+        self.DATA_DIRECTORY = os.getenv("DATA_DIRECTORY", "data")
         self.DATABASE_PATH = os.getenv("DATABASE_PATH", "data/network_analyzer.db")
         self.DATA_RETENTION_DAYS = int(os.getenv("DATA_RETENTION_DAYS", "30"))
         self.AUTO_CLEANUP = os.getenv("AUTO_CLEANUP", "true").lower() == "true"

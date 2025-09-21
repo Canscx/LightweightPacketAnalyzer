@@ -1,0 +1,11 @@
+2025-09-22 00:17:32,191 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-22 00:17:32,191 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-22 00:17:32,196 - network_analyzer.main - ERROR - 需要管理员权限才能捕获网络数据包
+2025-09-22 00:33:26,661 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-22 00:33:26,662 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-22 00:33:26,666 - root - ERROR - 程序运行出错: 'Settings' object has no attribute 'DATA_DIRECTORY'
+Traceback (most recent call last):
+  File "D:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\main.py", line 87, in main
+    data_dir = Path(settings.DATA_DIRECTORY)
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Settings' object has no attribute 'DATA_DIRECTORY'
