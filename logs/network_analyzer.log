@@ -9,3 +9,20 @@ Traceback (most recent call last):
     data_dir = Path(settings.DATA_DIRECTORY)
                     ^^^^^^^^^^^^^^^^^^^^^^^
 AttributeError: 'Settings' object has no attribute 'DATA_DIRECTORY'
+2025-09-22 14:05:54,311 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-22 14:05:54,311 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-22 14:05:54,317 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-22 14:05:54,323 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-22 14:05:54,492 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-22 14:06:27,445 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-22 14:06:41,966 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-22 14:07:31,377 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-22 14:09:37,378 - network_analyzer.gui.main_window - INFO - 用户关闭应用程序
+2025-09-22 14:16:24,945 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-22 14:16:24,945 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-22 14:16:24,950 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-22 14:16:24,952 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-22 14:16:25,037 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-22 14:16:27,332 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-22 14:16:31,012 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-22 14:16:38,332 - network_analyzer.gui.main_window - INFO - 用户关闭应用程序
