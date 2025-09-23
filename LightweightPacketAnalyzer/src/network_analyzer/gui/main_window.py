@@ -10,12 +10,232 @@ import logging
 import threading
 import queue
 import time
+from datetime import datetime
 from typing import Optional, Dict, Any
 
 from network_analyzer.config.settings import Settings
 from network_analyzer.storage.data_manager import DataManager
 from network_analyzer.capture.packet_capture import PacketCapture
 from network_analyzer.processing.data_processor import DataProcessor
+
+
+class SessionDialog:
+    """会话选择对话框类"""
+    
+    def __init__(self, parent: tk.Tk, data_manager: DataManager):
+        """
+        初始化会话选择对话框
+        
+        Args:
+            parent: 父窗口
+            data_manager: 数据管理器实例
+        """
+        self.parent = parent
+        self.data_manager = data_manager
+        self.selected_session_id = None
+        self.sessions = []
+        
+        # 创建对话框窗口
+        self.dialog = tk.Toplevel(parent)
+        self.dialog.title("选择会话")
+        self.dialog.geometry("500x400")
+        self.dialog.resizable(False, False)
+        
+        # 设置模态
+        self.dialog.transient(parent)
+        self.dialog.grab_set()
+        
+        # 居中显示
+        self._center_dialog()
+        
+        # 创建UI组件
+        self._create_ui()
+        
+        # 加载会话列表
+        self._load_sessions()
+        
+        # 绑定关闭事件
+        self.dialog.protocol("WM_DELETE_WINDOW", self._on_cancel)
+    
+    def _center_dialog(self) -> None:
+        """将对话框居中显示"""
+        self.dialog.update_idletasks()
+        
+        # 获取父窗口位置和大小
+        parent_x = self.parent.winfo_x()
+        parent_y = self.parent.winfo_y()
+        parent_width = self.parent.winfo_width()
+        parent_height = self.parent.winfo_height()
+        
+        # 获取对话框大小
+        dialog_width = self.dialog.winfo_reqwidth()
+        dialog_height = self.dialog.winfo_reqheight()
+        
+        # 计算居中位置
+        x = parent_x + (parent_width - dialog_width) // 2
+        y = parent_y + (parent_height - dialog_height) // 2
+        
+        self.dialog.geometry(f"{dialog_width}x{dialog_height}+{x}+{y}")
+    
+    def _create_ui(self) -> None:
+        """创建对话框UI组件"""
+        # 主框架
+        main_frame = ttk.Frame(self.dialog, padding="10")
+        main_frame.pack(fill=tk.BOTH, expand=True)
+        
+        # 标题
+        title_label = ttk.Label(
+            main_frame, 
+            text="选择要打开的会话", 
+            font=("Arial", 12, "bold")
+        )
+        title_label.pack(pady=(0, 10))
+        
+        # 会话列表框架
+        list_frame = ttk.Frame(main_frame)
+        list_frame.pack(fill=tk.BOTH, expand=True, pady=(0, 10))
+        
+        # 会话列表
+        columns = ("会话名称", "开始时间", "数据包数", "总字节数")
+        self.session_tree = ttk.Treeview(
+            list_frame, 
+            columns=columns, 
+            show="headings", 
+            height=12
+        )
+        
+        # 设置列标题和宽度
+        self.session_tree.heading("会话名称", text="会话名称")
+        self.session_tree.heading("开始时间", text="开始时间")
+        self.session_tree.heading("数据包数", text="数据包数")
+        self.session_tree.heading("总字节数", text="总字节数")
+        
+        self.session_tree.column("会话名称", width=150)
+        self.session_tree.column("开始时间", width=150)
+        self.session_tree.column("数据包数", width=80)
+        self.session_tree.column("总字节数", width=100)
+        
+        # 添加滚动条
+        scrollbar = ttk.Scrollbar(list_frame, orient=tk.VERTICAL, command=self.session_tree.yview)
+        self.session_tree.configure(yscrollcommand=scrollbar.set)
+        
+        # 打包列表和滚动条
+        self.session_tree.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        
+        # 绑定双击事件
+        self.session_tree.bind("<Double-1>", self._on_double_click)
+        
+        # 按钮框架
+        button_frame = ttk.Frame(main_frame)
+        button_frame.pack(fill=tk.X)
+        
+        # 取消按钮
+        cancel_btn = ttk.Button(
+            button_frame, 
+            text="取消", 
+            command=self._on_cancel
+        )
+        cancel_btn.pack(side=tk.RIGHT, padx=(5, 0))
+        
+        # 确定按钮
+        self.ok_btn = ttk.Button(
+            button_frame, 
+            text="确定", 
+            command=self._on_ok,
+            state=tk.DISABLED
+        )
+        self.ok_btn.pack(side=tk.RIGHT)
+        
+        # 绑定选择事件
+        self.session_tree.bind("<<TreeviewSelect>>", self._on_session_select)
+    
+    def _load_sessions(self) -> None:
+        """加载并显示会话列表"""
+        try:
+            # 获取所有会话
+            self.sessions = self.data_manager.get_sessions()
+            
+            # 清空现有列表
+            for item in self.session_tree.get_children():
+                self.session_tree.delete(item)
+            
+            # 添加会话到列表
+            for session in self.sessions:
+                # 格式化时间
+                start_time = session.get('start_time', 0)
+                if start_time:
+                    from datetime import datetime
+                    formatted_time = datetime.fromtimestamp(start_time).strftime("%Y-%m-%d %H:%M:%S")
+                else:
+                    formatted_time = "未知"
+                
+                # 格式化数据包数和字节数
+                packet_count = session.get('packet_count', 0)
+                total_bytes = session.get('total_bytes', 0)
+                
+                # 插入到树形视图
+                self.session_tree.insert('', 'end', values=(
+                    session.get('session_name', '未命名会话'),
+                    formatted_time,
+                    f"{packet_count:,}",
+                    f"{total_bytes:,}"
+                ))
+            
+            # 如果没有会话，显示提示
+            if not self.sessions:
+                self.session_tree.insert('', 'end', values=(
+                    "没有找到已保存的会话", "", "", ""
+                ))
+                
+        except Exception as e:
+            logging.getLogger(__name__).error(f"加载会话列表失败: {e}")
+            messagebox.showerror("错误", f"加载会话列表失败: {e}")
+    
+    def _on_session_select(self, event) -> None:
+        """处理会话选择事件"""
+        selection = self.session_tree.selection()
+        if selection and self.sessions:
+            # 获取选中的索引
+            item = selection[0]
+            index = self.session_tree.index(item)
+            
+            # 检查是否是有效的会话
+            if 0 <= index < len(self.sessions):
+                self.selected_session_id = self.sessions[index]['id']
+                self.ok_btn.config(state=tk.NORMAL)
+            else:
+                self.selected_session_id = None
+                self.ok_btn.config(state=tk.DISABLED)
+        else:
+            self.selected_session_id = None
+            self.ok_btn.config(state=tk.DISABLED)
+    
+    def _on_double_click(self, event) -> None:
+        """处理双击事件"""
+        if self.selected_session_id:
+            self._on_ok()
+    
+    def _on_ok(self) -> None:
+        """处理确定按钮点击"""
+        if self.selected_session_id:
+            self.dialog.destroy()
+    
+    def _on_cancel(self) -> None:
+        """处理取消按钮点击"""
+        self.selected_session_id = None
+        self.dialog.destroy()
+    
+    def show(self) -> Optional[int]:
+        """
+        显示对话框并等待用户选择
+        
+        Returns:
+            选中的会话ID，如果取消则返回None
+        """
+        # 等待对话框关闭
+        self.dialog.wait_window()
+        return self.selected_session_id
 
 
 class MainWindow:
@@ -57,6 +277,9 @@ class MainWindow:
         # 当前会话管理
         self.current_session_id = None
         self.current_session_name = None
+        
+        # 捕获状态管理
+        self.is_capturing = False
         
         # 创建主窗口
         self.root = tk.Tk()
@@ -100,9 +323,8 @@ class MainWindow:
     
     def _start_gui_updates(self) -> None:
         """启动GUI更新定时器"""
-        if not hasattr(self, '_update_timer_active'):
-            self._update_timer_active = True
-            self._schedule_gui_update()
+        self._update_timer_active = True
+        self._schedule_gui_update()
     
     def _stop_gui_updates(self) -> None:
         """停止GUI更新定时器"""
@@ -124,6 +346,12 @@ class MainWindow:
                     
                     # 处理数据包
                     self.data_processor.process_packet(packet_info)
+                    
+                    # 保存数据包到数据库
+                    try:
+                        self.data_manager.save_packet(packet_info)
+                    except Exception as e:
+                        self.logger.error(f"保存数据包到数据库失败: {e}")
                     
                     # 添加到数据包列表显示
                     self._add_packet_to_list(packet_info)
@@ -197,6 +425,15 @@ class MainWindow:
         
         # 创建状态栏
         self._create_status_bar()
+        
+        # 绑定键盘快捷键
+        self._bind_keyboard_shortcuts()
+    
+    def _bind_keyboard_shortcuts(self) -> None:
+        """绑定键盘快捷键"""
+        # 绑定Ctrl+S到保存会话功能
+        self.root.bind('<Control-s>', lambda event: self._save_session())
+        self.root.bind('<Control-S>', lambda event: self._save_session())
     
     def _create_menu(self) -> None:
         """创建菜单栏"""
@@ -208,7 +445,7 @@ class MainWindow:
         menubar.add_cascade(label="文件", menu=file_menu)
         file_menu.add_command(label="新建会话", command=self._new_session)
         file_menu.add_command(label="打开会话", command=self._open_session)
-        file_menu.add_command(label="保存会话", command=self._save_session)
+        file_menu.add_command(label="保存会话", command=self._save_session, accelerator="Ctrl+S")
         file_menu.add_separator()
         file_menu.add_command(label="导出数据", command=self._export_data)
         file_menu.add_separator()
@@ -479,11 +716,130 @@ class MainWindow:
     
     def _open_session(self) -> None:
         """打开会话"""
-        messagebox.showinfo("提示", "打开会话功能将在后续版本中实现")
+        try:
+            # 检查是否正在捕获
+            if self.is_capturing:
+                messagebox.showwarning("警告", "请先停止当前捕获再打开会话")
+                return
+            
+            # 创建并显示会话选择对话框
+            dialog = SessionDialog(self.root, self.data_manager)
+            selected_session_id = dialog.show()
+            
+            if selected_session_id:
+                # 加载选中的会话数据
+                self._load_session_data(selected_session_id)
+                
+                # 更新状态栏
+                self.status_text.config(text=f"已打开会话 ID: {selected_session_id}")
+                
+                # 记录日志
+                self.logger.info(f"成功打开会话: {selected_session_id}")
+                
+        except Exception as e:
+            self.logger.error(f"打开会话失败: {e}")
+            messagebox.showerror("错误", f"打开会话失败: {e}")
     
+    def _load_session_data(self, session_id: int) -> None:
+        """
+        加载会话数据到GUI
+        
+        Args:
+            session_id: 会话ID
+        """
+        try:
+            # 重置GUI组件
+            self._reset_gui_components()
+            
+            # 获取会话数据包
+            packets = self.data_manager.get_packets_by_session(session_id)
+            
+            # 加载数据包到列表
+            for packet in packets:
+                self._add_packet_to_list(packet)
+            
+            # 更新会话状态
+            self.current_session_id = session_id
+            
+            # 获取会话信息
+            sessions = self.data_manager.get_sessions()
+            session_info = next((s for s in sessions if s['id'] == session_id), None)
+            
+            if session_info:
+                self.current_session_name = session_info.get('session_name', f'会话{session_id}')
+                
+                # 更新统计信息
+                self._update_session_statistics(session_info)
+            
+            self.logger.info(f"成功加载会话数据: {session_id}, 数据包数: {len(packets)}")
+            
+        except Exception as e:
+            self.logger.error(f"加载会话数据失败: {e}")
+            raise
+    
+    def _update_session_statistics(self, session_info: Dict[str, Any]) -> None:
+        """
+        更新会话统计信息显示
+        
+        Args:
+            session_info: 会话信息字典
+        """
+        try:
+            if hasattr(self, 'stats_text'):
+                stats_text = f"""会话统计信息:
+会话名称: {session_info.get('session_name', '未知')}
+开始时间: {datetime.fromtimestamp(session_info.get('start_time', 0)).strftime('%Y-%m-%d %H:%M:%S')}
+结束时间: {datetime.fromtimestamp(session_info.get('end_time', 0)).strftime('%Y-%m-%d %H:%M:%S') if session_info.get('end_time') else '未结束'}
+数据包数: {session_info.get('packet_count', 0):,}
+总字节数: {session_info.get('total_bytes', 0):,}
+"""
+                
+                self.stats_text.config(state=tk.NORMAL)
+                self.stats_text.delete(1.0, tk.END)
+                self.stats_text.insert(tk.END, stats_text)
+                self.stats_text.config(state=tk.DISABLED)
+                
+        except Exception as e:
+            self.logger.error(f"更新会话统计信息失败: {e}")
+
     def _save_session(self) -> None:
         """保存会话"""
-        messagebox.showinfo("提示", "保存会话功能将在后续版本中实现")
+        try:
+            # 检查是否有数据可以保存
+            if not hasattr(self, 'data_processor') or self.data_processor is None:
+                messagebox.showwarning(
+                    "无法保存",
+                    "当前没有可保存的会话数据。\n请先创建新会话或开始数据捕获。",
+                    parent=self.root
+                )
+                return
+            
+            # 检查是否有数据包数据
+            stats = self.data_processor.get_statistics()
+            if stats.get('total_packets', 0) == 0:
+                result = messagebox.askyesno(
+                    "确认保存",
+                    "当前会话没有捕获到数据包。\n是否仍要保存空会话？",
+                    parent=self.root
+                )
+                if not result:
+                    return
+            
+            # 调用现有的保存逻辑
+            success = self._save_current_session()
+            
+            if success:
+                self.logger.info("通过菜单保存会话成功")
+            else:
+                self.logger.warning("通过菜单保存会话失败")
+                
+        except Exception as e:
+            self.logger.error(f"保存会话时发生未预期错误: {e}")
+            messagebox.showerror(
+                "保存失败",
+                f"保存会话时发生错误:\n{str(e)}",
+                parent=self.root
+            )
     
     def _export_data(self) -> None:
         """导出数据"""
@@ -545,6 +901,7 @@ class MainWindow:
             
             # 开始捕获
             if self.packet_capture.start_capture():
+                self.is_capturing = True  # 更新捕获状态
                 self.start_btn.config(state=tk.DISABLED)
                 self.stop_btn.config(state=tk.NORMAL)
                 self.status_text.config(text="正在捕获...")
@@ -568,8 +925,23 @@ class MainWindow:
             # 停止捕获
             self.packet_capture.stop_capture()
             
+            # 更新捕获状态
+            self.is_capturing = False
+            
             # 停止GUI更新定时器
             self._stop_gui_updates()
+            
+            # 更新当前会话的结束时间
+            if hasattr(self, 'current_session_id') and self.current_session_id:
+                try:
+                    stats = self.data_processor.get_current_stats()
+                    self.data_manager.update_session(
+                        self.current_session_id,
+                        packet_count=stats.get('total_packets', 0),
+                        total_bytes=stats.get('total_bytes', 0)
+                    )
+                except Exception as e:
+                    self.logger.error(f"更新会话信息失败: {e}")
             
             # 更新UI状态
             self.start_btn.config(state=tk.NORMAL)
@@ -588,6 +960,7 @@ class MainWindow:
             self.logger.error(f"停止捕获失败: {e}")
             messagebox.showerror("错误", f"停止捕获失败: {str(e)}")
             # 即使出错也要恢复UI状态
+            self.is_capturing = False  # 确保状态正确
             self.start_btn.config(state=tk.NORMAL)
             self.stop_btn.config(state=tk.DISABLED)
             self.status_text.config(text="就绪")

@@ -94,6 +94,12 @@ class DataProcessor:
     def _update_basic_stats(self, packet_info: Dict[str, Any]) -> None:
         """更新基础统计信息"""
         timestamp = packet_info.get('timestamp', datetime.now())
+        # 确保timestamp是datetime对象
+        if isinstance(timestamp, datetime):
+            timestamp_dt = timestamp
+        else:
+            # 如果是时间戳，转换为datetime对象
+            timestamp_dt = datetime.fromtimestamp(timestamp)
         length = packet_info.get('length', 0)
         protocol = packet_info.get('protocol', 'Unknown')
         src_ip = packet_info.get('src_ip')
@@ -104,10 +110,10 @@ class DataProcessor:
         # 更新总计数
         self._packet_stats['total_packets'] += 1
         self._packet_stats['total_bytes'] += length
-        self._packet_stats['last_update'] = timestamp
+        self._packet_stats['last_update'] = timestamp_dt
         
         if self._packet_stats['start_time'] is None:
-            self._packet_stats['start_time'] = timestamp
+            self._packet_stats['start_time'] = timestamp_dt
         
         # 更新协议统计
         self._packet_stats['protocol_counts'][protocol] += 1
@@ -127,8 +133,12 @@ class DataProcessor:
     
     def _update_traffic_stats(self, packet_info: Dict[str, Any]) -> None:
         """更新流量统计信息"""
-        timestamp = packet_info.get('timestamp', datetime.now())
+        timestamp = packet_info.get('timestamp', datetime.now().timestamp())
         length = packet_info.get('length', 0)
+        
+        # 如果timestamp是float，转换为datetime对象
+        if isinstance(timestamp, (int, float)):
+            timestamp = datetime.fromtimestamp(timestamp)
         
         # 获取当前秒的时间戳
         current_second = timestamp.replace(microsecond=0)
@@ -161,7 +171,7 @@ class DataProcessor:
         src_port = packet_info.get('src_port')
         dst_port = packet_info.get('dst_port')
         protocol = packet_info.get('protocol')
-        timestamp = packet_info.get('timestamp', datetime.now())
+        timestamp = packet_info.get('timestamp', datetime.now().timestamp())
         length = packet_info.get('length', 0)
         
         if not all([src_ip, dst_ip, protocol]):
@@ -202,7 +212,7 @@ class DataProcessor:
         try:
             # 构造数据包数据
             packet_data = {
-                'timestamp': packet_info.get('timestamp', datetime.now()),
+                'timestamp': packet_info.get('timestamp', datetime.now().timestamp()),
                 'src_ip': packet_info.get('src_ip', ''),
                 'dst_ip': packet_info.get('dst_ip', ''),
                 'src_port': packet_info.get('src_port', 0),
@@ -252,6 +262,7 @@ class DataProcessor:
             
             # 计算速率
             if stats['start_time'] and stats['last_update']:
+                # 使用datetime对象计算时间差
                 duration = (stats['last_update'] - stats['start_time']).total_seconds()
                 if duration > 0:
                     stats['packet_rate'] = stats['total_packets'] / duration
@@ -424,3 +435,25 @@ class DataProcessor:
         except Exception as e:
             self.logger.error(f"计算基线统计失败: {e}")
             return {}
+    
+    # 兼容性方法 - 为了与GUI代码保持一致
+    def get_statistics(self) -> Dict[str, Any]:
+        """
+        兼容性方法：获取统计信息
+        
+        这是为了与GUI代码中的方法调用保持一致而添加的兼容性方法。
+        实际功能由 get_current_stats() 方法提供。
+        
+        Returns:
+            当前统计信息字典
+        """
+        return self.get_current_stats()
+    
+    def reset_statistics(self) -> None:
+        """
+        兼容性方法：重置统计信息
+        
+        这是为了与GUI代码中的方法调用保持一致而添加的兼容性方法。
+        实际功能由 reset_stats() 方法提供。
+        """
+        self.reset_stats()

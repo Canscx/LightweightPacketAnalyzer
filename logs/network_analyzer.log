@@ -33,3 +33,175 @@ AttributeError: 'Settings' object has no attribute 'DATA_DIRECTORY'
 2025-09-23 18:00:57,827 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
 2025-09-23 18:01:00,964 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
 2025-09-23 18:01:04,963 - network_analyzer.gui.main_window - INFO - 用户关闭应用程序
+2025-09-23 21:30:57,555 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-23 21:30:57,555 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-23 21:30:57,556 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-23 21:30:57,559 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-23 21:30:57,560 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-23 21:30:57,560 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-23 21:30:57,694 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-23 21:31:02,192 - network_analyzer.gui.main_window - ERROR - 重置GUI组件时发生错误: 'DataProcessor' object has no attribute 'reset_statistics'
+2025-09-23 21:31:04,752 - root - INFO - 新会话创建成功: 新会话 (ID: 4)
+2025-09-23 21:31:07,927 - network_analyzer.gui.main_window - ERROR - 打开会话失败: 'MainWindow' object has no attribute 'is_capturing'
+2025-09-23 21:31:13,245 - network_analyzer.gui.main_window - ERROR - 保存会话数据失败: 'DataProcessor' object has no attribute 'get_statistics'
+2025-09-23 21:31:17,033 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-23 22:01:43,370 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-23 22:01:43,370 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-23 22:01:43,372 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-23 22:01:43,374 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-23 22:01:43,374 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-23 22:01:43,374 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-23 22:01:43,494 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-23 22:01:47,184 - network_analyzer.gui.main_window - ERROR - 重置GUI组件时发生错误: 'DataProcessor' object has no attribute 'reset_statistics'
+2025-09-23 22:01:49,084 - root - INFO - 新会话创建成功: 新会话 (ID: 9)
+2025-09-23 22:01:51,068 - network_analyzer.gui.main_window - ERROR - 保存会话时发生未预期错误: 'DataProcessor' object has no attribute 'get_statistics'
+2025-09-23 22:01:53,744 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-23 22:01:53,745 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-23 22:01:56,011 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 41 个数据包, 耗时: 2.27 秒
+2025-09-23 22:01:56,011 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-23 22:01:58,341 - network_analyzer.gui.main_window - ERROR - 保存会话时发生未预期错误: 'DataProcessor' object has no attribute 'get_statistics'
+2025-09-23 22:02:03,315 - network_analyzer.gui.main_window - ERROR - 重置GUI组件时发生错误: 'DataProcessor' object has no attribute 'reset_statistics'
+2025-09-23 22:02:06,964 - root - INFO - 新会话创建成功: 新会话 (ID: 10)
+2025-09-23 22:02:12,040 - network_analyzer.gui.main_window - ERROR - 打开会话失败: 'MainWindow' object has no attribute 'is_capturing'
+2025-09-23 22:02:15,345 - network_analyzer.gui.main_window - ERROR - 保存会话时发生未预期错误: 'DataProcessor' object has no attribute 'get_statistics'
+2025-09-23 22:02:22,717 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-23 22:02:22,718 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-23 22:02:24,744 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 216 个数据包, 耗时: 2.03 秒
+2025-09-23 22:02:24,744 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-23 22:02:30,078 - network_analyzer.gui.main_window - ERROR - 重置GUI组件时发生错误: 'DataProcessor' object has no attribute 'reset_statistics'
+2025-09-23 22:02:31,733 - root - INFO - 新会话创建成功: 新会话 (ID: 11)
+2025-09-23 22:02:32,347 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-23 22:02:32,347 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-23 22:02:34,620 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 68 个数据包, 耗时: 2.27 秒
+2025-09-23 22:02:34,621 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-23 22:02:36,705 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-23 22:02:49,643 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-23 22:02:49,644 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-23 22:02:49,646 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-23 22:02:49,649 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-23 22:02:49,649 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-23 22:02:49,649 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-23 22:02:49,772 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-23 22:02:51,931 - network_analyzer.gui.main_window - ERROR - 保存会话时发生未预期错误: 'DataProcessor' object has no attribute 'get_statistics'
+2025-09-23 22:03:22,529 - network_analyzer.gui.main_window - ERROR - 打开会话失败: 'MainWindow' object has no attribute 'is_capturing'
+2025-09-23 22:03:50,610 - network_analyzer.gui.main_window - ERROR - 重置GUI组件时发生错误: 'DataProcessor' object has no attribute 'reset_statistics'
+2025-09-23 22:04:23,059 - root - INFO - 新会话创建成功: 新会话 (ID: 12)
+2025-09-23 22:04:27,628 - network_analyzer.gui.main_window - ERROR - 重置GUI组件时发生错误: 'DataProcessor' object has no attribute 'reset_statistics'
+2025-09-23 22:04:36,502 - root - INFO - 新会话创建成功: 新会话 (ID: 13)
+2025-09-23 22:05:03,796 - network_analyzer.gui.main_window - ERROR - 重置GUI组件时发生错误: 'DataProcessor' object has no attribute 'reset_statistics'
+2025-09-23 22:05:33,089 - root - INFO - 新会话创建成功: 新会话 (ID: 14)
+2025-09-23 22:05:35,487 - network_analyzer.gui.main_window - ERROR - 保存会话数据失败: 'DataProcessor' object has no attribute 'get_statistics'
+2025-09-23 22:13:14,493 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-23 23:23:43,356 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-23 23:23:43,358 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-23 23:23:43,359 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-23 23:23:43,360 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-23 23:23:43,360 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-23 23:23:43,360 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-23 23:23:43,432 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-23 23:23:44,888 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-23 23:23:44,888 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-23 23:23:46,303 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 44 个数据包, 耗时: 1.42 秒
+2025-09-23 23:23:46,304 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-23 23:24:24,114 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-23 23:24:24,114 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-23 23:24:24,116 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-23 23:24:24,117 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-23 23:24:24,118 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-23 23:24:24,118 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-23 23:24:24,191 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-23 23:24:25,398 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-23 23:24:25,399 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-23 23:24:29,222 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 1276 个数据包, 耗时: 3.82 秒
+2025-09-23 23:24:29,222 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-23 23:24:32,768 - network_analyzer.gui.main_window - INFO - 创建临时会话: 临时会话 (ID: 30)
+2025-09-23 23:24:32,771 - network_analyzer.gui.main_window - INFO - 会话数据保存成功: ID=30, 数据包=420, 字节数=484758
+2025-09-23 23:24:33,436 - network_analyzer.gui.main_window - INFO - 通过菜单保存会话成功
+2025-09-23 23:24:35,906 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-23 23:24:35,908 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-23 23:24:35,910 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 30, 数据包数: 0
+2025-09-23 23:24:35,910 - network_analyzer.gui.main_window - INFO - 成功打开会话: 30
+2025-09-23 23:25:18,718 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-23 23:56:51,715 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-23 23:56:51,715 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-23 23:56:51,716 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-23 23:56:51,719 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-23 23:56:51,719 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-23 23:56:51,719 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-23 23:56:51,791 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-23 23:56:56,127 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-23 23:56:56,128 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-23 23:56:58,362 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 194 个数据包, 耗时: 2.23 秒
+2025-09-23 23:56:58,363 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-23 23:57:01,585 - network_analyzer.gui.main_window - INFO - 创建临时会话: 临时会话 (ID: 39)
+2025-09-23 23:57:01,587 - network_analyzer.gui.main_window - INFO - 会话数据保存成功: ID=39, 数据包=172, 字节数=27679
+2025-09-23 23:57:02,225 - network_analyzer.gui.main_window - INFO - 通过菜单保存会话成功
+2025-09-23 23:57:04,877 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-23 23:57:04,877 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-23 23:57:04,878 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 38, 数据包数: 3
+2025-09-23 23:57:04,879 - network_analyzer.gui.main_window - INFO - 成功打开会话: 38
+2025-09-23 23:57:09,023 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-23 23:57:09,023 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-23 23:57:09,025 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 39, 数据包数: 0
+2025-09-23 23:57:09,025 - network_analyzer.gui.main_window - INFO - 成功打开会话: 39
+2025-09-23 23:57:14,772 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-23 23:57:14,772 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-23 23:57:14,866 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 1, 数据包数: 1000
+2025-09-23 23:57:14,866 - network_analyzer.gui.main_window - INFO - 成功打开会话: 1
+2025-09-23 23:57:23,782 - network_analyzer.gui.main_window - INFO - 会话数据保存成功: ID=1, 数据包=0, 字节数=0
+2025-09-23 23:57:28,954 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-23 23:57:28,954 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-23 23:57:29,650 - root - INFO - 新会话创建成功: 测试1 (ID: 40)
+2025-09-23 23:57:30,154 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-23 23:57:30,154 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-23 23:57:32,030 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 22 个数据包, 耗时: 1.88 秒
+2025-09-23 23:57:32,035 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-23 23:57:38,503 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-23 23:57:38,503 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-23 23:57:38,505 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 40, 数据包数: 44
+2025-09-23 23:57:38,505 - network_analyzer.gui.main_window - INFO - 成功打开会话: 40
+2025-09-23 23:57:44,407 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-23 23:57:44,407 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-23 23:57:44,409 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 39, 数据包数: 0
+2025-09-23 23:57:44,409 - network_analyzer.gui.main_window - INFO - 成功打开会话: 39
+2025-09-23 23:57:47,192 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-23 23:57:47,192 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-23 23:57:47,198 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 40, 数据包数: 44
+2025-09-23 23:57:47,198 - network_analyzer.gui.main_window - INFO - 成功打开会话: 40
+2025-09-23 23:58:06,822 - network_analyzer.gui.main_window - INFO - 会话数据保存成功: ID=40, 数据包=0, 字节数=0
+2025-09-23 23:58:09,502 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-23 23:58:09,502 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-23 23:58:10,351 - root - INFO - 新会话创建成功: 测试2 (ID: 41)
+2025-09-23 23:58:11,128 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-23 23:58:11,128 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-23 23:58:12,572 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 33 个数据包, 耗时: 1.45 秒
+2025-09-23 23:58:12,577 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-23 23:58:18,282 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-23 23:58:18,282 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-23 23:58:18,286 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 41, 数据包数: 66
+2025-09-23 23:58:18,286 - network_analyzer.gui.main_window - INFO - 成功打开会话: 41
+2025-09-23 23:58:25,016 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-23 23:58:25,016 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-23 23:58:26,429 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 16 个数据包, 耗时: 1.41 秒
+2025-09-23 23:58:26,434 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-23 23:58:29,323 - network_analyzer.gui.main_window - INFO - 会话数据保存成功: ID=41, 数据包=16, 字节数=2042
+2025-09-23 23:58:33,867 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-23 23:58:33,867 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-23 23:58:34,455 - root - INFO - 新会话创建成功: 测试3 (ID: 42)
+2025-09-23 23:58:35,137 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-23 23:58:35,138 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-23 23:58:37,515 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 199 个数据包, 耗时: 2.38 秒
+2025-09-23 23:58:37,518 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-23 23:58:46,127 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-23 23:58:46,127 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-23 23:58:46,132 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 42, 数据包数: 114
+2025-09-23 23:58:46,132 - network_analyzer.gui.main_window - INFO - 成功打开会话: 42
+2025-09-23 23:59:25,884 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-23 23:59:25,885 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-23 23:59:25,890 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 41, 数据包数: 98
+2025-09-23 23:59:25,890 - network_analyzer.gui.main_window - INFO - 成功打开会话: 41
+2025-09-23 23:59:28,850 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-23 23:59:28,850 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-23 23:59:28,857 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 42, 数据包数: 114
+2025-09-23 23:59:28,858 - network_analyzer.gui.main_window - INFO - 成功打开会话: 42
+2025-09-23 23:59:35,942 - network_analyzer.gui.main_window - INFO - 应用程序正常退出

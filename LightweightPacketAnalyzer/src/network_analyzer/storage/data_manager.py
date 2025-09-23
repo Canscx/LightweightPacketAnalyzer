@@ -7,6 +7,7 @@
 import sqlite3
 import json
 import logging
+import time
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple
 from datetime import datetime, timedelta
@@ -167,6 +168,47 @@ class DataManager:
                 first_id = last_id - len(packets) + 1
                 return list(range(first_id, last_id + 1))
     
+    def get_packets_by_session(self, session_id: int, limit: int = 1000) -> List[Dict[str, Any]]:
+        """
+        根据会话ID获取数据包列表
+        
+        Args:
+            session_id: 会话ID
+            limit: 返回记录数限制
+            
+        Returns:
+            数据包列表
+        """
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            
+            # 首先获取会话的时间范围
+            cursor.execute("""
+                SELECT start_time, end_time 
+                FROM sessions 
+                WHERE id = ?
+            """, (session_id,))
+            
+            session_info = cursor.fetchone()
+            if not session_info:
+                return []
+            
+            start_time = session_info['start_time']
+            end_time = session_info['end_time']
+            
+            # 获取该时间范围内的数据包
+            query = """
+                SELECT * FROM packets 
+                WHERE timestamp >= ? AND timestamp <= ?
+                ORDER BY timestamp ASC 
+                LIMIT ?
+            """
+            
+            cursor.execute(query, (start_time, end_time or time.time(), limit))
+            rows = cursor.fetchall()
+            
+            return [dict(row) for row in rows]
+
     def get_packets(self, 
                    start_time: Optional[float] = None,
                    end_time: Optional[float] = None,

@@ -215,7 +215,7 @@ class PacketCapture:
             数据包信息字典
         """
         info = {
-            'timestamp': datetime.now(),
+            'timestamp': time.time(),
             'length': len(packet),
             'protocol': 'Unknown',
             'src_ip': None,
