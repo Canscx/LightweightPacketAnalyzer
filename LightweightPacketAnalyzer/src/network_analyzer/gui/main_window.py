@@ -5,10 +5,11 @@
 """
 
 import tkinter as tk
-from tkinter import ttk, messagebox
+from tkinter import ttk, messagebox, simpledialog
 import logging
 import threading
 import queue
+import time
 from typing import Optional, Dict, Any
 
 from network_analyzer.config.settings import Settings
@@ -52,6 +53,10 @@ class MainWindow:
         # GUI更新标志
         self._gui_update_active = False
         self._update_timer_id = None
+        
+        # 当前会话管理
+        self.current_session_id = None
+        self.current_session_name = None
         
         # 创建主窗口
         self.root = tk.Tk()
@@ -369,8 +374,108 @@ class MainWindow:
     
     # 菜单和按钮事件处理方法（占位符）
     def _new_session(self) -> None:
-        """新建会话"""
-        messagebox.showinfo("提示", "新建会话功能将在后续版本中实现")
+        """新建会话
+        
+        完整的新建会话流程：
+        1. 检查当前捕获状态
+        2. 询问是否保存当前数据
+        3. 获取新会话名称
+        4. 保存当前会话数据（如需要）
+        5. 重置GUI组件
+        6. 创建新会话
+        7. 更新界面状态
+        """
+        try:
+            # 步骤1: 检查当前捕获状态
+            if self._check_capture_status():
+                messagebox.showwarning("警告", "请先停止数据包捕获后再新建会话")
+                return
+            
+            # 步骤2: 询问是否保存当前数据
+            save_choice = self._ask_save_current_data()
+            if save_choice == "cancel":
+                return  # 用户取消操作
+            elif save_choice == "yes":
+                # 保存当前会话数据
+                if not self._save_current_session():
+                    messagebox.showerror("错误", "保存当前会话失败，无法继续新建会话")
+                    return
+            
+            # 步骤3: 获取新会话名称
+            session_name = self._get_session_name()
+            if not session_name:
+                return  # 用户取消或输入无效
+            
+            # 步骤4: 重置GUI组件和数据处理器
+            self._reset_gui_components()
+            
+            # 步骤5: 创建新会话
+            try:
+                session_id = self.data_manager.create_session(session_name)
+                if not session_id:
+                    messagebox.showerror("错误", "创建新会话失败")
+                    return
+                
+                # 更新当前会话信息
+                self.current_session_id = session_id
+                self.current_session_name = session_name
+                
+                # 步骤6: 更新界面状态
+                self._update_session_status(session_name)
+                
+                # 显示成功消息
+                messagebox.showinfo("成功", f"新会话 '{session_name}' 创建成功")
+                
+                logging.info(f"新会话创建成功: {session_name} (ID: {session_id})")
+                
+            except Exception as e:
+                logging.error(f"创建新会话时发生错误: {str(e)}")
+                messagebox.showerror("错误", f"创建新会话时发生错误: {str(e)}")
+                
+        except Exception as e:
+            logging.error(f"新建会话过程中发生未预期错误: {str(e)}")
+            messagebox.showerror("错误", f"新建会话失败: {str(e)}")
+    
+    def _update_session_status(self, session_name: str) -> None:
+        """更新会话状态显示
+        
+        Args:
+            session_name: 会话名称
+        """
+        try:
+            # 更新状态栏
+            if hasattr(self, 'status_text'):
+                self.status_text.config(text=f"当前会话: {session_name}")
+            
+            # 更新窗口标题
+            if hasattr(self, 'root'):
+                app_name = getattr(self.settings, 'APP_NAME', 'Network Analyzer')
+                self.root.title(f"{app_name} - {session_name}")
+                
+        except Exception as e:
+            logging.error(f"更新会话状态时发生错误: {str(e)}")
+    
+    def new_session(self) -> bool:
+        """公共接口：新建会话
+        
+        Returns:
+            bool: 操作是否成功
+        """
+        try:
+            # 记录操作前的状态
+            old_session_id = getattr(self, 'current_session_id', None)
+            old_session_name = getattr(self, 'current_session_name', None)
+            
+            # 执行新建会话
+            self._new_session()
+            
+            # 检查是否成功创建了新会话
+            new_session_id = getattr(self, 'current_session_id', None)
+            return new_session_id is not None and new_session_id != old_session_id
+            
+        except Exception as e:
+            logging.error(f"新建会话公共接口调用失败: {str(e)}")
+            return False
     
     def _open_session(self) -> None:
         """打开会话"""
@@ -486,7 +591,193 @@ class MainWindow:
             self.start_btn.config(state=tk.NORMAL)
             self.stop_btn.config(state=tk.DISABLED)
             self.status_text.config(text="就绪")
+
+    def _check_capture_status(self) -> bool:
+        """
+        检查当前捕获状态
+        
+        Returns:
+            bool: 如果正在捕获返回True，否则返回False
+        """
+        try:
+            # 检查packet_capture是否存在且正在捕获
+            if self.packet_capture is not None:
+                return self.packet_capture.is_capturing
+            else:
+                return False
+        except Exception as e:
+            self.logger.error(f"检查捕获状态失败: {e}")
+            return False
+
+    def _get_session_name(self) -> Optional[str]:
+        """
+        获取用户输入的会话名称
+        
+        Returns:
+            Optional[str]: 用户输入的会话名称，如果取消则返回None
+        """
+        try:
+            session_name = simpledialog.askstring(
+                "新建会话",
+                "请输入会话名称:",
+                parent=self.root,
+                initialvalue="新会话"
+            )
+            
+            # 验证输入
+            if session_name is not None:
+                session_name = session_name.strip()
+                if not session_name:
+                    messagebox.showerror("错误", "会话名称不能为空")
+                    return None
+                if len(session_name) > 100:
+                    messagebox.showerror("错误", "会话名称长度不能超过100个字符")
+                    return None
+            
+            return session_name
+        except Exception as e:
+            self.logger.error(f"获取会话名称失败: {e}")
+            messagebox.showerror("错误", "获取会话名称时发生错误")
+            return None
+
+    def _ask_save_current_data(self) -> str:
+        """
+        询问是否保存当前数据
+        
+        Returns:
+            str: 用户选择 'yes'/'no'/'cancel'
+        """
+        try:
+            result = messagebox.askyesnocancel(
+                "保存数据",
+                "当前会话有数据，是否保存？\n\n"
+                "是 - 保存并新建会话\n"
+                "否 - 不保存直接新建\n"
+                "取消 - 取消操作",
+                parent=self.root
+            )
+            
+            if result is True:
+                return 'yes'
+            elif result is False:
+                return 'no'
+            else:  # result is None (Cancel)
+                return 'cancel'
+        except Exception as e:
+            self.logger.error(f"询问保存数据失败: {e}")
+            return 'cancel'
     
+    def _save_current_session(self) -> bool:
+        """保存当前会话数据"""
+        try:
+            if self.current_session_id is None:
+                # 如果没有当前会话，先创建一个临时会话
+                session_name = self.current_session_name or "临时会话"
+                self.current_session_id = self.data_manager.create_session(session_name)
+                self.logger.info(f"创建临时会话: {session_name} (ID: {self.current_session_id})")
+            
+            # 获取当前统计数据
+            stats = self.data_processor.get_statistics()
+            packet_count = stats.get('total_packets', 0)
+            total_bytes = stats.get('total_bytes', 0)
+            
+            # 更新会话统计信息
+            self.data_manager.update_session(
+                self.current_session_id,
+                packet_count,
+                total_bytes
+            )
+            
+            self.logger.info(f"会话数据保存成功: ID={self.current_session_id}, "
+                           f"数据包={packet_count}, 字节数={total_bytes}")
+            
+            # 显示保存成功消息
+            messagebox.showinfo(
+                "保存成功",
+                f"会话数据已保存\n数据包数量: {packet_count}\n总字节数: {total_bytes}",
+                parent=self.root
+            )
+            
+            return True
+            
+        except Exception as e:
+            self.logger.error(f"保存会话数据失败: {e}")
+            messagebox.showerror(
+                "保存失败",
+                f"保存会话数据时发生错误:\n{str(e)}",
+                parent=self.root
+            )
+            return False
+    
+    def _reset_gui_components(self) -> None:
+        """
+        重置GUI组件和状态
+        
+        清空所有显示组件，重置会话状态，为新会话做准备
+        """
+        try:
+            # 清空数据包列表
+            if hasattr(self, 'packet_tree'):
+                for item in self.packet_tree.get_children():
+                    self.packet_tree.delete(item)
+                self.logger.debug("数据包列表已清空")
+            
+            # 重置统计信息显示
+            if hasattr(self, 'stats_text'):
+                self.stats_text.config(state=tk.NORMAL)
+                self.stats_text.delete(1.0, tk.END)
+                self.stats_text.insert(tk.END, "暂无统计信息")
+                self.stats_text.config(state=tk.DISABLED)
+                self.logger.debug("统计信息显示已重置")
+            
+            # 清空详情显示
+            if hasattr(self, 'detail_text'):
+                self.detail_text.config(state=tk.NORMAL)
+                self.detail_text.delete(1.0, tk.END)
+                self.detail_text.insert(tk.END, "请选择数据包查看详情")
+                self.detail_text.config(state=tk.DISABLED)
+                self.logger.debug("详情显示已清空")
+            
+            # 更新状态栏
+            if hasattr(self, 'status_text'):
+                self.status_text.config(text="就绪 - 新会话")
+                self.logger.debug("状态栏已更新")
+            
+            # 重置数据包计数
+            if hasattr(self, 'packet_count_label'):
+                self.packet_count_label.config(text="数据包: 0")
+                self.logger.debug("数据包计数已重置")
+            
+            # 重置会话相关状态
+            self.current_session_id = None
+            self.current_session_name = None
+            self.logger.debug("会话状态已重置")
+            
+            # 重置数据处理器统计
+            if hasattr(self, 'data_processor') and self.data_processor:
+                self.data_processor.reset_statistics()
+                self.logger.debug("数据处理器统计已重置")
+            
+            # 清空数据队列
+            while not self.packet_queue.empty():
+                try:
+                    self.packet_queue.get_nowait()
+                except queue.Empty:
+                    break
+            
+            while not self.stats_queue.empty():
+                try:
+                    self.stats_queue.get_nowait()
+                except queue.Empty:
+                    break
+            
+            self.logger.info("GUI组件重置完成")
+            
+        except Exception as e:
+            error_msg = f"重置GUI组件时发生错误: {str(e)}"
+            self.logger.error(error_msg)
+            messagebox.showerror("错误", error_msg)
+
     def _capture_options(self) -> None:
         """捕获选项"""
         messagebox.showinfo("提示", "捕获选项功能将在后续版本中实现")
