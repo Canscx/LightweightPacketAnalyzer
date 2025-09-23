@@ -7,10 +7,14 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 import logging
-from typing import Optional
+import threading
+import queue
+from typing import Optional, Dict, Any
 
 from network_analyzer.config.settings import Settings
 from network_analyzer.storage.data_manager import DataManager
+from network_analyzer.capture.packet_capture import PacketCapture
+from network_analyzer.processing.data_processor import DataProcessor
 
 
 class MainWindow:
@@ -29,6 +33,26 @@ class MainWindow:
         # 初始化数据管理器
         self.data_manager = DataManager(settings.get_database_path())
         
+        # 初始化数据包捕获器
+        try:
+            self.packet_capture = PacketCapture(settings)
+            self.logger.info("数据包捕获器初始化成功")
+        except ImportError as e:
+            self.logger.error(f"数据包捕获器初始化失败: {e}")
+            self.packet_capture = None
+        
+        # 初始化数据处理器
+        self.data_processor = DataProcessor(settings, self.data_manager)
+        self.logger.info("数据处理器初始化成功")
+        
+        # 线程安全的数据传递队列
+        self.packet_queue = queue.Queue()
+        self.stats_queue = queue.Queue()
+        
+        # GUI更新标志
+        self._gui_update_active = False
+        self._update_timer_id = None
+        
         # 创建主窗口
         self.root = tk.Tk()
         self.root.title(settings.APP_NAME)
@@ -41,13 +65,119 @@ class MainWindow:
         except Exception:
             pass
         
+        # 设置数据包回调
+        if self.packet_capture:
+            self.packet_capture.set_packet_callback(self._on_packet_received)
+        
         # 初始化界面
         self._init_ui()
         
         # 绑定窗口关闭事件
         self.root.protocol("WM_DELETE_WINDOW", self._on_closing)
         
+        # 启动GUI更新定时器
+        self._start_gui_updates()
+        
         self.logger.info("主窗口初始化完成")
+    
+    def _on_packet_received(self, packet_info: Dict[str, Any]) -> None:
+        """
+        数据包接收回调函数
+        
+        Args:
+            packet_info: 数据包信息
+        """
+        try:
+            # 将数据包放入队列，避免阻塞捕获线程
+            self.packet_queue.put(packet_info, block=False)
+        except queue.Full:
+            self.logger.warning("数据包队列已满，丢弃数据包")
+    
+    def _start_gui_updates(self) -> None:
+        """启动GUI更新定时器"""
+        if not hasattr(self, '_update_timer_active'):
+            self._update_timer_active = True
+            self._schedule_gui_update()
+    
+    def _stop_gui_updates(self) -> None:
+        """停止GUI更新定时器"""
+        self._update_timer_active = False
+    
+    def _schedule_gui_update(self) -> None:
+        """调度GUI更新"""
+        if hasattr(self, '_update_timer_active') and self._update_timer_active:
+            self._update_timer_id = self.root.after(100, self._update_gui)  # 每100ms更新一次
+    
+    def _update_gui(self) -> None:
+        """更新GUI显示"""
+        try:
+            # 处理数据包队列
+            packets_processed = 0
+            while not self.packet_queue.empty() and packets_processed < 10:  # 限制每次处理的数据包数量
+                try:
+                    packet_info = self.packet_queue.get_nowait()
+                    
+                    # 处理数据包
+                    self.data_processor.process_packet(packet_info)
+                    
+                    # 添加到数据包列表显示
+                    self._add_packet_to_list(packet_info)
+                    
+                    packets_processed += 1
+                    
+                except queue.Empty:
+                    break
+                except Exception as e:
+                    self.logger.error(f"处理数据包失败: {e}")
+            
+            # 更新统计信息
+            self._update_statistics()
+            
+        except Exception as e:
+            self.logger.error(f"GUI更新失败: {e}")
+        finally:
+            # 继续调度下一次更新
+            if hasattr(self, '_update_timer_active') and self._update_timer_active:
+                self._schedule_gui_update()
+    
+    def _add_packet_to_list(self, packet_info: Dict[str, Any]) -> None:
+        """添加数据包到列表显示"""
+        try:
+            # 格式化数据包信息
+            timestamp = packet_info.get('timestamp', '')
+            src_ip = packet_info.get('src_ip', 'N/A')
+            dst_ip = packet_info.get('dst_ip', 'N/A')
+            protocol = packet_info.get('protocol', 'Unknown')
+            length = packet_info.get('length', 0)
+            
+            # 插入到树形视图
+            self.packet_tree.insert('', 'end', values=(
+                timestamp, src_ip, dst_ip, protocol, length
+            ))
+            
+            # 自动滚动到最新数据包
+            children = self.packet_tree.get_children()
+            if children:
+                self.packet_tree.see(children[-1])
+                
+        except Exception as e:
+            self.logger.error(f"添加数据包到列表失败: {e}")
+    
+    def _update_statistics(self) -> None:
+        """更新统计信息显示"""
+        try:
+            stats = self.data_processor.get_current_stats()
+            
+            # 更新状态栏
+            total_packets = stats.get('total_packets', 0)
+            total_bytes = stats.get('total_bytes', 0)
+            self.status_text.config(text=f"正在捕获... 数据包: {total_packets}, 字节: {total_bytes}")
+            
+            # 更新右侧统计面板（如果存在）
+            # 这里可以添加更详细的统计信息更新
+            
+        except Exception as e:
+            self.logger.error(f"更新统计信息失败: {e}")
     
     def _init_ui(self) -> None:
         """初始化用户界面"""
@@ -252,22 +382,110 @@ class MainWindow:
     
     def _export_data(self) -> None:
         """导出数据"""
-        messagebox.showinfo("提示", "导出数据功能将在后续版本中实现")
+        try:
+            from tkinter import filedialog
+            
+            # 选择导出文件
+            filename = filedialog.asksaveasfilename(
+                title="导出数据",
+                defaultextension=".csv",
+                filetypes=[
+                    ("CSV文件", "*.csv"),
+                    ("JSON文件", "*.json"),
+                    ("所有文件", "*.*")
+                ]
+            )
+            
+            if filename:
+                # 获取当前统计数据
+                stats = self.data_processor.get_current_stats()
+                
+                if filename.endswith('.json'):
+                    import json
+                    with open(filename, 'w', encoding='utf-8') as f:
+                        json.dump(stats, f, ensure_ascii=False, indent=2, default=str)
+                else:
+                    # 导出为CSV格式
+                    import csv
+                    with open(filename, 'w', newline='', encoding='utf-8') as f:
+                        writer = csv.writer(f)
+                        writer.writerow(['指标', '数值'])
+                        writer.writerow(['总数据包', stats.get('total_packets', 0)])
+                        writer.writerow(['总字节数', stats.get('total_bytes', 0)])
+                        writer.writerow(['数据包速率', f"{stats.get('packet_rate', 0):.2f} pps"])
+                        writer.writerow(['字节速率', f"{stats.get('byte_rate', 0):.2f} Bps"])
+                        
+                        # 协议分布
+                        writer.writerow([])
+                        writer.writerow(['协议分布'])
+                        for protocol, count in stats.get('protocol_counts', {}).items():
+                            writer.writerow([protocol, count])
+                
+                messagebox.showinfo("成功", f"数据已导出到: {filename}")
+                self.logger.info(f"数据导出成功: {filename}")
+                
+        except Exception as e:
+            self.logger.error(f"导出数据失败: {e}")
+            messagebox.showerror("错误", f"导出数据失败: {str(e)}")
     
     def _start_capture(self) -> None:
         """开始捕获"""
-        self.start_btn.config(state=tk.DISABLED)
-        self.stop_btn.config(state=tk.NORMAL)
-        self.status_text.config(text="正在捕获...")
-        self.logger.info("开始数据包捕获")
-        messagebox.showinfo("提示", "数据包捕获功能将在后续版本中实现")
+        if not self.packet_capture:
+            messagebox.showerror("错误", "数据包捕获器未初始化，请检查网络权限")
+            return
+            
+        try:
+            # 设置数据包回调函数
+            self.packet_capture.set_packet_callback(self._on_packet_received)
+            
+            # 开始捕获
+            if self.packet_capture.start_capture():
+                self.start_btn.config(state=tk.DISABLED)
+                self.stop_btn.config(state=tk.NORMAL)
+                self.status_text.config(text="正在捕获...")
+                self.logger.info("开始数据包捕获")
+                
+                # 启动GUI更新定时器
+                self._start_gui_updates()
+            else:
+                messagebox.showerror("错误", "无法开始数据包捕获，请检查网络接口和权限")
+                
+        except Exception as e:
+            self.logger.error(f"启动捕获失败: {e}")
+            messagebox.showerror("错误", f"启动捕获失败: {str(e)}")
     
     def _stop_capture(self) -> None:
         """停止捕获"""
-        self.start_btn.config(state=tk.NORMAL)
-        self.stop_btn.config(state=tk.DISABLED)
-        self.status_text.config(text="就绪")
-        self.logger.info("停止数据包捕获")
+        if not self.packet_capture:
+            return
+            
+        try:
+            # 停止捕获
+            self.packet_capture.stop_capture()
+            
+            # 停止GUI更新定时器
+            self._stop_gui_updates()
+            
+            # 更新UI状态
+            self.start_btn.config(state=tk.NORMAL)
+            self.stop_btn.config(state=tk.DISABLED)
+            self.status_text.config(text="就绪")
+            self.logger.info("停止数据包捕获")
+            
+            # 显示最终统计信息
+            stats = self.data_processor.get_current_stats()
+            messagebox.showinfo("捕获完成", 
+                f"捕获完成！\n"
+                f"总数据包: {stats.get('total_packets', 0)}\n"
+                f"总字节数: {stats.get('total_bytes', 0)}")
+                
+        except Exception as e:
+            self.logger.error(f"停止捕获失败: {e}")
+            messagebox.showerror("错误", f"停止捕获失败: {str(e)}")
+            # 即使出错也要恢复UI状态
+            self.start_btn.config(state=tk.NORMAL)
+            self.stop_btn.config(state=tk.DISABLED)
+            self.status_text.config(text="就绪")
     
     def _capture_options(self) -> None:
         """捕获选项"""
@@ -343,8 +561,23 @@ class MainWindow:
     
     def _on_closing(self) -> None:
         """窗口关闭事件处理"""
-        if messagebox.askokcancel("退出", "确定要退出程序吗？"):
-            self.logger.info("用户关闭应用程序")
+        try:
+            # 如果正在捕获，先停止捕获
+            if self.packet_capture and self.packet_capture.is_capturing:
+                self.logger.info("检测到正在捕获，正在停止...")
+                self.packet_capture.stop_capture()
+                
+            # 停止GUI更新定时器
+            if hasattr(self, '_update_timer_active'):
+                self._update_timer_active = False
+                
+            # 数据管理器不需要显式关闭，SQLite连接会自动管理
+            self.logger.info("应用程序正常退出")
+            
+        except Exception as e:
+            self.logger.error(f"关闭应用程序时发生错误: {e}")
+        finally:
+            # 销毁窗口
             self.root.destroy()
     
     def run(self) -> int:

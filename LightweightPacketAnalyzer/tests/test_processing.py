@@ -21,6 +21,9 @@ class TestDataProcessor(unittest.TestCase):
         """测试前的设置"""
         self.settings = Settings()
         self.mock_data_manager = Mock(spec=DataManager)
+        # 确保Mock对象具有所需的方法
+        self.mock_data_manager.get_packets_by_time_range = Mock(return_value=[])
+        self.mock_data_manager.store_packet = Mock()
         self.processor = DataProcessor(self.settings, self.mock_data_manager)
         
         # 创建测试数据包
