@@ -205,3 +205,60 @@ AttributeError: 'Settings' object has no attribute 'DATA_DIRECTORY'
 2025-09-23 23:59:28,857 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 42, 数据包数: 114
 2025-09-23 23:59:28,858 - network_analyzer.gui.main_window - INFO - 成功打开会话: 42
 2025-09-23 23:59:35,942 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 17:22:06,550 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 17:22:06,551 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 17:22:06,552 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 17:22:06,559 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 17:22:06,560 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 17:22:06,560 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 17:22:06,724 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 17:22:19,122 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 17:22:19,122 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 17:22:19,127 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 42, 数据包数: 114
+2025-09-24 17:22:19,127 - network_analyzer.gui.main_window - INFO - 成功打开会话: 42
+2025-09-24 17:24:04,871 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 18:18:02,518 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 18:18:02,518 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 18:18:02,519 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 18:18:02,523 - root - ERROR - 程序运行出错: no such column: packet_fingerprint
+Traceback (most recent call last):
+  File "D:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\main.py", line 92, in main
+    app = MainWindow(settings)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\gui\main_window.py", line 255, in __init__
+    self.data_manager = DataManager(settings.get_database_path())
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\storage\data_manager.py", line 36, in __init__
+    self._init_database()
+  File "D:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\storage\data_manager.py", line 90, in _init_database
+    cursor.execute("CREATE INDEX IF NOT EXISTS idx_packets_fingerprint ON packets(packet_fingerprint)")
+sqlite3.OperationalError: no such column: packet_fingerprint
+2025-09-24 18:18:23,765 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 18:18:23,766 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 18:18:23,767 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 18:18:23,769 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 18:18:23,769 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 18:18:23,769 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 18:18:23,849 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 18:18:26,365 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 18:18:26,365 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 18:18:27,328 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 521 个数据包, 耗时: 0.96 秒
+2025-09-24 18:18:27,329 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 18:18:31,528 - network_analyzer.gui.main_window - INFO - 创建临时会话: 临时会话 (ID: 56)
+2025-09-24 18:18:31,533 - network_analyzer.gui.main_window - INFO - 会话数据保存成功: ID=56, 数据包=140, 字节数=155309
+2025-09-24 18:18:34,663 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 18:18:34,664 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 18:18:35,288 - root - INFO - 新会话创建成功: 新会话332 (ID: 57)
+2025-09-24 18:18:37,595 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 18:18:37,596 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 18:18:38,624 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 369 个数据包, 耗时: 1.03 秒
+2025-09-24 18:18:38,629 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 18:18:41,897 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 18:18:41,898 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 18:18:41,900 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 56, 数据包数: 0
+2025-09-24 18:18:41,900 - network_analyzer.gui.main_window - INFO - 成功打开会话: 56
+2025-09-24 18:18:44,726 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 18:18:44,726 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 18:18:44,732 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 57, 数据包数: 80
+2025-09-24 18:18:44,733 - network_analyzer.gui.main_window - INFO - 成功打开会话: 57
+2025-09-24 18:19:07,847 - network_analyzer.gui.main_window - INFO - 应用程序正常退出

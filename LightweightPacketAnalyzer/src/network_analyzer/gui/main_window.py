@@ -344,14 +344,8 @@ class MainWindow:
                 try:
                     packet_info = self.packet_queue.get_nowait()
                     
-                    # 处理数据包
+                    # 处理数据包（包含保存到数据库）
                     self.data_processor.process_packet(packet_info)
-                    
-                    # 保存数据包到数据库
-                    try:
-                        self.data_manager.save_packet(packet_info)
-                    except Exception as e:
-                        self.logger.error(f"保存数据包到数据库失败: {e}")
                     
                     # 添加到数据包列表显示
                     self._add_packet_to_list(packet_info)
