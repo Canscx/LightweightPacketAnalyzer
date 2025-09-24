@@ -17,6 +17,9 @@ from network_analyzer.config.settings import Settings
 from network_analyzer.storage.data_manager import DataManager
 from network_analyzer.capture.packet_capture import PacketCapture
 from network_analyzer.processing.data_processor import DataProcessor
+from network_analyzer.analysis.protocol_parser import ProtocolParser
+from network_analyzer.analysis.packet_formatter import PacketFormatter
+from network_analyzer.analysis.packet_cache import packet_cache
 
 
 class SessionDialog:
@@ -266,6 +269,11 @@ class MainWindow:
         self.data_processor = DataProcessor(settings, self.data_manager)
         self.logger.info("数据处理器初始化成功")
         
+        # 初始化协议解析器和格式化器
+        self.protocol_parser = ProtocolParser()
+        self.packet_formatter = PacketFormatter()
+        self.logger.info("协议解析器和格式化器初始化成功")
+        
         # 线程安全的数据传递队列
         self.packet_queue = queue.Queue()
         self.stats_queue = queue.Queue()
@@ -333,32 +341,46 @@ class MainWindow:
     def _schedule_gui_update(self) -> None:
         """调度GUI更新"""
         if hasattr(self, '_update_timer_active') and self._update_timer_active:
-            self._update_timer_id = self.root.after(100, self._update_gui)  # 每100ms更新一次
+            self._update_timer_id = self.root.after(200, self._update_gui)  # 每200ms更新一次，减少更新频率
     
     def _update_gui(self) -> None:
         """更新GUI显示"""
         try:
-            # 处理数据包队列
+            # 处理数据包队列 - 只处理显示，不进行数据库操作
             packets_processed = 0
-            while not self.packet_queue.empty() and packets_processed < 10:  # 限制每次处理的数据包数量
+            display_packets = []
+            
+            # 批量获取数据包
+            while not self.packet_queue.empty() and packets_processed < 20:
                 try:
                     packet_info = self.packet_queue.get_nowait()
-                    
-                    # 处理数据包（包含保存到数据库）
-                    self.data_processor.process_packet(packet_info)
-                    
-                    # 添加到数据包列表显示
-                    self._add_packet_to_list(packet_info)
-                    
+                    display_packets.append(packet_info)
                     packets_processed += 1
-                    
                 except queue.Empty:
                     break
                 except Exception as e:
+                    self.logger.error(f"获取数据包失败: {e}")
+            
+            # 异步处理数据包（数据库操作）
+            for packet_info in display_packets:
+                try:
+                    # 异步保存到数据库（不阻塞GUI）
+                    self.data_processor.process_packet(packet_info)
+                    
+                    # 立即添加到GUI显示
+                    self._add_packet_to_list(packet_info)
+                    
+                except Exception as e:
                     self.logger.error(f"处理数据包失败: {e}")
+            
+            # 限制显示的数据包数量，防止内存无限增长
+            self._limit_packet_display()
             
             # 更新统计信息
             self._update_statistics()
+            
+            # 更新数据库队列状态信息
+            self._update_queue_status()
             
         except Exception as e:
             self.logger.error(f"GUI更新失败: {e}")
@@ -366,6 +388,47 @@ class MainWindow:
             # 继续调度下一次更新
             if hasattr(self, '_update_timer_active') and self._update_timer_active:
                 self._schedule_gui_update()
+    
+    def _limit_packet_display(self) -> None:
+        """限制数据包显示数量，防止内存无限增长"""
+        try:
+            if hasattr(self, 'packet_tree') and self.packet_tree:
+                # 获取当前显示的数据包数量
+                children = self.packet_tree.get_children()
+                max_display_packets = 1000  # 最多显示1000个数据包
+                
+                # 如果超过限制，删除最旧的数据包
+                if len(children) > max_display_packets:
+                    # 删除最旧的数据包（前面的）
+                    for i in range(len(children) - max_display_packets):
+                        self.packet_tree.delete(children[i])
+        except Exception as e:
+            self.logger.error(f"限制数据包显示失败: {e}")
+    
+    def _update_queue_status(self) -> None:
+        """更新数据库队列状态信息"""
+        try:
+            if hasattr(self.data_processor, 'get_queue_status'):
+                queue_status = self.data_processor.get_queue_status()
+                queue_size = queue_status.get('queue_size', 0)
+                thread_alive = queue_status.get('thread_alive', False)
+                
+                # 更新状态栏显示队列信息
+                if hasattr(self, 'status_text'):
+                    current_text = self.status_text.cget('text')
+                    # 添加队列状态信息
+                    if '|' in current_text:
+                        base_text = current_text.split('|')[0]
+                    else:
+                        base_text = current_text
+                    
+                    status_info = f"| DB队列: {queue_size}"
+                    if not thread_alive:
+                        status_info += " (线程停止)"
+                    
+                    self.status_text.config(text=base_text + status_info)
+        except Exception as e:
+            self.logger.error(f"更新队列状态失败: {e}")
     
     def _add_packet_to_list(self, packet_info: Dict[str, Any]) -> None:
         """添加数据包到列表显示"""
@@ -570,13 +633,55 @@ class MainWindow:
         self.detail_frame = ttk.Frame(self.notebook)
         self.notebook.add(self.detail_frame, text="数据包详情")
         
-        # 详情文本框
-        self.detail_text = tk.Text(self.detail_frame, wrap=tk.WORD, state=tk.DISABLED)
-        detail_scrollbar = ttk.Scrollbar(self.detail_frame, orient=tk.VERTICAL, command=self.detail_text.yview)
-        self.detail_text.configure(yscrollcommand=detail_scrollbar.set)
+        # 创建详情面板的子标签页
+        self.detail_notebook = ttk.Notebook(self.detail_frame)
+        self.detail_notebook.pack(fill=tk.BOTH, expand=True)
         
-        self.detail_text.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
-        detail_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        # 协议树标签页
+        self.tree_frame = ttk.Frame(self.detail_notebook)
+        self.detail_notebook.add(self.tree_frame, text="协议层次")
+        
+        # 协议树视图
+        self.protocol_tree = ttk.Treeview(self.tree_frame, show="tree headings")
+        self.protocol_tree["columns"] = ("value",)
+        self.protocol_tree.heading("#0", text="字段")
+        self.protocol_tree.heading("value", text="值")
+        self.protocol_tree.column("#0", width=200)
+        self.protocol_tree.column("value", width=300)
+        
+        tree_scrollbar_y = ttk.Scrollbar(self.tree_frame, orient=tk.VERTICAL, command=self.protocol_tree.yview)
+        tree_scrollbar_x = ttk.Scrollbar(self.tree_frame, orient=tk.HORIZONTAL, command=self.protocol_tree.xview)
+        self.protocol_tree.configure(yscrollcommand=tree_scrollbar_y.set, xscrollcommand=tree_scrollbar_x.set)
+        
+        self.protocol_tree.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        tree_scrollbar_y.pack(side=tk.RIGHT, fill=tk.Y)
+        tree_scrollbar_x.pack(side=tk.BOTTOM, fill=tk.X)
+        
+        # 十六进制视图标签页
+        self.hex_frame = ttk.Frame(self.detail_notebook)
+        self.detail_notebook.add(self.hex_frame, text="十六进制")
+        
+        # 十六进制文本框
+        self.hex_text = tk.Text(self.hex_frame, wrap=tk.NONE, state=tk.DISABLED, font=("Courier", 10))
+        hex_scrollbar_y = ttk.Scrollbar(self.hex_frame, orient=tk.VERTICAL, command=self.hex_text.yview)
+        hex_scrollbar_x = ttk.Scrollbar(self.hex_frame, orient=tk.HORIZONTAL, command=self.hex_text.xview)
+        self.hex_text.configure(yscrollcommand=hex_scrollbar_y.set, xscrollcommand=hex_scrollbar_x.set)
+        
+        self.hex_text.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        hex_scrollbar_y.pack(side=tk.RIGHT, fill=tk.Y)
+        hex_scrollbar_x.pack(side=tk.BOTTOM, fill=tk.X)
+        
+        # 原始数据标签页
+        self.raw_frame = ttk.Frame(self.detail_notebook)
+        self.detail_notebook.add(self.raw_frame, text="原始数据")
+        
+        # 原始数据文本框
+        self.raw_text = tk.Text(self.raw_frame, wrap=tk.WORD, state=tk.DISABLED, font=("Courier", 10))
+        raw_scrollbar = ttk.Scrollbar(self.raw_frame, orient=tk.VERTICAL, command=self.raw_text.yview)
+        self.raw_text.configure(yscrollcommand=raw_scrollbar.set)
+        
+        self.raw_text.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        raw_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
         
         # 统计信息标签页
         self.stats_frame = ttk.Frame(self.notebook)
@@ -1210,12 +1315,187 @@ class MainWindow:
     def _on_packet_select(self, event) -> None:
         """数据包选择事件处理"""
         selection = self.packet_tree.selection()
-        if selection:
-            # 这里可以显示选中数据包的详细信息
-            self.detail_text.config(state=tk.NORMAL)
-            self.detail_text.delete(1.0, tk.END)
-            self.detail_text.insert(tk.END, "数据包详细信息将在后续版本中显示")
-            self.detail_text.config(state=tk.DISABLED)
+        if not selection:
+            return
+            
+        try:
+            # 获取选中的数据包项
+            item = selection[0]
+            packet_values = self.packet_tree.item(item, 'values')
+            
+            if not packet_values:
+                return
+            
+            # 从数据库获取原始数据包数据
+            # 这里需要根据实际的数据存储结构来获取原始数据
+            # 暂时使用模拟数据进行演示
+            raw_data = self._get_packet_raw_data(item)
+            
+            if raw_data:
+                self._display_packet_details(raw_data)
+            else:
+                self._clear_packet_details()
+                
+        except Exception as e:
+            self.logger.error(f"显示数据包详情时发生错误: {e}")
+            self._clear_packet_details()
+    
+    def _get_packet_raw_data(self, item_id: str) -> Optional[bytes]:
+        """
+        获取数据包的原始数据
+        
+        Args:
+            item_id: 数据包项ID
+            
+        Returns:
+            原始数据包字节，如果获取失败则返回None
+        """
+        try:
+            # 这里应该从数据库或缓存中获取原始数据包数据
+            # 目前返回模拟数据用于演示
+            # 实际实现需要根据数据存储结构来获取
+            
+            # 模拟以太网帧数据（用于演示）
+            demo_data = bytes([
+                # 以太网头部
+                0x00, 0x11, 0x22, 0x33, 0x44, 0x55,  # 目标MAC
+                0xaa, 0xbb, 0xcc, 0xdd, 0xee, 0xff,  # 源MAC
+                0x08, 0x00,                          # EtherType (IPv4)
+                # IPv4头部
+                0x45, 0x00, 0x00, 0x3c,              # 版本、头长、服务类型、总长度
+                0x1c, 0x46, 0x40, 0x00,              # 标识、标志、片偏移
+                0x40, 0x06, 0x00, 0x00,              # TTL、协议(TCP)、头校验和
+                0xc0, 0xa8, 0x01, 0x64,              # 源IP (192.168.1.100)
+                0xc0, 0xa8, 0x01, 0x01,              # 目标IP (192.168.1.1)
+                # TCP头部
+                0x04, 0xd2, 0x00, 0x50,              # 源端口、目标端口
+                0x00, 0x00, 0x00, 0x01,              # 序列号
+                0x00, 0x00, 0x00, 0x00,              # 确认号
+                0x50, 0x02, 0x20, 0x00,              # 头长、标志、窗口大小
+                0x00, 0x00, 0x00, 0x00,              # 校验和、紧急指针
+            ])
+            
+            return demo_data
+            
+        except Exception as e:
+            self.logger.error(f"获取数据包原始数据失败: {e}")
+            return None
+    
+    def _display_packet_details(self, raw_data: bytes) -> None:
+        """
+        显示数据包详细信息
+        
+        Args:
+            raw_data: 原始数据包字节
+        """
+        try:
+            # 首先尝试从缓存获取解析结果
+            parsed_packet = packet_cache.get(raw_data)
+            
+            if parsed_packet is None:
+                # 缓存中没有，进行解析
+                parsed_packet = self.protocol_parser.parse_packet(raw_data)
+                if parsed_packet:
+                    # 将解析结果放入缓存
+                    packet_cache.put(raw_data, parsed_packet)
+            
+            if parsed_packet:
+                # 显示协议树
+                self._display_protocol_tree(parsed_packet)
+                
+                # 显示十六进制数据
+                self._display_hex_data(raw_data)
+                
+                # 显示原始数据
+                self._display_raw_data(raw_data, parsed_packet)
+            else:
+                self._clear_packet_details()
+                
+        except Exception as e:
+            self.logger.error(f"显示数据包详情失败: {e}")
+            self._clear_packet_details()
+    
+    def _display_protocol_tree(self, parsed_packet) -> None:
+        """显示协议层次树"""
+        try:
+            # 清空现有内容
+            for item in self.protocol_tree.get_children():
+                self.protocol_tree.delete(item)
+            
+            # 获取格式化的协议树
+            tree_data = self.packet_formatter.format_packet_tree(parsed_packet)
+            
+            # 递归添加树节点
+            self._add_tree_nodes("", tree_data)
+            
+        except Exception as e:
+            self.logger.error(f"显示协议树失败: {e}")
+    
+    def _add_tree_nodes(self, parent: str, tree_data: dict) -> None:
+        """递归添加树节点"""
+        for key, value in tree_data.items():
+            if isinstance(value, dict):
+                # 如果值是字典，创建父节点并递归添加子节点
+                node = self.protocol_tree.insert(parent, "end", text=key, values=("",))
+                self._add_tree_nodes(node, value)
+            else:
+                # 如果值不是字典，直接添加叶节点
+                self.protocol_tree.insert(parent, "end", text=key, values=(str(value),))
+    
+    def _display_hex_data(self, raw_data: bytes) -> None:
+        """显示十六进制数据"""
+        try:
+            self.hex_text.config(state=tk.NORMAL)
+            self.hex_text.delete(1.0, tk.END)
+            
+            hex_dump = self.packet_formatter.format_hex_dump(raw_data)
+            self.hex_text.insert(tk.END, hex_dump)
+            
+            self.hex_text.config(state=tk.DISABLED)
+            
+        except Exception as e:
+            self.logger.error(f"显示十六进制数据失败: {e}")
+    
+    def _display_raw_data(self, raw_data: bytes, parsed_packet) -> None:
+        """显示原始数据和解析摘要"""
+        try:
+            self.raw_text.config(state=tk.NORMAL)
+            self.raw_text.delete(1.0, tk.END)
+            
+            # 显示数据包摘要
+            summary = self.packet_formatter.format_packet_summary(parsed_packet)
+            self.raw_text.insert(tk.END, f"数据包摘要:\n{summary}\n\n")
+            
+            # 显示详细信息
+            details = self.packet_formatter.format_packet_details(parsed_packet)
+            self.raw_text.insert(tk.END, f"详细信息:\n{details}")
+            
+            self.raw_text.config(state=tk.DISABLED)
+            
+        except Exception as e:
+            self.logger.error(f"显示原始数据失败: {e}")
+    
+    def _clear_packet_details(self) -> None:
+        """清空数据包详情显示"""
+        try:
+            # 清空协议树
+            for item in self.protocol_tree.get_children():
+                self.protocol_tree.delete(item)
+            
+            # 清空十六进制视图
+            self.hex_text.config(state=tk.NORMAL)
+            self.hex_text.delete(1.0, tk.END)
+            self.hex_text.insert(tk.END, "请选择数据包以查看十六进制数据")
+            self.hex_text.config(state=tk.DISABLED)
+            
+            # 清空原始数据视图
+            self.raw_text.config(state=tk.NORMAL)
+            self.raw_text.delete(1.0, tk.END)
+            self.raw_text.insert(tk.END, "请选择数据包以查看详细信息")
+            self.raw_text.config(state=tk.DISABLED)
+            
+        except Exception as e:
+            self.logger.error(f"清空数据包详情失败: {e}")
     
     def _on_closing(self) -> None:
         """窗口关闭事件处理"""
@@ -1228,6 +1508,11 @@ class MainWindow:
             # 停止GUI更新定时器
             if hasattr(self, '_update_timer_active'):
                 self._update_timer_active = False
+                
+            # 停止数据处理器的数据库线程
+            if hasattr(self, 'data_processor') and self.data_processor:
+                self.logger.info("正在停止数据库线程...")
+                self.data_processor.shutdown()
                 
             # 数据管理器不需要显式关闭，SQLite连接会自动管理
             self.logger.info("应用程序正常退出")

@@ -5,11 +5,13 @@
 """
 
 import threading
+import queue
 from typing import Dict, List, Any, Optional, Tuple
 from datetime import datetime, timedelta
 from collections import defaultdict, deque
 import logging
 import statistics
+import time
 
 from ..config.settings import Settings
 from ..storage.data_manager import DataManager
@@ -32,6 +34,13 @@ class DataProcessor:
         
         # 线程安全锁
         self._lock = threading.RLock()
+        
+        # 异步数据库写入相关
+        self._db_queue = queue.Queue(maxsize=1000)  # 限制队列大小防止内存溢出
+        self._db_thread = None
+        self._db_thread_running = False
+        self._batch_size = 50  # 批量写入大小
+        self._batch_timeout = 2.0  # 批量写入超时时间（秒）
         
         # 实时统计数据
         self._packet_stats = {
@@ -63,7 +72,96 @@ class DataProcessor:
             'protocol_distribution': {},
             'port_distribution': {}
         }
-    
+        
+        # 启动数据库写入线程
+        self._start_db_thread()
+
+    def _start_db_thread(self) -> None:
+        """启动数据库写入线程"""
+        if self._db_thread is None or not self._db_thread.is_alive():
+            self._db_thread_running = True
+            self._db_thread = threading.Thread(target=self._db_worker, daemon=True)
+            self._db_thread.start()
+            self.logger.info("数据库写入线程已启动")
+
+    def _stop_db_thread(self) -> None:
+        """停止数据库写入线程"""
+        if self._db_thread_running:
+            self._db_thread_running = False
+            # 发送停止信号
+            try:
+                self._db_queue.put(None, timeout=1.0)
+            except queue.Full:
+                pass
+            
+            # 等待线程结束
+            if self._db_thread and self._db_thread.is_alive():
+                self._db_thread.join(timeout=5.0)
+            
+            self.logger.info("数据库写入线程已停止")
+
+    def _db_worker(self) -> None:
+        """数据库写入工作线程"""
+        batch = []
+        last_batch_time = time.time()
+        
+        while self._db_thread_running:
+            try:
+                # 尝试获取数据包数据
+                timeout = max(0.1, self._batch_timeout - (time.time() - last_batch_time))
+                packet_data = self._db_queue.get(timeout=timeout)
+                
+                # 检查停止信号
+                if packet_data is None:
+                    break
+                
+                batch.append(packet_data)
+                
+                # 检查是否需要批量写入
+                current_time = time.time()
+                should_flush = (
+                    len(batch) >= self._batch_size or 
+                    (current_time - last_batch_time) >= self._batch_timeout
+                )
+                
+                if should_flush and batch:
+                    self._flush_batch(batch)
+                    batch.clear()
+                    last_batch_time = current_time
+                    
+            except queue.Empty:
+                # 超时，检查是否有待写入的数据
+                if batch:
+                    self._flush_batch(batch)
+                    batch.clear()
+                    last_batch_time = time.time()
+            except Exception as e:
+                self.logger.error(f"数据库写入线程错误: {e}")
+        
+        # 线程结束前写入剩余数据
+        if batch:
+            self._flush_batch(batch)
+
+    def _flush_batch(self, batch: List[Dict[str, Any]]) -> None:
+        """批量写入数据到数据库"""
+        try:
+            if len(batch) == 1:
+                # 单个数据包直接写入
+                self.data_manager.save_packet(batch[0])
+            else:
+                # 批量写入（如果数据管理器支持）
+                if hasattr(self.data_manager, 'save_packets_batch'):
+                    self.data_manager.save_packets_batch(batch)
+                else:
+                    # 逐个写入
+                    for packet_data in batch:
+                        self.data_manager.save_packet(packet_data)
+            
+            self.logger.debug(f"成功写入 {len(batch)} 个数据包到数据库")
+            
+        except Exception as e:
+            self.logger.error(f"批量写入数据库失败: {e}")
+
     def process_packet(self, packet_info: Dict[str, Any]) -> None:
         """
         处理单个数据包
@@ -73,7 +171,7 @@ class DataProcessor:
         """
         with self._lock:
             try:
-                # 更新基础统计
+                # 更新基础统计（快速操作，保留在主线程）
                 self._update_basic_stats(packet_info)
                 
                 # 更新流量统计
@@ -82,15 +180,45 @@ class DataProcessor:
                 # 更新连接跟踪
                 self._update_connection_tracking(packet_info)
                 
-                # 存储数据包到数据库
-                self._store_packet(packet_info)
+                # 异步存储数据包到数据库
+                self._store_packet_async(packet_info)
                 
                 # 检测异常
                 self._detect_anomalies(packet_info)
                 
             except Exception as e:
                 self.logger.error(f"处理数据包失败: {e}")
-    
+
+    def _store_packet_async(self, packet_info: Dict[str, Any]) -> None:
+        """异步存储数据包到数据库"""
+        try:
+            # 构造数据包数据
+            packet_data = {
+                'timestamp': packet_info.get('timestamp', datetime.now().timestamp()),
+                'src_ip': packet_info.get('src_ip', ''),
+                'dst_ip': packet_info.get('dst_ip', ''),
+                'src_port': packet_info.get('src_port', 0),
+                'dst_port': packet_info.get('dst_port', 0),
+                'protocol': packet_info.get('protocol', 'Unknown'),
+                'length': packet_info.get('length', 0),
+                'summary': packet_info.get('summary', '')
+            }
+            
+            # 添加到异步写入队列
+            try:
+                self._db_queue.put_nowait(packet_data)
+            except queue.Full:
+                # 队列满时丢弃最旧的数据包
+                try:
+                    self._db_queue.get_nowait()  # 移除一个旧数据包
+                    self._db_queue.put_nowait(packet_data)  # 添加新数据包
+                    self.logger.warning("数据库队列已满，丢弃旧数据包")
+                except queue.Empty:
+                    pass
+            
+        except Exception as e:
+            self.logger.error(f"异步存储数据包失败: {e}")
+
     def _update_basic_stats(self, packet_info: Dict[str, Any]) -> None:
         """更新基础统计信息"""
         timestamp = packet_info.get('timestamp', datetime.now())
@@ -457,3 +585,25 @@ class DataProcessor:
         实际功能由 reset_stats() 方法提供。
         """
         self.reset_stats()
+
+    def get_queue_status(self) -> Dict[str, Any]:
+        """获取队列状态信息"""
+        return {
+            'queue_size': self._db_queue.qsize(),
+            'queue_maxsize': self._db_queue.maxsize,
+            'thread_running': self._db_thread_running,
+            'thread_alive': self._db_thread.is_alive() if self._db_thread else False
+        }
+
+    def shutdown(self) -> None:
+        """关闭数据处理器，清理资源"""
+        self.logger.info("正在关闭数据处理器...")
+        self._stop_db_thread()
+        self.logger.info("数据处理器已关闭")
+
+    def __del__(self):
+        """析构函数，确保资源清理"""
+        try:
+            self.shutdown()
+        except:
+            pass

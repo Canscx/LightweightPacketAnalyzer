@@ -262,3 +262,260 @@ sqlite3.OperationalError: no such column: packet_fingerprint
 2025-09-24 18:18:44,732 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 57, 数据包数: 80
 2025-09-24 18:18:44,733 - network_analyzer.gui.main_window - INFO - 成功打开会话: 57
 2025-09-24 18:19:07,847 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 18:20:18,980 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 18:20:18,980 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 18:20:18,982 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 18:20:18,983 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 18:20:18,983 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 18:20:18,983 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 18:20:19,075 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 18:20:22,197 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 18:20:22,197 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 18:20:23,103 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 309 个数据包, 耗时: 0.91 秒
+2025-09-24 18:20:23,103 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 18:28:39,539 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 19:58:50,979 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 19:58:50,979 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 19:58:50,980 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 19:58:50,982 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 19:58:50,982 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 19:58:50,982 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 19:58:50,983 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 19:58:50,983 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 19:58:51,132 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 19:58:53,133 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 19:58:53,133 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 19:59:39,048 - network_analyzer.gui.main_window - INFO - 检测到正在捕获，正在停止...
+2025-09-24 19:59:39,066 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 156243 个数据包, 耗时: 45.93 秒
+2025-09-24 19:59:39,066 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 19:59:45,027 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 19:59:45,027 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 19:59:45,030 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 19:59:45,032 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 19:59:45,032 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 19:59:45,032 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 19:59:45,032 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 19:59:45,032 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 19:59:45,132 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 19:59:47,657 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 19:59:47,658 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 20:00:13,341 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 90423 个数据包, 耗时: 25.68 秒
+2025-09-24 20:00:13,341 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 20:00:15,828 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:00:18,654 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:00:19,398 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:00:23,976 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:00:24,473 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:00:25,451 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:00:32,372 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:00:34,535 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:00:36,122 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:00:36,888 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:00:37,614 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:00:38,238 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:00:38,944 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:00:40,401 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:00:43,222 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:00:45,569 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:00:47,586 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:00:48,074 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:00:48,633 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:00:49,385 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:00:51,762 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:00:52,570 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:00:52,887 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:02:09,282 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:02:09,774 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:02:10,430 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:02:11,553 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 20:06:46,445 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 20:06:46,446 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 20:06:46,447 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 20:06:46,449 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 20:06:46,449 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 20:06:46,449 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 20:06:46,449 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 20:06:46,449 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 20:06:46,553 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 20:06:47,657 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 20:06:47,657 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 20:14:53,762 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 20:14:53,763 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 20:14:53,764 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 20:14:53,766 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 20:14:53,767 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 20:14:53,767 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-24 20:14:53,767 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 20:14:53,767 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 20:14:53,767 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 20:14:53,857 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 20:14:55,058 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 20:14:55,058 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 20:14:56,138 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:14:57,395 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 8181 个数据包, 耗时: 2.34 秒
+2025-09-24 20:14:57,396 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 20:14:57,404 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:14:59,419 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:15:01,463 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 20:15:01,463 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 20:15:04,201 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:15:05,928 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:15:08,490 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:15:08,852 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 26859 个数据包, 耗时: 7.39 秒
+2025-09-24 20:15:08,852 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 20:15:09,984 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:15:11,114 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-24 20:15:11,114 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 20:15:11,114 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-24 20:15:11,115 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 20:15:11,115 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 20:15:11,274 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 20:15:11,274 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 20:15:13,823 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 20:15:13,823 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 20:15:13,826 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 20:15:13,827 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 20:15:13,827 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 20:15:13,828 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-24 20:15:13,828 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 20:15:13,828 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 20:15:13,828 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 20:15:13,925 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 20:15:15,431 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 20:15:15,432 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 20:15:16,038 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:15:18,212 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:15:20,092 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:15:22,057 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:15:24,111 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:15:26,139 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:15:28,157 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:15:30,190 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:15:32,155 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:15:34,359 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:15:36,225 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:15:38,283 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:15:40,270 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:15:42,421 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:15:49,016 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 20:15:49,016 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 20:15:49,018 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 20:15:49,020 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 20:15:49,020 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 20:15:49,022 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-24 20:15:49,022 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 20:15:49,022 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 20:15:49,022 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 20:15:49,128 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 20:15:57,894 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 20:15:57,894 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 20:15:59,600 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:16:01,056 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:16:02,380 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:16:03,949 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:16:05,586 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:16:07,392 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:16:08,577 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 37861 个数据包, 耗时: 10.68 秒
+2025-09-24 20:16:08,577 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 20:16:08,583 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:16:10,599 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:16:12,549 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 20:16:12,550 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 20:16:15,258 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:16:17,217 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:16:17,721 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 18133 个数据包, 耗时: 5.17 秒
+2025-09-24 20:16:17,721 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 20:16:18,784 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:16:26,576 - network_analyzer.gui.main_window - INFO - 创建临时会话: 临时会话 (ID: 58)
+2025-09-24 20:16:26,579 - network_analyzer.gui.main_window - INFO - 会话数据保存成功: ID=58, 数据包=500, 字节数=489392
+2025-09-24 20:16:30,124 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:16:30,190 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:16:30,898 - root - INFO - 新会话创建成功: 新会话22 (ID: 59)
+2025-09-24 20:16:31,724 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 20:16:31,724 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 20:16:32,349 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:16:32,955 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:16:33,386 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:16:34,037 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:16:34,452 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:16:35,088 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:16:35,517 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:16:35,768 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 798 个数据包, 耗时: 4.05 秒
+2025-09-24 20:16:35,772 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 20:16:37,536 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:16:38,479 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 20:16:38,479 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 20:16:39,096 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:16:39,504 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:16:39,668 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 203 个数据包, 耗时: 1.19 秒
+2025-09-24 20:16:39,672 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 20:16:40,606 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:16:41,522 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:16:42,395 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:16:42,914 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:16:43,378 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:16:43,816 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:16:45,926 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:16:46,494 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:16:47,156 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:16:47,931 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:16:53,131 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:16:53,132 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:16:53,133 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 58, 数据包数: 0
+2025-09-24 20:16:53,134 - network_analyzer.gui.main_window - INFO - 成功打开会话: 58
+2025-09-24 20:16:56,104 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:16:56,104 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:16:56,112 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 57, 数据包数: 80
+2025-09-24 20:16:56,112 - network_analyzer.gui.main_window - INFO - 成功打开会话: 57
+2025-09-24 20:16:59,190 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:16:59,190 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:16:59,228 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 59, 数据包数: 520
+2025-09-24 20:16:59,228 - network_analyzer.gui.main_window - INFO - 成功打开会话: 59
+2025-09-24 20:17:05,495 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 20:17:05,495 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 20:17:06,119 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:17:06,759 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:17:07,194 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:17:07,285 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 280 个数据包, 耗时: 1.79 秒
+2025-09-24 20:17:07,289 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 20:17:09,200 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:17:10,691 - network_analyzer.gui.main_window - INFO - 会话数据保存成功: ID=59, 数据包=180, 字节数=48002
+2025-09-24 20:17:13,472 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:17:13,472 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:17:14,189 - root - INFO - 新会话创建成功: 新会话123 (ID: 60)
+2025-09-24 20:17:14,992 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 20:17:14,993 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 20:17:15,620 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:17:16,251 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:17:16,671 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:17:17,293 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:17:17,626 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 356 个数据包, 耗时: 2.64 秒
+2025-09-24 20:17:17,631 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 20:17:17,713 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:17:19,722 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:17:22,060 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:17:22,060 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:17:22,135 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 59, 数据包数: 700
+2025-09-24 20:17:22,136 - network_analyzer.gui.main_window - INFO - 成功打开会话: 59
+2025-09-24 20:17:23,081 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 20:17:23,082 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 20:17:23,725 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:17:23,799 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 161 个数据包, 耗时: 0.72 秒
+2025-09-24 20:17:23,803 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 20:17:25,739 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:17:26,816 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:17:26,817 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:17:26,828 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 60, 数据包数: 260
+2025-09-24 20:17:26,829 - network_analyzer.gui.main_window - INFO - 成功打开会话: 60
+2025-09-24 20:17:41,205 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:17:41,996 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:18:20,339 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:18:20,892 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:18:21,373 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:19:48,810 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-24 20:19:48,810 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 20:19:48,810 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-24 20:19:48,810 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 20:19:48,811 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 20:19:48,942 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 20:19:48,943 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
