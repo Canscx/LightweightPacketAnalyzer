@@ -32,6 +32,9 @@ class DataProcessor:
         self.data_manager = data_manager
         self.logger = logging.getLogger(__name__)
         
+        # 当前会话ID
+        self.current_session_id: Optional[int] = None
+        
         # 线程安全锁
         self._lock = threading.RLock()
         
@@ -75,6 +78,27 @@ class DataProcessor:
         
         # 启动数据库写入线程
         self._start_db_thread()
+
+    def set_session_id(self, session_id: Optional[int]) -> None:
+        """
+        设置当前会话ID
+        
+        Args:
+            session_id: 会话ID，None表示没有活动会话
+        """
+        with self._lock:
+            self.current_session_id = session_id
+            self.logger.debug(f"设置会话ID: {session_id}")
+
+    def get_session_id(self) -> Optional[int]:
+        """
+        获取当前会话ID
+        
+        Returns:
+            Optional[int]: 当前会话ID，None表示没有活动会话
+        """
+        with self._lock:
+            return self.current_session_id
 
     def _start_db_thread(self) -> None:
         """启动数据库写入线程"""
@@ -192,16 +216,25 @@ class DataProcessor:
     def _store_packet_async(self, packet_info: Dict[str, Any]) -> None:
         """异步存储数据包到数据库"""
         try:
+            # 获取timestamp并确保是float类型（数据库需要）
+            timestamp = packet_info.get('timestamp')
+            if timestamp is None:
+                timestamp = datetime.now().timestamp()
+            elif isinstance(timestamp, datetime):
+                timestamp = timestamp.timestamp()
+            
             # 构造数据包数据
             packet_data = {
-                'timestamp': packet_info.get('timestamp', datetime.now().timestamp()),
+                'timestamp': timestamp,
                 'src_ip': packet_info.get('src_ip', ''),
                 'dst_ip': packet_info.get('dst_ip', ''),
                 'src_port': packet_info.get('src_port', 0),
                 'dst_port': packet_info.get('dst_port', 0),
                 'protocol': packet_info.get('protocol', 'Unknown'),
                 'length': packet_info.get('length', 0),
-                'summary': packet_info.get('summary', '')
+                'summary': packet_info.get('summary', ''),
+                'raw_data': packet_info.get('raw_data'),  # 添加原始数据包字节数据
+                'session_id': self.current_session_id  # 添加会话ID
             }
             
             # 添加到异步写入队列
@@ -261,12 +294,21 @@ class DataProcessor:
     
     def _update_traffic_stats(self, packet_info: Dict[str, Any]) -> None:
         """更新流量统计信息"""
-        timestamp = packet_info.get('timestamp', datetime.now().timestamp())
+        timestamp = packet_info.get('timestamp', datetime.now())
         length = packet_info.get('length', 0)
         
-        # 如果timestamp是float，转换为datetime对象
+        # 确保timestamp是datetime对象
         if isinstance(timestamp, (int, float)):
             timestamp = datetime.fromtimestamp(timestamp)
+        elif isinstance(timestamp, str):
+            try:
+                # 尝试解析字符串格式的时间戳
+                timestamp = datetime.fromisoformat(timestamp.replace('Z', '+00:00'))
+            except (ValueError, AttributeError):
+                timestamp = datetime.now()
+        elif not isinstance(timestamp, datetime):
+            # 如果既不是数字也不是datetime，使用当前时间
+            timestamp = datetime.now()
         
         # 获取当前秒的时间戳
         current_second = timestamp.replace(microsecond=0)
@@ -338,16 +380,25 @@ class DataProcessor:
     def _store_packet(self, packet_info: Dict[str, Any]) -> None:
         """存储数据包到数据库"""
         try:
+            # 获取timestamp并确保是float类型（数据库需要）
+            timestamp = packet_info.get('timestamp')
+            if timestamp is None:
+                timestamp = datetime.now().timestamp()
+            elif isinstance(timestamp, datetime):
+                timestamp = timestamp.timestamp()
+            
             # 构造数据包数据
             packet_data = {
-                'timestamp': packet_info.get('timestamp', datetime.now().timestamp()),
+                'timestamp': timestamp,
                 'src_ip': packet_info.get('src_ip', ''),
                 'dst_ip': packet_info.get('dst_ip', ''),
                 'src_port': packet_info.get('src_port', 0),
                 'dst_port': packet_info.get('dst_port', 0),
                 'protocol': packet_info.get('protocol', 'Unknown'),
                 'length': packet_info.get('length', 0),
-                'summary': packet_info.get('summary', '')
+                'summary': packet_info.get('summary', ''),
+                'raw_data': packet_info.get('raw_data'),  # 添加原始数据包字节数据
+                'session_id': self.current_session_id  # 添加会话ID
             }
             
             # 保存到数据库
@@ -388,14 +439,23 @@ class DataProcessor:
         with self._lock:
             stats = self._packet_stats.copy()
             
-            # 计算速率
-            if stats['start_time'] and stats['last_update']:
-                # 使用datetime对象计算时间差
-                duration = (stats['last_update'] - stats['start_time']).total_seconds()
-                if duration > 0:
-                    stats['packet_rate'] = stats['total_packets'] / duration
-                    stats['byte_rate'] = stats['total_bytes'] / duration
-                else:
+            # 计算速率 - 添加更严格的None检查
+            start_time = stats.get('start_time')
+            last_update = stats.get('last_update')
+            
+            if (start_time is not None and last_update is not None and 
+                isinstance(start_time, datetime) and isinstance(last_update, datetime)):
+                try:
+                    # 使用datetime对象计算时间差
+                    duration = (last_update - start_time).total_seconds()
+                    if duration > 0:
+                        stats['packet_rate'] = stats['total_packets'] / duration
+                        stats['byte_rate'] = stats['total_bytes'] / duration
+                    else:
+                        stats['packet_rate'] = 0.0
+                        stats['byte_rate'] = 0.0
+                except (TypeError, AttributeError) as e:
+                    self.logger.debug(f"计算统计速率时出错: {e}")
                     stats['packet_rate'] = 0.0
                     stats['byte_rate'] = 0.0
             else:

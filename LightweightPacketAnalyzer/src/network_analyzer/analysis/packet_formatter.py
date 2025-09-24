@@ -94,7 +94,9 @@ class PacketFormatter:
             details.append("")
             
             # 逐层显示协议信息
-            for protocol_type, fields in parsed_packet.layers.items():
+            for layer in parsed_packet.layers:
+                protocol_type = layer['protocol']
+                fields = layer['fields']
                 protocol_details = self._format_protocol_layer(protocol_type, fields)
                 details.extend(protocol_details)
                 details.append("")
@@ -164,9 +166,10 @@ class PacketFormatter:
             tree_lines.append("📦 数据包")
             
             # 协议层
-            protocol_list = list(parsed_packet.layers.items())
-            for i, (protocol_type, fields) in enumerate(protocol_list):
-                is_last_protocol = (i == len(protocol_list) - 1)
+            for i, layer in enumerate(parsed_packet.layers):
+                protocol_type = layer['protocol']
+                fields = layer['fields']
+                is_last_protocol = (i == len(parsed_packet.layers) - 1)
                 
                 # 协议节点
                 protocol_name = self.protocol_display_names.get(protocol_type, protocol_type.value)

@@ -519,3 +519,1169 @@ sqlite3.OperationalError: no such column: packet_fingerprint
 2025-09-24 20:19:48,811 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
 2025-09-24 20:19:48,942 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
 2025-09-24 20:19:48,943 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 20:25:09,791 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 20:25:09,791 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 20:25:09,792 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 20:25:09,794 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 20:25:09,794 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 20:25:09,795 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-24 20:25:09,795 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 20:25:09,795 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 20:25:09,795 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 20:25:09,883 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 20:25:20,093 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:25:20,093 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:25:20,716 - root - INFO - 新会话创建成功: 123 (ID: 62)
+2025-09-24 20:25:21,760 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 20:25:21,762 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 20:25:22,170 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:25:22,581 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:25:22,841 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 150 个数据包, 耗时: 1.08 秒
+2025-09-24 20:25:22,846 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 20:25:24,584 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:25:25,022 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:25:26,332 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:25:26,757 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:25:27,271 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:25:36,674 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:25:37,098 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:25:37,470 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:25:50,597 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:25:51,151 - network_analyzer.gui.main_window - ERROR - 显示协议树失败: 'str' object has no attribute 'items'
+2025-09-24 20:28:09,851 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-24 20:28:09,852 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 20:28:09,852 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-24 20:28:09,852 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 20:28:09,852 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 20:28:10,077 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 20:28:10,078 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 20:32:57,505 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 20:32:57,505 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 20:32:57,507 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 20:32:57,509 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 20:32:57,509 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 20:32:57,509 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-24 20:32:57,509 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 20:32:57,510 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 20:32:57,510 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 20:32:57,644 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 20:33:04,214 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 20:33:04,215 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 20:33:04,523 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:33:04,835 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 207 个数据包, 耗时: 0.62 秒
+2025-09-24 20:33:04,836 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 20:33:04,848 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:33:05,990 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I071
+2025-09-24 20:33:06,856 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:33:07,976 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I070
+2025-09-24 20:33:08,958 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I072
+2025-09-24 20:33:09,667 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I073
+2025-09-24 20:33:10,550 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I074
+2025-09-24 20:33:11,128 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I074
+2025-09-24 20:33:19,691 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I06C
+2025-09-24 20:33:24,535 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:33:24,536 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:33:25,273 - root - INFO - 新会话创建成功: 123 (ID: 64)
+2025-09-24 20:33:26,800 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 20:33:26,801 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 20:33:27,411 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 76 个数据包, 耗时: 0.61 秒
+2025-09-24 20:33:27,417 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 20:33:27,428 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:33:29,439 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:33:36,974 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:33:36,974 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:33:36,976 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,977 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,977 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,977 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,977 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,977 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,977 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,978 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,978 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,978 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,978 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,978 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,978 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,978 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,979 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,979 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,979 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,979 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,979 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,980 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,980 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,980 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,980 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,981 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,981 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,981 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,981 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,982 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,982 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,982 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,982 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,983 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,983 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,983 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,983 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,983 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,984 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,984 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,984 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,984 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,985 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,985 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,985 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,985 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,985 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,986 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,986 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,986 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,986 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,987 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,987 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,987 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,987 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,987 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,988 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,988 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,989 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,989 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,989 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,991 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:36,993 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 64, 数据包数: 60
+2025-09-24 20:33:36,994 - network_analyzer.gui.main_window - INFO - 成功打开会话: 64
+2025-09-24 20:33:37,947 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I0E8
+2025-09-24 20:33:40,356 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:33:40,356 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:33:40,358 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,359 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,359 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,359 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,359 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,359 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,359 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,359 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,359 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,360 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,360 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,360 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,360 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,360 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,360 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,360 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,361 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,361 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,361 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,361 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,361 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,361 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,361 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,361 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,361 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,361 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,361 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,361 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,361 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,361 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,362 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,362 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,362 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,362 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,362 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,362 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,362 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,362 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,363 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,363 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,363 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,363 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,363 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,363 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,364 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,364 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,364 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,364 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,364 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,364 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,364 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,365 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,365 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,365 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,365 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,365 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,365 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,365 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,366 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,366 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,366 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,366 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,366 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,366 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,366 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,366 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,366 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,367 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,367 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,367 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,367 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,367 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,367 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,368 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,368 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,368 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,368 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,368 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,369 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,369 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,369 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,369 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,369 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,369 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,371 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,371 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,371 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,371 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,371 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,371 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,371 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,371 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,372 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,372 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,372 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,372 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,372 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,372 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,373 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,373 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,373 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,373 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,373 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,374 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,374 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,374 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,374 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,374 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,374 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,374 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,375 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,375 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,375 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,375 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,375 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,375 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,376 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,376 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,376 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,376 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,376 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,376 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,376 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,376 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,377 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,377 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,377 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,377 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,377 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,377 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,377 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,377 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,377 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,377 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,377 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,379 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,379 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,379 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,379 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,379 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,379 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,379 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,379 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,379 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,379 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,379 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,379 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,379 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,379 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,380 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,380 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,380 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,380 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,380 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,380 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,380 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,380 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,380 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,381 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,381 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:40,382 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 63, 数据包数: 160
+2025-09-24 20:33:40,382 - network_analyzer.gui.main_window - INFO - 成功打开会话: 63
+2025-09-24 20:33:40,865 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I123
+2025-09-24 20:33:44,245 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:33:44,245 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:33:44,246 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,246 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,246 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,246 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,246 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,247 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,247 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,247 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,247 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,247 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,247 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,247 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,247 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,247 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,248 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,248 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,248 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,248 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,248 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,248 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,248 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,248 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,249 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,249 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,249 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,249 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,249 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,250 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,250 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,250 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,250 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,251 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,251 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,251 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,251 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,252 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,252 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,252 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,252 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,252 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,252 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,252 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,252 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,253 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,253 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,253 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,254 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,254 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,254 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,254 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,255 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,255 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,255 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,255 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,256 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,256 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,256 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,257 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,257 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,257 - network_analyzer.gui.main_window - ERROR - 添加数据包到列表失败: Display column #0 cannot be set
+2025-09-24 20:33:44,259 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 64, 数据包数: 60
+2025-09-24 20:33:44,259 - network_analyzer.gui.main_window - INFO - 成功打开会话: 64
+2025-09-24 20:35:31,975 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-24 20:35:31,975 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 20:35:31,975 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-24 20:35:31,975 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 20:35:31,976 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 20:35:32,145 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 20:35:32,149 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 20:41:03,494 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 20:41:03,494 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 20:41:03,497 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 20:41:03,499 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 20:41:03,499 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 20:41:03,499 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-24 20:41:03,499 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 20:41:03,499 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 20:41:03,500 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 20:41:03,623 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 20:41:10,509 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:41:10,510 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:41:11,503 - root - INFO - 新会话创建成功: 432 (ID: 66)
+2025-09-24 20:41:12,496 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 20:41:12,496 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 20:41:12,763 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:41:13,041 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 259 个数据包, 耗时: 0.55 秒
+2025-09-24 20:41:13,046 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 20:41:13,119 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:41:14,862 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I069
+2025-09-24 20:41:15,121 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:41:16,862 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I065
+2025-09-24 20:41:17,546 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I068
+2025-09-24 20:41:18,745 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-24 20:41:18,745 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 20:41:18,745 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-24 20:41:18,745 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 20:41:18,745 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 20:41:18,960 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 20:41:18,960 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 20:41:29,130 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 20:41:29,130 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 20:41:29,132 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 20:41:29,136 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 20:41:29,137 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 20:41:29,137 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-24 20:41:29,137 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 20:41:29,138 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 20:41:29,138 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 20:41:29,267 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 20:41:41,813 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:41:41,814 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:41:41,942 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 1, 数据包数: 1000
+2025-09-24 20:41:41,942 - network_analyzer.gui.main_window - INFO - 成功打开会话: 1
+2025-09-24 20:41:43,063 - network_analyzer.gui.main_window - WARNING - 数据包 1788 没有原始数据
+2025-09-24 20:41:44,618 - network_analyzer.gui.main_window - WARNING - 数据包 1788 没有原始数据
+2025-09-24 20:41:45,018 - network_analyzer.gui.main_window - WARNING - 数据包 1794 没有原始数据
+2025-09-24 20:41:45,393 - network_analyzer.gui.main_window - WARNING - 数据包 1802 没有原始数据
+2025-09-24 20:41:51,517 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:41:51,518 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:41:51,528 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 63, 数据包数: 160
+2025-09-24 20:41:51,528 - network_analyzer.gui.main_window - INFO - 成功打开会话: 63
+2025-09-24 20:41:51,936 - network_analyzer.gui.main_window - WARNING - 数据包 10802 没有原始数据
+2025-09-24 20:41:59,707 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-24 20:41:59,707 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 20:41:59,707 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-24 20:41:59,707 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 20:41:59,707 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 20:41:59,962 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 20:41:59,963 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 20:47:03,594 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 20:47:03,594 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 20:47:03,595 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 20:47:03,597 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 20:47:03,597 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 20:47:03,598 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-24 20:47:03,598 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 20:47:03,598 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 20:47:03,598 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 20:47:03,706 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 20:47:17,410 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:47:17,410 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:47:17,550 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 1, 数据包数: 1000
+2025-09-24 20:47:17,550 - network_analyzer.gui.main_window - INFO - 成功打开会话: 1
+2025-09-24 20:47:18,338 - network_analyzer.gui.main_window - WARNING - 数据包 1785 没有原始数据
+2025-09-24 20:47:24,846 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:47:24,846 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:47:24,856 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 66, 数据包数: 135
+2025-09-24 20:47:24,857 - network_analyzer.gui.main_window - INFO - 成功打开会话: 66
+2025-09-24 20:47:25,251 - network_analyzer.gui.main_window - WARNING - 数据包 11492 没有原始数据
+2025-09-24 20:47:25,480 - network_analyzer.gui.main_window - WARNING - 数据包 11488 没有原始数据
+2025-09-24 20:47:26,825 - network_analyzer.gui.main_window - WARNING - 数据包 11493 没有原始数据
+2025-09-24 20:47:26,993 - network_analyzer.gui.main_window - WARNING - 数据包 11494 没有原始数据
+2025-09-24 20:47:27,274 - network_analyzer.gui.main_window - WARNING - 数据包 11489 没有原始数据
+2025-09-24 20:47:27,759 - network_analyzer.gui.main_window - WARNING - 数据包 11492 没有原始数据
+2025-09-24 20:47:27,944 - network_analyzer.gui.main_window - WARNING - 数据包 11497 没有原始数据
+2025-09-24 20:47:28,167 - network_analyzer.gui.main_window - WARNING - 数据包 11501 没有原始数据
+2025-09-24 20:47:28,397 - network_analyzer.gui.main_window - WARNING - 数据包 11506 没有原始数据
+2025-09-24 20:47:28,785 - network_analyzer.gui.main_window - WARNING - 数据包 11497 没有原始数据
+2025-09-24 20:47:35,835 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:47:35,835 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:47:36,517 - root - INFO - 新会话创建成功: 1234 (ID: 67)
+2025-09-24 20:47:37,095 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 20:47:37,096 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 20:47:37,694 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:47:37,820 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 86 个数据包, 耗时: 0.73 秒
+2025-09-24 20:47:37,824 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 20:47:39,695 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:47:39,755 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I4AD
+2025-09-24 20:47:40,478 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I4AD
+2025-09-24 20:47:41,907 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I4A9
+2025-09-24 20:47:42,152 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I4B0
+2025-09-24 20:47:42,325 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I4B5
+2025-09-24 20:47:42,653 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I4BA
+2025-09-24 20:47:46,472 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I4B3
+2025-09-24 20:47:46,788 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I4AC
+2025-09-24 20:47:52,296 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-24 20:47:52,296 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 20:47:52,297 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-24 20:47:52,297 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 20:47:52,297 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 20:47:52,476 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 20:47:52,478 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 20:48:03,386 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 20:48:03,387 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 20:48:03,388 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 20:48:03,390 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 20:48:03,390 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 20:48:03,392 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-24 20:48:03,392 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 20:48:03,392 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 20:48:03,392 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 20:48:03,497 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 20:48:11,606 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:48:11,606 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:48:12,208 - root - INFO - 新会话创建成功: 123 (ID: 68)
+2025-09-24 20:48:12,797 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 20:48:12,799 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 20:48:13,270 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:48:13,612 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:48:13,815 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:48:14,080 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:48:14,117 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 309 个数据包, 耗时: 1.32 秒
+2025-09-24 20:48:14,123 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 20:48:14,283 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:48:16,283 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I0E4
+2025-09-24 20:48:16,285 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 20:48:16,590 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I0E5
+2025-09-24 20:48:18,508 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-24 20:48:18,510 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 20:48:18,510 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-24 20:48:18,510 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 20:48:18,510 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 20:48:18,677 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 20:48:18,678 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 20:51:29,399 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 20:51:29,399 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 20:51:29,401 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 20:51:29,403 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 20:51:29,403 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 20:51:29,404 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-24 20:51:29,404 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 20:51:29,404 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 20:51:29,404 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 20:51:29,507 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 20:51:38,213 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:51:38,214 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:51:38,216 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 55, 数据包数: 4
+2025-09-24 20:51:38,216 - network_analyzer.gui.main_window - INFO - 成功打开会话: 55
+2025-09-24 20:51:39,268 - network_analyzer.gui.main_window - WARNING - 数据包 4453 没有原始数据
+2025-09-24 20:51:41,160 - network_analyzer.gui.main_window - WARNING - 数据包 4454 没有原始数据
+2025-09-24 20:51:41,660 - network_analyzer.gui.main_window - WARNING - 数据包 4455 没有原始数据
+2025-09-24 20:51:42,003 - network_analyzer.gui.main_window - WARNING - 数据包 4456 没有原始数据
+2025-09-24 20:51:42,419 - network_analyzer.gui.main_window - WARNING - 数据包 4453 没有原始数据
+2025-09-24 20:51:43,002 - network_analyzer.gui.main_window - WARNING - 数据包 4454 没有原始数据
+2025-09-24 20:51:48,675 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:51:48,675 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:51:48,676 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 54, 数据包数: 4
+2025-09-24 20:51:48,677 - network_analyzer.gui.main_window - INFO - 成功打开会话: 54
+2025-09-24 20:51:49,298 - network_analyzer.gui.main_window - WARNING - 数据包 4449 没有原始数据
+2025-09-24 20:51:51,097 - network_analyzer.gui.main_window - WARNING - 数据包 4450 没有原始数据
+2025-09-24 20:51:51,553 - network_analyzer.gui.main_window - WARNING - 数据包 4450 没有原始数据
+2025-09-24 20:51:52,031 - network_analyzer.gui.main_window - WARNING - 数据包 4451 没有原始数据
+2025-09-24 20:51:55,969 - network_analyzer.gui.main_window - WARNING - 数据包 4449 没有原始数据
+2025-09-24 20:52:01,952 - network_analyzer.gui.main_window - WARNING - 数据包 4450 没有原始数据
+2025-09-24 20:52:02,334 - network_analyzer.gui.main_window - WARNING - 数据包 4449 没有原始数据
+2025-09-24 20:52:15,104 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-24 20:52:15,104 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 20:52:15,106 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-24 20:52:15,106 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 20:52:15,106 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 20:52:15,293 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 20:52:15,295 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 20:52:19,143 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 20:52:19,143 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 20:52:19,146 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 20:52:19,148 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 20:52:19,149 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 20:52:19,149 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-24 20:52:19,150 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 20:52:19,150 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 20:52:19,150 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 20:52:19,265 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 20:52:23,451 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:52:23,451 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:52:23,455 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 55, 数据包数: 4
+2025-09-24 20:52:23,455 - network_analyzer.gui.main_window - INFO - 成功打开会话: 55
+2025-09-24 20:52:24,957 - network_analyzer.gui.main_window - WARNING - 数据包 4454 没有原始数据
+2025-09-24 20:52:25,335 - network_analyzer.gui.main_window - WARNING - 数据包 4453 没有原始数据
+2025-09-24 20:52:25,549 - network_analyzer.gui.main_window - WARNING - 数据包 4453 没有原始数据
+2025-09-24 20:52:25,930 - network_analyzer.gui.main_window - WARNING - 数据包 4454 没有原始数据
+2025-09-24 20:52:26,236 - network_analyzer.gui.main_window - WARNING - 数据包 4453 没有原始数据
+2025-09-24 20:52:58,246 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-24 20:52:58,246 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 20:52:58,247 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-24 20:52:58,247 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 20:52:58,247 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 20:52:58,413 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 20:52:58,414 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 20:55:14,086 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 20:55:14,087 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 20:55:14,089 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 20:55:14,093 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 20:55:14,093 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 20:55:14,094 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-24 20:55:14,094 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 20:55:14,094 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 20:55:14,094 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 20:55:14,218 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 20:55:24,301 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:55:24,303 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:55:24,306 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 55, 数据包数: 4
+2025-09-24 20:55:24,306 - network_analyzer.gui.main_window - INFO - 成功打开会话: 55
+2025-09-24 20:55:24,882 - network_analyzer.gui.main_window - WARNING - 数据包 4454 没有原始数据
+2025-09-24 20:55:26,545 - network_analyzer.gui.main_window - WARNING - 数据包 4455 没有原始数据
+2025-09-24 20:55:26,769 - network_analyzer.gui.main_window - WARNING - 数据包 4456 没有原始数据
+2025-09-24 20:55:32,920 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:55:32,920 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:55:32,923 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 56, 数据包数: 0
+2025-09-24 20:55:32,923 - network_analyzer.gui.main_window - INFO - 成功打开会话: 56
+2025-09-24 20:55:38,830 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:55:38,830 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:55:39,007 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 47, 数据包数: 1000
+2025-09-24 20:55:39,007 - network_analyzer.gui.main_window - INFO - 成功打开会话: 47
+2025-09-24 20:55:40,772 - network_analyzer.gui.main_window - WARNING - 数据包 5397 没有原始数据
+2025-09-24 20:55:42,280 - network_analyzer.gui.main_window - WARNING - 数据包 5390 没有原始数据
+2025-09-24 20:55:42,777 - network_analyzer.gui.main_window - WARNING - 数据包 5393 没有原始数据
+2025-09-24 20:55:43,055 - network_analyzer.gui.main_window - WARNING - 数据包 5398 没有原始数据
+2025-09-24 20:55:43,267 - network_analyzer.gui.main_window - WARNING - 数据包 5401 没有原始数据
+2025-09-24 20:55:43,451 - network_analyzer.gui.main_window - WARNING - 数据包 5402 没有原始数据
+2025-09-24 20:55:44,796 - network_analyzer.gui.main_window - WARNING - 数据包 5395 没有原始数据
+2025-09-24 20:55:45,046 - network_analyzer.gui.main_window - WARNING - 数据包 5390 没有原始数据
+2025-09-24 20:55:50,573 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:55:50,573 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:55:50,575 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 54, 数据包数: 4
+2025-09-24 20:55:50,575 - network_analyzer.gui.main_window - INFO - 成功打开会话: 54
+2025-09-24 20:55:51,083 - network_analyzer.gui.main_window - WARNING - 数据包 4452 没有原始数据
+2025-09-24 20:55:51,300 - network_analyzer.gui.main_window - WARNING - 数据包 4450 没有原始数据
+2025-09-24 20:56:02,999 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 20:56:02,999 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 20:56:03,004 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 50, 数据包数: 4
+2025-09-24 20:56:03,006 - network_analyzer.gui.main_window - INFO - 成功打开会话: 50
+2025-09-24 20:56:03,504 - network_analyzer.gui.main_window - WARNING - 数据包 4435 没有原始数据
+2025-09-24 20:56:03,733 - network_analyzer.gui.main_window - WARNING - 数据包 4434 没有原始数据
+2025-09-24 20:56:04,330 - network_analyzer.gui.main_window - WARNING - 数据包 4433 没有原始数据
+2025-09-24 20:56:04,750 - network_analyzer.gui.main_window - WARNING - 数据包 4436 没有原始数据
+2025-09-24 20:56:53,526 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-24 20:56:53,526 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 20:56:53,527 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-24 20:56:53,528 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 20:56:53,528 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 20:56:53,702 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 20:56:53,705 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 21:03:43,131 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 21:03:43,131 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 21:03:43,134 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 21:03:43,136 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 21:03:43,136 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 21:03:43,137 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-24 21:03:43,137 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 21:03:43,137 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 21:03:43,137 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 21:03:43,244 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 21:04:28,526 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:04:28,527 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:04:28,530 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 55, 数据包数: 4
+2025-09-24 21:04:28,531 - network_analyzer.gui.main_window - INFO - 成功打开会话: 55
+2025-09-24 21:04:29,305 - network_analyzer.gui.main_window - WARNING - 数据包 4454 没有原始数据
+2025-09-24 21:04:29,594 - network_analyzer.gui.main_window - WARNING - 数据包 4453 没有原始数据
+2025-09-24 21:04:30,031 - network_analyzer.gui.main_window - WARNING - 数据包 4454 没有原始数据
+2025-09-24 21:04:42,778 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:04:42,779 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:04:42,780 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 58, 数据包数: 0
+2025-09-24 21:04:42,781 - network_analyzer.gui.main_window - INFO - 成功打开会话: 58
+2025-09-24 21:04:58,682 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:04:58,684 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:04:58,689 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 67, 数据包数: 86
+2025-09-24 21:04:58,690 - network_analyzer.gui.main_window - INFO - 成功打开会话: 67
+2025-09-24 21:04:59,128 - network_analyzer.gui.main_window - WARNING - 数据包 11577 没有原始数据
+2025-09-24 21:05:00,871 - network_analyzer.gui.main_window - WARNING - 数据包 11576 没有原始数据
+2025-09-24 21:05:01,520 - network_analyzer.gui.main_window - WARNING - 数据包 11577 没有原始数据
+2025-09-24 21:05:09,490 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:05:09,490 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:05:09,494 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 54, 数据包数: 4
+2025-09-24 21:05:09,494 - network_analyzer.gui.main_window - INFO - 成功打开会话: 54
+2025-09-24 21:05:10,116 - network_analyzer.gui.main_window - WARNING - 数据包 4451 没有原始数据
+2025-09-24 21:05:10,914 - network_analyzer.gui.main_window - WARNING - 数据包 4451 没有原始数据
+2025-09-24 21:05:14,873 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-24 21:05:14,873 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 21:05:14,875 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-24 21:05:14,875 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 21:05:14,875 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 21:05:15,051 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 21:05:15,053 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 21:05:18,094 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 21:05:18,095 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 21:05:18,096 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 21:05:18,098 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 21:05:18,098 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 21:05:18,099 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-24 21:05:18,099 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 21:05:18,099 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 21:05:18,099 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 21:05:18,204 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 21:05:22,550 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:05:22,550 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:05:22,553 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 55, 数据包数: 4
+2025-09-24 21:05:22,554 - network_analyzer.gui.main_window - INFO - 成功打开会话: 55
+2025-09-24 21:05:23,214 - network_analyzer.gui.main_window - WARNING - 数据包 4453 没有原始数据
+2025-09-24 21:05:23,634 - network_analyzer.gui.main_window - WARNING - 数据包 4454 没有原始数据
+2025-09-24 21:05:24,716 - network_analyzer.gui.main_window - WARNING - 数据包 4453 没有原始数据
+2025-09-24 21:05:25,007 - network_analyzer.gui.main_window - WARNING - 数据包 4455 没有原始数据
+2025-09-24 21:05:25,225 - network_analyzer.gui.main_window - WARNING - 数据包 4455 没有原始数据
+2025-09-24 21:05:25,387 - network_analyzer.gui.main_window - WARNING - 数据包 4456 没有原始数据
+2025-09-24 21:05:25,685 - network_analyzer.gui.main_window - WARNING - 数据包 4454 没有原始数据
+2025-09-24 21:05:27,244 - network_analyzer.gui.main_window - WARNING - 数据包 4455 没有原始数据
+2025-09-24 21:05:27,535 - network_analyzer.gui.main_window - WARNING - 数据包 4453 没有原始数据
+2025-09-24 21:05:27,963 - network_analyzer.gui.main_window - WARNING - 数据包 4455 没有原始数据
+2025-09-24 21:05:28,158 - network_analyzer.gui.main_window - WARNING - 数据包 4456 没有原始数据
+2025-09-24 21:05:29,266 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-24 21:05:29,267 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 21:05:29,267 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-24 21:05:29,267 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 21:05:29,267 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 21:05:29,432 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 21:05:29,434 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 21:15:03,061 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 21:15:03,061 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 21:15:03,064 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 21:15:03,066 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 21:15:03,067 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 21:15:03,067 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-24 21:15:03,068 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 21:15:03,068 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 21:15:03,068 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 21:15:03,245 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 21:15:09,173 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:15:09,174 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:15:09,180 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 55, 数据包数: 4
+2025-09-24 21:15:09,180 - network_analyzer.gui.main_window - INFO - 成功打开会话: 55
+2025-09-24 21:16:08,442 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:16:08,442 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:16:08,463 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 68, 数据包数: 259
+2025-09-24 21:16:08,463 - network_analyzer.gui.main_window - INFO - 成功打开会话: 68
+2025-09-24 21:16:09,333 - network_analyzer.gui.main_window - WARNING - 数据包 11833 没有原始数据
+2025-09-24 21:16:11,069 - network_analyzer.gui.main_window - WARNING - 数据包 11837 没有原始数据
+2025-09-24 21:16:11,453 - network_analyzer.gui.main_window - WARNING - 数据包 11835 没有原始数据
+2025-09-24 21:16:16,583 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:16:16,583 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:16:16,592 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 55, 数据包数: 4
+2025-09-24 21:16:16,592 - network_analyzer.gui.main_window - INFO - 成功打开会话: 55
+2025-09-24 21:16:40,267 - network_analyzer.gui.main_window - INFO - 会话数据保存成功: ID=55, 数据包=0, 字节数=0
+2025-09-24 21:16:43,773 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:16:43,773 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:16:44,399 - root - INFO - 新会话创建成功: 111 (ID: 69)
+2025-09-24 21:16:44,932 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 21:16:44,934 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 21:16:45,342 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:16:45,494 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 87 个数据包, 耗时: 0.56 秒
+2025-09-24 21:16:45,498 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 21:16:47,043 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I142
+2025-09-24 21:16:47,344 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:16:49,592 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I143
+2025-09-24 21:16:50,083 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I142
+2025-09-24 21:16:53,266 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I149
+2025-09-24 21:16:53,580 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I143
+2025-09-24 21:16:54,051 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I143
+2025-09-24 21:16:55,024 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I142
+2025-09-24 21:16:56,035 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I146
+2025-09-24 21:18:05,120 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I143
+2025-09-24 21:18:05,420 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I141
+2025-09-24 21:18:07,433 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-24 21:18:07,434 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 21:18:07,434 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-24 21:18:07,434 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 21:18:07,434 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 21:18:07,590 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 21:18:07,591 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 21:21:09,684 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 21:21:09,684 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 21:21:09,686 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 21:21:09,687 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 21:21:09,688 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 21:21:09,688 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-24 21:21:09,688 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 21:21:09,688 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 21:21:09,689 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 21:21:09,806 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 21:21:20,566 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:21:20,566 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:21:21,096 - root - INFO - 新会话创建成功: 1122 (ID: 70)
+2025-09-24 21:21:21,888 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 21:21:21,889 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 21:21:22,296 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:21:22,542 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 110 个数据包, 耗时: 0.65 秒
+2025-09-24 21:21:22,546 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 21:21:22,660 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:21:23,565 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I057
+2025-09-24 21:21:24,197 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I056
+2025-09-24 21:21:24,671 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:21:30,539 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I003
+2025-09-24 21:21:31,116 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I002
+2025-09-24 21:21:31,506 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I001
+2025-09-24 21:21:31,746 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I001
+2025-09-24 21:21:32,115 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I002
+2025-09-24 21:21:32,523 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I001
+2025-09-24 21:21:34,501 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I002
+2025-09-24 21:21:37,239 - network_analyzer.gui.main_window - INFO - 会话数据保存成功: ID=70, 数据包=110, 字节数=47895
+2025-09-24 21:21:38,098 - network_analyzer.gui.main_window - INFO - 通过菜单保存会话成功
+2025-09-24 21:21:40,097 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:21:40,097 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:21:40,105 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 69, 数据包数: 87
+2025-09-24 21:21:40,106 - network_analyzer.gui.main_window - INFO - 成功打开会话: 69
+2025-09-24 21:21:44,186 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:21:44,186 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:21:44,197 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 70, 数据包数: 110
+2025-09-24 21:21:44,198 - network_analyzer.gui.main_window - INFO - 成功打开会话: 70
+2025-09-24 21:21:44,791 - network_analyzer.gui.main_window - WARNING - 数据包 12032 没有原始数据
+2025-09-24 21:21:47,564 - network_analyzer.gui.main_window - WARNING - 数据包 11954 没有原始数据
+2025-09-24 21:21:48,139 - network_analyzer.gui.main_window - WARNING - 数据包 11953 没有原始数据
+2025-09-24 21:29:22,301 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-24 21:29:22,303 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 21:29:22,303 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-24 21:29:22,303 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 21:29:22,303 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 21:29:22,458 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 21:29:22,463 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 21:40:24,220 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 21:40:24,221 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 21:40:24,224 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 21:40:24,231 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 21:40:24,232 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 21:40:24,232 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-24 21:40:24,233 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 21:40:24,233 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 21:40:24,233 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 21:40:24,452 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 21:40:30,687 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:40:30,690 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:40:30,697 - network_analyzer.gui.main_window - INFO - DataProcessor session_id已更新为: 73
+2025-09-24 21:40:31,321 - root - INFO - 新会话创建成功: 112233 (ID: 73)
+2025-09-24 21:40:31,886 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 21:40:31,886 - network_analyzer.gui.main_window - INFO - 开始捕获时DataProcessor session_id已设置为: 73
+2025-09-24 21:40:31,887 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 21:40:32,307 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:40:32,475 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 74 个数据包, 耗时: 0.59 秒
+2025-09-24 21:40:32,479 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 21:40:33,765 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I02E
+2025-09-24 21:40:34,310 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:40:35,087 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I025
+2025-09-24 21:40:37,424 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I00C
+2025-09-24 21:40:38,839 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I003
+2025-09-24 21:40:39,589 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I001
+2025-09-24 21:40:40,134 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I003
+2025-09-24 21:40:40,471 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I001
+2025-09-24 21:40:43,666 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I002
+2025-09-24 21:41:03,252 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I008
+2025-09-24 21:41:03,509 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I006
+2025-09-24 21:41:03,705 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I005
+2025-09-24 21:41:03,934 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I002
+2025-09-24 21:41:04,457 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I004
+2025-09-24 21:41:17,475 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-24 21:41:17,476 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 21:41:17,479 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-24 21:41:17,479 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 21:41:17,479 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 21:41:17,756 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 21:41:17,758 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 21:41:21,644 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 21:41:21,645 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 21:41:21,651 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 21:41:21,654 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 21:41:21,654 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 21:41:21,656 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-24 21:41:21,656 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 21:41:21,656 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 21:41:21,656 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 21:41:21,839 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 21:41:33,644 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:41:33,645 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:41:33,654 - network_analyzer.gui.main_window - INFO - DataProcessor session_id已更新为: 74
+2025-09-24 21:41:34,274 - root - INFO - 新会话创建成功: 11 (ID: 74)
+2025-09-24 21:41:35,169 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 21:41:35,171 - network_analyzer.gui.main_window - INFO - 开始捕获时DataProcessor session_id已设置为: 74
+2025-09-24 21:41:35,171 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 21:41:35,571 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:41:35,744 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 110 个数据包, 耗时: 0.57 秒
+2025-09-24 21:41:35,751 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 21:41:35,856 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:41:37,860 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:41:38,640 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I026
+2025-09-24 21:41:40,062 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I043
+2025-09-24 21:41:41,479 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I013
+2025-09-24 21:41:41,837 - network_analyzer.gui.main_window - WARNING - 无法获取数据包ID: I014
+2025-09-24 21:42:08,019 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-24 21:42:08,019 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 21:42:08,020 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-24 21:42:08,020 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 21:42:08,020 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 21:42:08,342 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 21:42:08,343 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 21:52:13,676 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 21:52:13,676 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 21:52:13,679 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 21:52:13,683 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 21:52:13,683 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 21:52:13,684 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-24 21:52:13,684 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 21:52:13,684 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 21:52:13,684 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 21:52:13,902 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 21:52:17,993 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:52:17,994 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:52:18,000 - network_analyzer.gui.main_window - INFO - DataProcessor session_id已更新为: 75
+2025-09-24 21:52:18,643 - root - INFO - 新会话创建成功: 123 (ID: 75)
+2025-09-24 21:52:19,439 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 21:52:19,439 - network_analyzer.gui.main_window - INFO - 开始捕获时DataProcessor session_id已设置为: 75
+2025-09-24 21:52:19,440 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 21:52:19,856 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:52:20,007 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 85 个数据包, 耗时: 0.57 秒
+2025-09-24 21:52:20,014 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 21:52:20,973 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:52:21,858 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:52:23,012 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:52:23,404 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:52:25,342 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:52:30,658 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:52:30,658 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:52:30,660 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 55, 数据包数: 0
+2025-09-24 21:52:30,661 - network_analyzer.gui.main_window - INFO - 成功打开会话: 55
+2025-09-24 21:52:34,862 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:52:34,862 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:52:34,865 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 54, 数据包数: 0
+2025-09-24 21:52:34,865 - network_analyzer.gui.main_window - INFO - 成功打开会话: 54
+2025-09-24 21:52:36,787 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 21:52:36,787 - network_analyzer.gui.main_window - INFO - 开始捕获时DataProcessor session_id已设置为: 54
+2025-09-24 21:52:36,787 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 21:52:37,409 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:52:37,507 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 91 个数据包, 耗时: 0.72 秒
+2025-09-24 21:52:37,520 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 21:52:39,407 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:52:42,802 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:52:42,802 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:52:42,803 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 53, 数据包数: 0
+2025-09-24 21:52:42,803 - network_analyzer.gui.main_window - INFO - 成功打开会话: 53
+2025-09-24 21:52:47,599 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:52:47,601 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:52:47,603 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 52, 数据包数: 0
+2025-09-24 21:52:47,605 - network_analyzer.gui.main_window - INFO - 成功打开会话: 52
+2025-09-24 21:52:51,243 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:52:51,245 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:52:51,247 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 63, 数据包数: 0
+2025-09-24 21:52:51,250 - network_analyzer.gui.main_window - INFO - 成功打开会话: 63
+2025-09-24 21:52:54,665 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:52:54,666 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:52:54,669 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 75, 数据包数: 1
+2025-09-24 21:52:54,670 - network_analyzer.gui.main_window - INFO - 成功打开会话: 75
+2025-09-24 21:53:11,234 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 21:53:11,235 - network_analyzer.gui.main_window - INFO - 开始捕获时DataProcessor session_id已设置为: 75
+2025-09-24 21:53:11,235 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 21:53:11,836 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 173 个数据包, 耗时: 0.60 秒
+2025-09-24 21:53:11,841 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 21:53:11,855 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:53:13,857 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:53:14,999 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:15,422 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:15,809 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:16,181 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:17,362 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:20,914 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:21,313 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:21,703 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:22,460 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:23,365 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:24,160 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:24,432 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:24,643 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:25,047 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:25,476 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:25,859 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:26,979 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:27,234 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:27,443 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:27,633 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:28,120 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:28,429 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:29,293 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:29,666 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:53:32,442 - network_analyzer.gui.main_window - INFO - 会话数据保存成功: ID=75, 数据包=60, 字节数=10822
+2025-09-24 21:53:33,120 - network_analyzer.gui.main_window - INFO - 通过菜单保存会话成功
+2025-09-24 21:53:35,339 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:53:35,340 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:53:35,344 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 74, 数据包数: 1
+2025-09-24 21:53:35,346 - network_analyzer.gui.main_window - INFO - 成功打开会话: 74
+2025-09-24 21:53:38,014 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:53:38,014 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:53:38,023 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 75, 数据包数: 2
+2025-09-24 21:53:38,024 - network_analyzer.gui.main_window - INFO - 成功打开会话: 75
+2025-09-24 21:53:46,906 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:53:46,907 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:53:46,909 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 60, 数据包数: 0
+2025-09-24 21:53:46,909 - network_analyzer.gui.main_window - INFO - 成功打开会话: 60
+2025-09-24 21:53:49,893 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:53:49,893 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:53:49,895 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 49, 数据包数: 0
+2025-09-24 21:53:49,896 - network_analyzer.gui.main_window - INFO - 成功打开会话: 49
+2025-09-24 21:53:55,950 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:53:55,950 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:53:55,955 - network_analyzer.gui.main_window - INFO - DataProcessor session_id已更新为: 76
+2025-09-24 21:53:56,606 - root - INFO - 新会话创建成功: 112233 (ID: 76)
+2025-09-24 21:53:57,114 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 21:53:57,114 - network_analyzer.gui.main_window - INFO - 开始捕获时DataProcessor session_id已设置为: 76
+2025-09-24 21:53:57,115 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 21:53:57,734 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:53:58,342 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:53:58,753 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:53:59,364 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:53:59,772 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:54:00,396 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:54:00,806 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:54:01,139 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 565 个数据包, 耗时: 4.03 秒
+2025-09-24 21:54:01,146 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 21:54:02,811 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:54:09,074 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:54:09,713 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:54:12,165 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:54:12,621 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:54:12,973 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:54:13,311 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:54:13,514 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:54:13,741 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:54:14,166 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:54:14,372 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:54:14,542 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:54:14,817 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:54:15,471 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:54:19,019 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:54:19,369 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:54:19,711 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:54:20,034 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:54:21,815 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:54:22,105 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:54:22,321 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:54:24,074 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:54:27,162 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:54:37,129 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:54:42,524 - network_analyzer.gui.main_window - INFO - 会话数据保存成功: ID=76, 数据包=400, 字节数=112998
+2025-09-24 21:54:43,270 - network_analyzer.gui.main_window - INFO - 通过菜单保存会话成功
+2025-09-24 21:54:45,090 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:54:45,090 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:54:45,095 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 75, 数据包数: 2
+2025-09-24 21:54:45,095 - network_analyzer.gui.main_window - INFO - 成功打开会话: 75
+2025-09-24 21:54:47,635 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:54:47,637 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:54:47,639 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 76, 数据包数: 1
+2025-09-24 21:54:47,639 - network_analyzer.gui.main_window - INFO - 成功打开会话: 76
+2025-09-24 21:55:03,286 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-24 21:55:03,287 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 21:55:03,287 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-24 21:55:03,287 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 21:55:03,287 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 21:55:03,545 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 21:55:03,551 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 21:55:07,110 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 21:55:07,111 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 21:55:07,115 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 21:55:07,120 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 21:55:07,120 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 21:55:07,122 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-24 21:55:07,122 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 21:55:07,122 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 21:55:07,122 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 21:55:07,279 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 21:55:12,736 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:55:12,737 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:55:12,742 - network_analyzer.gui.main_window - INFO - DataProcessor session_id已更新为: 77
+2025-09-24 21:55:13,584 - root - INFO - 新会话创建成功: 345 (ID: 77)
+2025-09-24 21:55:14,275 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 21:55:14,275 - network_analyzer.gui.main_window - INFO - 开始捕获时DataProcessor session_id已设置为: 77
+2025-09-24 21:55:14,276 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 21:55:14,645 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:55:14,891 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:55:15,254 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:55:15,502 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 173 个数据包, 耗时: 1.23 秒
+2025-09-24 21:55:15,510 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 21:55:17,253 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 21:55:21,665 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:55:22,389 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:55:23,242 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:56:12,142 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:56:17,870 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:56:18,222 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:56:18,675 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:56:19,124 - network_analyzer.gui.main_window - WARNING - 数据库中未找到匹配的数据包
+2025-09-24 21:56:37,209 - network_analyzer.gui.main_window - INFO - 会话数据保存成功: ID=77, 数据包=173, 字节数=40487
+2025-09-24 21:56:37,899 - network_analyzer.gui.main_window - INFO - 通过菜单保存会话成功
+2025-09-24 21:56:39,974 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 21:56:39,975 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 21:56:39,977 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 77, 数据包数: 1
+2025-09-24 21:56:39,977 - network_analyzer.gui.main_window - INFO - 成功打开会话: 77
+2025-09-24 22:15:57,167 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-24 22:15:57,168 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 22:15:57,168 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-24 22:15:57,169 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 22:15:57,169 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 22:15:57,586 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 22:15:57,588 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 22:16:04,787 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 22:16:04,787 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 22:16:04,790 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 22:16:04,794 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 22:16:04,795 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 22:16:04,796 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-24 22:16:04,796 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 22:16:04,796 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 22:16:04,796 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 22:16:04,939 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 22:16:15,141 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 22:16:15,141 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 22:16:15,153 - network_analyzer.gui.main_window - INFO - DataProcessor session_id已更新为: 78
+2025-09-24 22:16:15,868 - root - INFO - 新会话创建成功: 333 (ID: 78)
+2025-09-24 22:16:17,170 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 22:16:17,173 - network_analyzer.gui.main_window - INFO - 开始捕获时DataProcessor session_id已设置为: 78
+2025-09-24 22:16:17,179 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 22:16:17,603 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 22:16:17,870 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 133 个数据包, 耗时: 0.70 秒
+2025-09-24 22:16:17,877 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 22:16:17,950 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 22:16:19,947 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 22:17:08,773 - network_analyzer.gui.main_window - INFO - 会话数据保存成功: ID=78, 数据包=121, 字节数=29582
+2025-09-24 22:17:09,477 - network_analyzer.gui.main_window - INFO - 通过菜单保存会话成功
+2025-09-24 22:17:12,476 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 22:17:12,476 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 22:17:12,487 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 77, 数据包数: 1
+2025-09-24 22:17:12,488 - network_analyzer.gui.main_window - INFO - 成功打开会话: 77
+2025-09-24 22:17:14,930 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 22:17:14,931 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 22:17:14,935 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 78, 数据包数: 1
+2025-09-24 22:17:14,936 - network_analyzer.gui.main_window - INFO - 成功打开会话: 78
+2025-09-24 22:17:19,988 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 22:17:19,989 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 22:17:19,994 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 78, 数据包数: 1
+2025-09-24 22:17:19,994 - network_analyzer.gui.main_window - INFO - 成功打开会话: 78
+2025-09-24 22:17:29,620 - network_analyzer.storage.data_manager - INFO - 清理了 0 条旧记录
+2025-09-24 22:17:34,180 - network_analyzer.storage.data_manager - INFO - 清理了 0 条旧记录
+2025-09-24 22:17:41,239 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-24 22:17:41,240 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 22:17:41,240 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-24 22:17:41,240 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 22:17:41,240 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 22:17:41,506 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 22:17:41,518 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 22:17:44,630 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-24 22:17:44,631 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-24 22:17:44,633 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-24 22:17:44,636 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-24 22:17:44,636 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-24 22:17:44,637 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-24 22:17:44,637 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-24 22:17:44,638 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-24 22:17:44,638 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-24 22:17:44,760 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-24 22:17:53,228 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 22:17:53,229 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 22:17:53,235 - network_analyzer.gui.main_window - INFO - DataProcessor session_id已更新为: 79
+2025-09-24 22:17:53,853 - root - INFO - 新会话创建成功: 444 (ID: 79)
+2025-09-24 22:17:54,574 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-24 22:17:54,575 - network_analyzer.gui.main_window - INFO - 开始捕获时DataProcessor session_id已设置为: 79
+2025-09-24 22:17:54,575 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-24 22:17:55,120 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 22:17:55,399 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 95 个数据包, 耗时: 0.83 秒
+2025-09-24 22:17:55,409 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-24 22:17:57,120 - network_analyzer.processing.data_processor - ERROR - 批量写入数据库失败: unsupported operand type(s) for -: 'NoneType' and 'int'
+2025-09-24 22:18:22,234 - network_analyzer.gui.main_window - INFO - 会话数据保存成功: ID=79, 数据包=95, 字节数=24514
+2025-09-24 22:18:22,917 - network_analyzer.gui.main_window - INFO - 通过菜单保存会话成功
+2025-09-24 22:18:25,116 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-24 22:18:25,117 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-24 22:18:25,122 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 79, 数据包数: 1
+2025-09-24 22:18:25,123 - network_analyzer.gui.main_window - INFO - 成功打开会话: 79
+2025-09-24 22:18:34,978 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-24 22:18:34,980 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 22:18:34,980 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-24 22:18:34,980 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-24 22:18:34,980 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-24 22:18:35,188 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-24 22:18:35,190 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭

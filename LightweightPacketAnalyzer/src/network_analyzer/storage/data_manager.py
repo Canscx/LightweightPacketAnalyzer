@@ -51,7 +51,9 @@ class DataManager:
                     protocol TEXT NOT NULL,
                     length INTEGER NOT NULL,
                     raw_data BLOB,
-                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                    session_id INTEGER,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY (session_id) REFERENCES sessions (id)
                 )
             """)
             
@@ -87,9 +89,29 @@ class DataManager:
             cursor.execute("CREATE INDEX IF NOT EXISTS idx_statistics_type ON statistics(stat_type)")
             cursor.execute("CREATE INDEX IF NOT EXISTS idx_sessions_name ON sessions(session_name)")
             
+            # 数据库迁移：为现有数据库添加session_id字段
+            self._migrate_database(cursor)
+            
+            # 迁移完成后创建session_id索引
+            cursor.execute("CREATE INDEX IF NOT EXISTS idx_packets_session_id ON packets(session_id)")
+            
             conn.commit()
             self.logger.info("数据库初始化完成")
-    
+
+    def _migrate_database(self, cursor: sqlite3.Cursor) -> None:
+        """数据库迁移：为现有数据库添加缺失的字段"""
+        try:
+            # 检查packets表是否已有session_id字段
+            cursor.execute("PRAGMA table_info(packets)")
+            columns = [column[1] for column in cursor.fetchall()]
+            
+            if 'session_id' not in columns:
+                self.logger.info("添加session_id字段到packets表")
+                cursor.execute("ALTER TABLE packets ADD COLUMN session_id INTEGER")
+                
+        except Exception as e:
+            self.logger.warning(f"数据库迁移失败: {e}")
+
     def _get_connection(self) -> sqlite3.Connection:
         """获取数据库连接"""
         conn = sqlite3.connect(self.db_path, timeout=30.0)
@@ -112,8 +134,8 @@ class DataManager:
                 cursor.execute("""
                     INSERT INTO packets (
                         timestamp, src_ip, dst_ip, src_port, dst_port,
-                        protocol, length, raw_data
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                        protocol, length, raw_data, session_id
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """, (
                     packet_data.get('timestamp', datetime.now().timestamp()),
                     packet_data.get('src_ip'),
@@ -122,7 +144,8 @@ class DataManager:
                     packet_data.get('dst_port'),
                     packet_data.get('protocol', 'Unknown'),
                     packet_data.get('length', 0),
-                    packet_data.get('raw_data')
+                    packet_data.get('raw_data'),
+                    packet_data.get('session_id')
                 ))
                 conn.commit()
                 return cursor.lastrowid
@@ -149,7 +172,8 @@ class DataManager:
                         packet.get('dst_port'),
                         packet.get('protocol', 'Unknown'),
                         packet.get('length', 0),
-                        packet.get('raw_data')
+                        packet.get('raw_data'),
+                        packet.get('session_id')
                     )
                     for packet in packets
                 ]
@@ -157,24 +181,29 @@ class DataManager:
                 cursor.executemany("""
                     INSERT INTO packets (
                         timestamp, src_ip, dst_ip, src_port, dst_port,
-                        protocol, length, raw_data
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                        protocol, length, raw_data, session_id
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """, packet_tuples)
                 
                 conn.commit()
                 
                 # 获取插入的ID范围
                 last_id = cursor.lastrowid
+                if last_id is None:
+                    # 如果lastrowid为None，返回空列表
+                    self.logger.warning("批量插入后lastrowid为None，可能是数据库不支持lastrowid")
+                    return []
+                
                 first_id = last_id - len(packets) + 1
                 return list(range(first_id, last_id + 1))
     
     def get_packets_by_session(self, session_id: int, limit: int = 1000) -> List[Dict[str, Any]]:
         """
-        根据会话ID获取数据包列表
+        根据会话ID获取数据包
         
         Args:
             session_id: 会话ID
-            limit: 返回记录数限制
+            limit: 返回数据包数量限制
             
         Returns:
             数据包列表
@@ -182,32 +211,85 @@ class DataManager:
         with self._get_connection() as conn:
             cursor = conn.cursor()
             
-            # 首先获取会话的时间范围
-            cursor.execute("""
-                SELECT start_time, end_time 
-                FROM sessions 
-                WHERE id = ?
-            """, (session_id,))
-            
-            session_info = cursor.fetchone()
-            if not session_info:
-                return []
-            
-            start_time = session_info['start_time']
-            end_time = session_info['end_time']
-            
-            # 获取该时间范围内的数据包
+            # 直接通过session_id查询数据包
             query = """
                 SELECT * FROM packets 
-                WHERE timestamp >= ? AND timestamp <= ?
+                WHERE session_id = ?
                 ORDER BY timestamp ASC 
                 LIMIT ?
             """
             
-            cursor.execute(query, (start_time, end_time or time.time(), limit))
+            cursor.execute(query, (session_id, limit))
             rows = cursor.fetchall()
             
             return [dict(row) for row in rows]
+
+    def get_packet_by_id(self, packet_id: int) -> Optional[Dict[str, Any]]:
+        """
+        根据ID获取单个数据包
+        
+        Args:
+            packet_id: 数据包ID
+            
+        Returns:
+            数据包信息字典，如果不存在则返回None
+        """
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT * FROM packets WHERE id = ?", (packet_id,))
+            row = cursor.fetchone()
+            return dict(row) if row else None
+
+    def get_packet_by_features(self, timestamp: float, src_ip: str, dst_ip: str, 
+                              protocol: str, length: int, session_id: Optional[int] = None) -> Optional[Dict[str, Any]]:
+        """
+        根据数据包特征获取数据包
+        
+        Args:
+            timestamp: 时间戳
+            src_ip: 源IP
+            dst_ip: 目标IP
+            protocol: 协议
+            length: 数据包长度
+            session_id: 会话ID (如果表中没有此字段则忽略)
+            
+        Returns:
+            数据包信息字典，如果不存在则返回None
+        """
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            
+            # 检查表是否有session_id字段
+            cursor.execute("PRAGMA table_info(packets)")
+            columns = [col[1] for col in cursor.fetchall()]
+            has_session_id = 'session_id' in columns
+            
+            # 构建查询条件
+            if session_id is not None and has_session_id:
+                query = """
+                    SELECT * FROM packets 
+                    WHERE ABS(timestamp - ?) < 0.001 
+                    AND src_ip = ? AND dst_ip = ? 
+                    AND protocol = ? AND length = ?
+                    AND session_id = ?
+                    ORDER BY ABS(timestamp - ?) ASC
+                    LIMIT 1
+                """
+                params = (timestamp, src_ip, dst_ip, protocol, length, session_id, timestamp)
+            else:
+                query = """
+                    SELECT * FROM packets 
+                    WHERE ABS(timestamp - ?) < 0.001 
+                    AND src_ip = ? AND dst_ip = ? 
+                    AND protocol = ? AND length = ?
+                    ORDER BY ABS(timestamp - ?) ASC
+                    LIMIT 1
+                """
+                params = (timestamp, src_ip, dst_ip, protocol, length, timestamp)
+            
+            cursor.execute(query, params)
+            row = cursor.fetchone()
+            return dict(row) if row else None
 
     def get_packets(self, 
                    start_time: Optional[float] = None,

@@ -222,7 +222,8 @@ class PacketCapture:
             'dst_ip': None,
             'src_port': None,
             'dst_port': None,
-            'summary': packet.summary()
+            'summary': packet.summary(),
+            'raw_data': bytes(packet)  # 添加原始数据包字节数据
         }
         
         try:

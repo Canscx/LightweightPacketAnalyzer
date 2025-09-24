@@ -41,8 +41,9 @@ class SessionDialog:
         # 创建对话框窗口
         self.dialog = tk.Toplevel(parent)
         self.dialog.title("选择会话")
-        self.dialog.geometry("500x400")
-        self.dialog.resizable(False, False)
+        self.dialog.geometry("800x600")
+        self.dialog.resizable(True, True)
+        self.dialog.minsize(600, 400)  # 设置最小窗口大小
         
         # 设置模态
         self.dialog.transient(parent)
@@ -113,10 +114,10 @@ class SessionDialog:
         self.session_tree.heading("数据包数", text="数据包数")
         self.session_tree.heading("总字节数", text="总字节数")
         
-        self.session_tree.column("会话名称", width=150)
-        self.session_tree.column("开始时间", width=150)
-        self.session_tree.column("数据包数", width=80)
-        self.session_tree.column("总字节数", width=100)
+        self.session_tree.column("会话名称", width=200, minwidth=150)
+        self.session_tree.column("开始时间", width=200, minwidth=150)
+        self.session_tree.column("数据包数", width=120, minwidth=80)
+        self.session_tree.column("总字节数", width=150, minwidth=100)
         
         # 添加滚动条
         scrollbar = ttk.Scrollbar(list_frame, orient=tk.VERTICAL, command=self.session_tree.yview)
@@ -289,6 +290,9 @@ class MainWindow:
         # 捕获状态管理
         self.is_capturing = False
         
+        # TreeView项目ID到数据包特征的映射
+        self.item_to_packet_features = {}
+        
         # 创建主窗口
         self.root = tk.Tk()
         self.root.title(settings.APP_NAME)
@@ -441,9 +445,19 @@ class MainWindow:
             length = packet_info.get('length', 0)
             
             # 插入到树形视图
-            self.packet_tree.insert('', 'end', values=(
+            item_id = self.packet_tree.insert('', 'end', values=(
                 timestamp, src_ip, dst_ip, protocol, length
             ))
+            
+            # 将数据包特征存储在映射字典中，用于后续查询
+            self.item_to_packet_features[item_id] = {
+                'timestamp': timestamp,
+                'src_ip': src_ip,
+                'dst_ip': dst_ip,
+                'protocol': protocol,
+                'length': length,
+                'session_id': self.data_processor.get_session_id()
+            }
             
             # 自动滚动到最新数据包
             children = self.packet_tree.get_children()
@@ -756,6 +770,11 @@ class MainWindow:
                 self.current_session_id = session_id
                 self.current_session_name = session_name
                 
+                # 同步session_id到DataProcessor
+                if hasattr(self, 'data_processor') and self.data_processor:
+                    self.data_processor.set_session_id(session_id)
+                    self.logger.info(f"DataProcessor session_id已更新为: {session_id}")
+                
                 # 步骤6: 更新界面状态
                 self._update_session_status(session_name)
                 
@@ -995,12 +1014,37 @@ class MainWindow:
             return
             
         try:
+            # 如果没有当前会话，自动创建默认会话
+            if not self.current_session_id:
+                from datetime import datetime
+                default_name = f"捕获会话_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+                try:
+                    session_id = self.data_manager.create_session(default_name)
+                    if session_id:
+                        self.current_session_id = session_id
+                        self.current_session_name = default_name
+                        self._update_session_status(default_name)
+                        self.logger.info(f"自动创建默认会话: {default_name} (ID: {session_id})")
+                    else:
+                        messagebox.showerror("错误", "无法创建默认会话，请手动创建会话后再开始捕获")
+                        return
+                except Exception as e:
+                    self.logger.error(f"创建默认会话失败: {e}")
+                    messagebox.showerror("错误", f"创建默认会话失败: {e}")
+                    return
+            
             # 设置数据包回调函数
             self.packet_capture.set_packet_callback(self._on_packet_received)
             
             # 开始捕获
             if self.packet_capture.start_capture():
                 self.is_capturing = True  # 更新捕获状态
+                
+                # 同步当前session_id到DataProcessor
+                if hasattr(self, 'data_processor') and self.data_processor and self.current_session_id:
+                    self.data_processor.set_session_id(self.current_session_id)
+                    self.logger.info(f"开始捕获时DataProcessor session_id已设置为: {self.current_session_id}")
+                
                 self.start_btn.config(state=tk.DISABLED)
                 self.stop_btn.config(state=tk.NORMAL)
                 self.status_text.config(text="正在捕获...")
@@ -1225,6 +1269,11 @@ class MainWindow:
             self.current_session_name = None
             self.logger.debug("会话状态已重置")
             
+            # 重置DataProcessor的session_id
+            if hasattr(self, 'data_processor') and self.data_processor:
+                self.data_processor.set_session_id(None)
+                self.logger.debug("DataProcessor session_id已重置")
+            
             # 重置数据处理器统计
             if hasattr(self, 'data_processor') and self.data_processor:
                 self.data_processor.reset_statistics()
@@ -1316,24 +1365,31 @@ class MainWindow:
         """数据包选择事件处理"""
         selection = self.packet_tree.selection()
         if not selection:
+            self.logger.debug("没有选中的数据包")
             return
             
         try:
             # 获取选中的数据包项
             item = selection[0]
+            self.logger.debug(f"选中的数据包项ID: {item}")
             packet_values = self.packet_tree.item(item, 'values')
+            self.logger.debug(f"数据包值: {packet_values}")
             
             if not packet_values:
+                self.logger.debug("数据包值为空")
                 return
             
             # 从数据库获取原始数据包数据
             # 这里需要根据实际的数据存储结构来获取原始数据
             # 暂时使用模拟数据进行演示
             raw_data = self._get_packet_raw_data(item)
+            self.logger.debug(f"获取到的raw_data长度: {len(raw_data) if raw_data else 0}")
             
             if raw_data:
+                self.logger.debug("开始显示数据包详情")
                 self._display_packet_details(raw_data)
             else:
+                self.logger.debug("raw_data为空，清除数据包详情")
                 self._clear_packet_details()
                 
         except Exception as e:
@@ -1351,31 +1407,40 @@ class MainWindow:
             原始数据包字节，如果获取失败则返回None
         """
         try:
-            # 这里应该从数据库或缓存中获取原始数据包数据
-            # 目前返回模拟数据用于演示
-            # 实际实现需要根据数据存储结构来获取
+            # 从映射字典中获取数据包特征
+            packet_features = self.item_to_packet_features.get(item_id)
+            self.logger.debug(f"从映射字典获取数据包特征: {item_id} -> {packet_features is not None}")
+            if not packet_features:
+                self.logger.warning(f"无法获取数据包特征: {item_id}")
+                return None
             
-            # 模拟以太网帧数据（用于演示）
-            demo_data = bytes([
-                # 以太网头部
-                0x00, 0x11, 0x22, 0x33, 0x44, 0x55,  # 目标MAC
-                0xaa, 0xbb, 0xcc, 0xdd, 0xee, 0xff,  # 源MAC
-                0x08, 0x00,                          # EtherType (IPv4)
-                # IPv4头部
-                0x45, 0x00, 0x00, 0x3c,              # 版本、头长、服务类型、总长度
-                0x1c, 0x46, 0x40, 0x00,              # 标识、标志、片偏移
-                0x40, 0x06, 0x00, 0x00,              # TTL、协议(TCP)、头校验和
-                0xc0, 0xa8, 0x01, 0x64,              # 源IP (192.168.1.100)
-                0xc0, 0xa8, 0x01, 0x01,              # 目标IP (192.168.1.1)
-                # TCP头部
-                0x04, 0xd2, 0x00, 0x50,              # 源端口、目标端口
-                0x00, 0x00, 0x00, 0x01,              # 序列号
-                0x00, 0x00, 0x00, 0x00,              # 确认号
-                0x50, 0x02, 0x20, 0x00,              # 头长、标志、窗口大小
-                0x00, 0x00, 0x00, 0x00,              # 校验和、紧急指针
-            ])
+            # 使用数据包特征查询数据库（不使用session_id，因为数据库表中没有此字段）
+            packet_data = self.data_manager.get_packet_by_features(
+                timestamp=packet_features['timestamp'],
+                src_ip=packet_features['src_ip'],
+                dst_ip=packet_features['dst_ip'],
+                protocol=packet_features['protocol'],
+                length=packet_features['length'],
+                session_id=None  # 明确设置为None，避免使用不存在的字段
+            )
+            self.logger.debug(f"从数据库获取数据包信息: {packet_data is not None}")
+            if not packet_data:
+                self.logger.warning(f"数据库中未找到匹配的数据包")
+                return None
             
-            return demo_data
+            # 获取原始数据
+            raw_data = packet_data.get('raw_data')
+            self.logger.debug(f"获取原始数据: {raw_data is not None}, 类型: {type(raw_data)}")
+            if raw_data is None:
+                self.logger.warning(f"数据包没有原始数据")
+                return None
+            
+            # 如果raw_data是字符串，转换为bytes
+            if isinstance(raw_data, str):
+                raw_data = raw_data.encode('latin-1')
+                self.logger.debug(f"转换字符串为bytes，长度: {len(raw_data)}")
+            
+            return raw_data
             
         except Exception as e:
             self.logger.error(f"获取数据包原始数据失败: {e}")
@@ -1389,17 +1454,24 @@ class MainWindow:
             raw_data: 原始数据包字节
         """
         try:
+            self.logger.debug(f"开始显示数据包详情，raw_data长度: {len(raw_data)}")
+            
             # 首先尝试从缓存获取解析结果
             parsed_packet = packet_cache.get(raw_data)
+            self.logger.debug(f"从缓存获取解析结果: {parsed_packet is not None}")
             
             if parsed_packet is None:
                 # 缓存中没有，进行解析
+                self.logger.debug("缓存中没有，开始解析数据包")
                 parsed_packet = self.protocol_parser.parse_packet(raw_data)
+                self.logger.debug(f"解析结果: {parsed_packet is not None}")
                 if parsed_packet:
                     # 将解析结果放入缓存
                     packet_cache.put(raw_data, parsed_packet)
+                    self.logger.debug("解析结果已放入缓存")
             
             if parsed_packet:
+                self.logger.debug("开始显示协议树、十六进制和原始数据")
                 # 显示协议树
                 self._display_protocol_tree(parsed_packet)
                 
@@ -1408,7 +1480,9 @@ class MainWindow:
                 
                 # 显示原始数据
                 self._display_raw_data(raw_data, parsed_packet)
+                self.logger.debug("数据包详情显示完成")
             else:
+                self.logger.debug("解析失败，清除数据包详情")
                 self._clear_packet_details()
                 
         except Exception as e:
@@ -1422,25 +1496,67 @@ class MainWindow:
             for item in self.protocol_tree.get_children():
                 self.protocol_tree.delete(item)
             
-            # 获取格式化的协议树
-            tree_data = self.packet_formatter.format_packet_tree(parsed_packet)
+            # 获取格式化的树形文本
+            tree_text = self.packet_formatter.format_packet_tree(parsed_packet)
             
-            # 递归添加树节点
-            self._add_tree_nodes("", tree_data)
-            
+            # 将树形文本解析为树节点
+            if tree_text:
+                self._parse_tree_text_to_nodes(tree_text)
+                
         except Exception as e:
-            self.logger.error(f"显示协议树失败: {e}")
+            self.logger.error(f"显示协议树时出错: {e}")
     
-    def _add_tree_nodes(self, parent: str, tree_data: dict) -> None:
-        """递归添加树节点"""
-        for key, value in tree_data.items():
-            if isinstance(value, dict):
-                # 如果值是字典，创建父节点并递归添加子节点
-                node = self.protocol_tree.insert(parent, "end", text=key, values=("",))
-                self._add_tree_nodes(node, value)
+    def _parse_tree_text_to_nodes(self, tree_text: str) -> None:
+        """解析树形文本并添加到TreeView"""
+        lines = tree_text.split('\n')
+        node_stack = []  # 存储节点层级关系
+        
+        for line in lines:
+            if not line.strip():
+                continue
+                
+            # 计算缩进级别
+            indent_level = 0
+            for char in line:
+                if char in ['│', '├', '└', '─', ' ']:
+                    indent_level += 1
+                else:
+                    break
+            
+            # 提取节点文本
+            text = line.strip()
+            # 移除树形字符
+            text = text.replace('├── ', '').replace('└── ', '').replace('│   ', '')
+            text = text.replace('📦 ', '').replace('🔗 ', '').replace('📄 ', '')
+            
+            if ':' in text:
+                # 字段节点 (key: value)
+                key, value = text.split(':', 1)
+                key = key.strip()
+                value = value.strip()
+                
+                # 确定父节点
+                parent = ""
+                if node_stack:
+                    parent = node_stack[-1]['id']
+                
+                # 添加节点
+                node_id = self.protocol_tree.insert(parent, "end", text=key, values=(value,))
+                
             else:
-                # 如果值不是字典，直接添加叶节点
-                self.protocol_tree.insert(parent, "end", text=key, values=(str(value),))
+                # 协议节点
+                # 根据缩进级别调整节点栈
+                while len(node_stack) > indent_level // 4:
+                    node_stack.pop()
+                
+                # 确定父节点
+                parent = ""
+                if node_stack:
+                    parent = node_stack[-1]['id']
+                
+                # 添加协议节点
+                node_id = self.protocol_tree.insert(parent, "end", text=text, values=("",))
+                node_stack.append({'id': node_id, 'level': indent_level})
     
     def _display_hex_data(self, raw_data: bytes) -> None:
         """显示十六进制数据"""
