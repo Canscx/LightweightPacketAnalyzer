@@ -514,3 +514,205 @@ class DataManager:
                 'statistics_count': stat_count,
                 'session_count': session_count
             }
+    
+    def get_protocol_statistics(self, 
+                               session_id: Optional[int] = None,
+                               start_time: Optional[float] = None,
+                               end_time: Optional[float] = None) -> Dict[str, Any]:
+        """
+        获取协议统计数据
+        
+        Args:
+            session_id: 会话ID过滤
+            start_time: 开始时间戳
+            end_time: 结束时间戳
+            
+        Returns:
+            包含协议统计信息的字典，格式：
+            {
+                'protocol_counts': {'TCP': 100, 'UDP': 50, ...},
+                'protocol_bytes': {'TCP': 10240, 'UDP': 2048, ...},
+                'total_packets': 150,
+                'total_bytes': 12288,
+                'time_range': {'start': start_time, 'end': end_time}
+            }
+        """
+        try:
+            with self._get_connection() as conn:
+                cursor = conn.cursor()
+                
+                # 构建基础查询条件
+                where_conditions = []
+                params = []
+                
+                if session_id is not None:
+                    where_conditions.append("session_id = ?")
+                    params.append(session_id)
+                
+                if start_time is not None:
+                    where_conditions.append("timestamp >= ?")
+                    params.append(start_time)
+                
+                if end_time is not None:
+                    where_conditions.append("timestamp <= ?")
+                    params.append(end_time)
+                
+                where_clause = " AND ".join(where_conditions) if where_conditions else "1=1"
+                
+                # 获取协议数量统计
+                count_query = f"""
+                    SELECT protocol, COUNT(*) as packet_count
+                    FROM packets 
+                    WHERE {where_clause}
+                    GROUP BY protocol
+                    ORDER BY packet_count DESC
+                """
+                cursor.execute(count_query, params)
+                protocol_counts = {row[0]: row[1] for row in cursor.fetchall()}
+                
+                # 获取协议字节统计
+                bytes_query = f"""
+                    SELECT protocol, SUM(length) as total_bytes
+                    FROM packets 
+                    WHERE {where_clause}
+                    GROUP BY protocol
+                    ORDER BY total_bytes DESC
+                """
+                cursor.execute(bytes_query, params)
+                protocol_bytes = {row[0]: row[1] for row in cursor.fetchall()}
+                
+                # 获取总计数据
+                total_query = f"""
+                    SELECT COUNT(*) as total_packets, SUM(length) as total_bytes
+                    FROM packets 
+                    WHERE {where_clause}
+                """
+                cursor.execute(total_query, params)
+                total_row = cursor.fetchone()
+                total_packets = total_row[0] if total_row else 0
+                total_bytes = total_row[1] if total_row else 0
+                
+                return {
+                    'protocol_counts': protocol_counts,
+                    'protocol_bytes': protocol_bytes,
+                    'total_packets': total_packets,
+                    'total_bytes': total_bytes,
+                    'time_range': {
+                        'start': start_time,
+                        'end': end_time
+                    }
+                }
+                
+        except Exception as e:
+            self.logger.error(f"获取协议统计数据失败: {e}")
+            return {
+                'protocol_counts': {},
+                'protocol_bytes': {},
+                'total_packets': 0,
+                'total_bytes': 0,
+                'time_range': {'start': start_time, 'end': end_time}
+            }
+    
+    def get_protocol_counts(self, 
+                           session_id: Optional[int] = None,
+                           start_time: Optional[float] = None,
+                           end_time: Optional[float] = None) -> Dict[str, int]:
+        """
+        获取协议数量统计
+        
+        Args:
+            session_id: 会话ID过滤
+            start_time: 开始时间戳
+            end_time: 结束时间戳
+            
+        Returns:
+            协议数量字典，格式：{'TCP': 100, 'UDP': 50, ...}
+        """
+        try:
+            with self._get_connection() as conn:
+                cursor = conn.cursor()
+                
+                # 构建查询条件
+                where_conditions = []
+                params = []
+                
+                if session_id is not None:
+                    where_conditions.append("session_id = ?")
+                    params.append(session_id)
+                
+                if start_time is not None:
+                    where_conditions.append("timestamp >= ?")
+                    params.append(start_time)
+                
+                if end_time is not None:
+                    where_conditions.append("timestamp <= ?")
+                    params.append(end_time)
+                
+                where_clause = " AND ".join(where_conditions) if where_conditions else "1=1"
+                
+                query = f"""
+                    SELECT protocol, COUNT(*) as packet_count
+                    FROM packets 
+                    WHERE {where_clause}
+                    GROUP BY protocol
+                    ORDER BY packet_count DESC
+                """
+                
+                cursor.execute(query, params)
+                return {row[0]: row[1] for row in cursor.fetchall()}
+                
+        except Exception as e:
+            self.logger.error(f"获取协议数量统计失败: {e}")
+            return {}
+    
+    def get_protocol_bytes(self, 
+                          session_id: Optional[int] = None,
+                          start_time: Optional[float] = None,
+                          end_time: Optional[float] = None) -> Dict[str, int]:
+        """
+        获取协议字节统计
+        
+        Args:
+            session_id: 会话ID过滤
+            start_time: 开始时间戳
+            end_time: 结束时间戳
+            
+        Returns:
+            协议字节数字典，格式：{'TCP': 10240, 'UDP': 2048, ...}
+        """
+        try:
+            with self._get_connection() as conn:
+                cursor = conn.cursor()
+                
+                # 构建查询条件
+                where_conditions = []
+                params = []
+                
+                if session_id is not None:
+                    where_conditions.append("session_id = ?")
+                    params.append(session_id)
+                
+                if start_time is not None:
+                    where_conditions.append("timestamp >= ?")
+                    params.append(start_time)
+                
+                if end_time is not None:
+                    where_conditions.append("timestamp <= ?")
+                    params.append(end_time)
+                
+                where_clause = " AND ".join(where_conditions) if where_conditions else "1=1"
+                
+                query = f"""
+                    SELECT protocol, SUM(length) as total_bytes
+                    FROM packets 
+                    WHERE {where_clause}
+                    GROUP BY protocol
+                    ORDER BY total_bytes DESC
+                """
+                
+                cursor.execute(query, params)
+                return {row[0]: row[1] for row in cursor.fetchall()}
+                
+        except Exception as e:
+            self.logger.error(f"获取协议字节统计失败: {e}")
+            return {}

@@ -980,15 +980,96 @@ class MainWindow:
                 # 获取当前统计数据
                 stats = self.data_processor.get_current_stats()
                 
+                # 如果实时统计为空或为0，从数据库获取当前会话的统计
+                if (not stats or 
+                    stats.get('total_packets', 0) == 0 or 
+                    stats.get('total_bytes', 0) == 0):
+                    
+                    if hasattr(self, 'current_session_id') and self.current_session_id:
+                        # 从数据库获取统计数据
+                        db_stats = self.data_manager.get_protocol_statistics(self.current_session_id)
+                        
+                        # 获取会话时间范围来计算速率
+                        packet_rate = 0
+                        byte_rate = 0
+                        
+                        if db_stats.get('total_packets', 0) > 1:
+                            # 获取会话的第一个和最后一个数据包时间戳
+                            try:
+                                # 获取第一个数据包
+                                first_packets = self.data_manager.get_packets(
+                                    start_time=None, end_time=None, 
+                                    protocol=None, limit=1
+                                )
+                                
+                                # 获取最后一个数据包 - 使用会话ID过滤
+                                all_packets = self.data_manager.get_packets_by_session(
+                                    self.current_session_id, limit=1
+                                )
+                                
+                                if first_packets and all_packets:
+                                    # 计算时间差
+                                    time_diff = all_packets[0]['timestamp'] - first_packets[0]['timestamp']
+                                    if time_diff > 0:
+                                        packet_rate = db_stats.get('total_packets', 0) / time_diff
+                                        byte_rate = db_stats.get('total_bytes', 0) / time_diff
+                            except Exception as e:
+                                self.logger.warning(f"计算速率时出错: {e}")
+                        
+                        # 构建统计数据
+                        stats = {
+                            'total_packets': db_stats.get('total_packets', 0),
+                            'total_bytes': db_stats.get('total_bytes', 0),
+                            'packet_rate': packet_rate,
+                            'byte_rate': byte_rate,
+                            'protocol_counts': db_stats.get('protocol_counts', {}),
+                            'protocol_bytes': db_stats.get('protocol_bytes', {})
+                        }
+                
                 if filename.endswith('.json'):
                     import json
+                    
+                    # 准备导出数据
+                    export_data = {
+                        'statistics': stats,
+                        'packets': []
+                    }
+                    
+                    # 添加数据包列表
+                    if self.current_session_id:
+                        try:
+                            packets = self.data_manager.get_packets_by_session(
+                                self.current_session_id, limit=10000
+                            )
+                            
+                            # 处理数据包中的bytes字段，转换为可序列化的格式
+                            serializable_packets = []
+                            for packet in packets:
+                                packet_copy = packet.copy()
+                                # 转换bytes字段为十六进制字符串
+                                if 'raw_data' in packet_copy and isinstance(packet_copy['raw_data'], bytes):
+                                    packet_copy['raw_data'] = packet_copy['raw_data'].hex()
+                                # 格式化时间戳
+                                if 'timestamp' in packet_copy:
+                                    timestamp = packet_copy['timestamp']
+                                    packet_copy['formatted_time'] = datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]
+                                serializable_packets.append(packet_copy)
+                            
+                            export_data['packets'] = serializable_packets
+                            
+                        except Exception as e:
+                            self.logger.warning(f"导出数据包列表时出错: {e}")
+                            export_data['packet_export_error'] = str(e)
+                    
                     with open(filename, 'w', encoding='utf-8') as f:
-                        json.dump(stats, f, ensure_ascii=False, indent=2, default=str)
+                        json.dump(export_data, f, ensure_ascii=False, indent=2, default=str)
                 else:
-                    # 导出为CSV格式
+                    # 导出为CSV格式，使用UTF-8 BOM编码确保Excel等软件能正确识别中文
                     import csv
-                    with open(filename, 'w', newline='', encoding='utf-8') as f:
+                    with open(filename, 'w', newline='', encoding='utf-8-sig') as f:
                         writer = csv.writer(f)
+                        
+                        # 基本统计信息
                         writer.writerow(['指标', '数值'])
                         writer.writerow(['总数据包', stats.get('total_packets', 0)])
                         writer.writerow(['总字节数', stats.get('total_bytes', 0)])
@@ -1000,6 +1081,37 @@ class MainWindow:
                         writer.writerow(['协议分布'])
                         for protocol, count in stats.get('protocol_counts', {}).items():
                             writer.writerow([protocol, count])
+                        
+                        # 添加完整数据包列表
+                        if self.current_session_id:
+                            try:
+                                packets = self.data_manager.get_packets_by_session(
+                                    self.current_session_id, limit=10000  # 增加限制以获取更多数据包
+                                )
+                                
+                                if packets:
+                                    writer.writerow([])
+                                    writer.writerow(['完整数据包列表'])
+                                    writer.writerow(['时间戳', '源IP', '目标IP', '源端口', '目标端口', '协议', '长度(字节)'])
+                                    
+                                    for packet in packets:
+                                        # 格式化时间戳
+                                        timestamp = packet.get('timestamp', 0)
+                                        formatted_time = datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]
+                                        
+                                        writer.writerow([
+                                            formatted_time,
+                                            packet.get('src_ip', ''),
+                                            packet.get('dst_ip', ''),
+                                            packet.get('src_port', ''),
+                                            packet.get('dst_port', ''),
+                                            packet.get('protocol', ''),
+                                            packet.get('length', 0)
+                                        ])
+                            except Exception as e:
+                                self.logger.warning(f"导出数据包列表时出错: {e}")
+                                writer.writerow([])
+                                writer.writerow(['数据包列表导出失败', str(e)])
                 
                 messagebox.showinfo("成功", f"数据已导出到: {filename}")
                 self.logger.info(f"数据导出成功: {filename}")
@@ -1332,7 +1444,27 @@ class MainWindow:
     
     def _protocol_statistics(self) -> None:
         """协议统计"""
-        messagebox.showinfo("提示", "协议统计功能将在后续版本中实现")
+        try:
+            from network_analyzer.gui.dialogs.protocol_stats_dialog import ProtocolStatsDialog
+            
+            # 获取当前会话ID
+            current_session_id = getattr(self, 'current_session_id', None)
+            
+            if not current_session_id:
+                messagebox.showwarning("警告", "请先创建或打开一个会话")
+                return
+            
+            # 创建并显示协议统计对话框
+            dialog = ProtocolStatsDialog(self.root, self.data_manager, current_session_id)
+            result = dialog.show()
+            
+            if result:
+                self.logger.info("协议统计分析完成")
+            
+        except Exception as e:
+            error_msg = f"打开协议统计对话框失败: {e}"
+            self.logger.error(error_msg)
+            messagebox.showerror("错误", error_msg)
     
     def _traffic_trends(self) -> None:
         """流量趋势"""
