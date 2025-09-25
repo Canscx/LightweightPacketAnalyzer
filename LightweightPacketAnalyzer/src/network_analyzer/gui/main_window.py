@@ -20,6 +20,7 @@ from network_analyzer.processing.data_processor import DataProcessor
 from network_analyzer.analysis.protocol_parser import ProtocolParser
 from network_analyzer.analysis.packet_formatter import PacketFormatter
 from network_analyzer.analysis.packet_cache import packet_cache
+from network_analyzer.gui.components.capture_options_dialog import show_capture_options_dialog
 
 
 class SessionDialog:
@@ -1301,7 +1302,33 @@ class MainWindow:
 
     def _capture_options(self) -> None:
         """捕获选项"""
-        messagebox.showinfo("提示", "捕获选项功能将在后续版本中实现")
+        try:
+            # 显示捕获选项对话框
+            options = show_capture_options_dialog(self.root, self.settings)
+            
+            if options:
+                # 用户确认了配置，应用到捕获器
+                self.logger.info("用户更新了捕获选项配置")
+                
+                # 如果正在捕获，提示用户重启捕获以应用新配置
+                if hasattr(self, 'packet_capture') and self.packet_capture.is_capturing():
+                    result = messagebox.askyesno(
+                        "配置已更新", 
+                        "捕获选项已更新。需要重启捕获以应用新配置，是否现在重启？"
+                    )
+                    if result:
+                        self._stop_capture()
+                        # 短暂延迟后重启捕获
+                        self.root.after(1000, self._start_capture)
+                else:
+                    messagebox.showinfo("配置已更新", "捕获选项配置已保存，将在下次开始捕获时生效。")
+            else:
+                self.logger.info("用户取消了捕获选项配置")
+                
+        except Exception as e:
+            error_msg = f"打开捕获选项对话框时发生错误: {str(e)}"
+            self.logger.error(error_msg)
+            messagebox.showerror("错误", error_msg)
     
     def _protocol_statistics(self) -> None:
         """协议统计"""

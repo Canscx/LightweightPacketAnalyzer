@@ -71,6 +71,24 @@ class Settings:
         # 开发配置
         self.DEBUG = os.getenv("DEBUG", "false").lower() == "true"
         self.TESTING = os.getenv("TESTING", "false").lower() == "true"
+        self.ENABLE_PROFILING = os.getenv('ENABLE_PROFILING', 'False').lower() == 'true'
+        
+        # 捕获选项设置
+        self.CAPTURE_OPTIONS = {
+            'default_interface': os.getenv('DEFAULT_CAPTURE_INTERFACE', ''),
+            'default_filter': os.getenv('DEFAULT_BPF_FILTER', ''),
+            'default_packet_count': int(os.getenv('DEFAULT_PACKET_COUNT', '1000')),
+            'default_timeout': int(os.getenv('DEFAULT_CAPTURE_TIMEOUT', '60')),
+            'promiscuous_mode': os.getenv('PROMISCUOUS_MODE', 'True').lower() == 'true',
+            'buffer_size': int(os.getenv('CAPTURE_BUFFER_SIZE', '1048576')),  # 1MB
+            'filter_templates_file': os.getenv('FILTER_TEMPLATES_FILE', 'filter_templates.json'),
+            'save_capture_history': os.getenv('SAVE_CAPTURE_HISTORY', 'True').lower() == 'true',
+            'max_history_entries': int(os.getenv('MAX_HISTORY_ENTRIES', '50')),
+            'validate_filters': os.getenv('VALIDATE_BPF_FILTERS', 'True').lower() == 'true',
+            'show_interface_details': os.getenv('SHOW_INTERFACE_DETAILS', 'True').lower() == 'true',
+            'auto_detect_interfaces': os.getenv('AUTO_DETECT_INTERFACES', 'True').lower() == 'true',
+            'interface_refresh_interval': int(os.getenv('INTERFACE_REFRESH_INTERVAL', '30')),  # 秒
+        }
     
     def _get_env(self, key: str, default: str) -> str:
         """获取环境变量字符串值"""
@@ -121,6 +139,23 @@ class Settings:
         # 确保目录存在
         log_path.parent.mkdir(parents=True, exist_ok=True)
         return log_path.resolve()
+    
+    def get_data_dir(self) -> Path:
+        """
+        获取数据目录的绝对路径
+        
+        Returns:
+            Path: 数据目录的绝对路径
+        """
+        data_path = Path(self.DATA_DIRECTORY)
+        if not data_path.is_absolute():
+            # 相对于项目根目录
+            project_root = Path(__file__).parent.parent.parent.parent
+            data_path = project_root / data_path
+        
+        # 确保目录存在
+        data_path.mkdir(parents=True, exist_ok=True)
+        return data_path.resolve()
     
     def validate_settings(self) -> bool:
         """

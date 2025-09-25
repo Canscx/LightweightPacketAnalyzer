@@ -1685,3 +1685,100 @@ sqlite3.OperationalError: no such column: packet_fingerprint
 2025-09-24 22:18:34,980 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
 2025-09-24 22:18:35,188 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
 2025-09-24 22:18:35,190 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-25 18:01:59,278 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-25 18:01:59,278 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-25 18:01:59,280 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-25 18:01:59,283 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-25 18:01:59,283 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-25 18:01:59,284 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-25 18:01:59,284 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-25 18:01:59,284 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-25 18:01:59,284 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-25 18:01:59,479 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-25 18:02:15,477 - network_analyzer.gui.main_window - INFO - 自动创建默认会话: 捕获会话_20250925_180215 (ID: 82)
+2025-09-25 18:02:15,478 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-25 18:02:15,478 - network_analyzer.gui.main_window - INFO - 开始捕获时DataProcessor session_id已设置为: 82
+2025-09-25 18:02:15,478 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-25 18:02:15,930 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-25 18:02:16,147 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-25 18:02:16,923 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-25 18:02:16,928 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 3437 个数据包, 耗时: 1.45 秒
+2025-09-25 18:02:16,932 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-25 18:02:17,129 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-25 18:02:19,141 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-25 18:02:35,950 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-25 18:02:35,954 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-25 18:02:35,958 - network_analyzer.gui.main_window - INFO - DataProcessor session_id已更新为: 83
+2025-09-25 18:02:37,323 - root - INFO - 新会话创建成功: 100 (ID: 83)
+2025-09-25 18:02:38,645 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-25 18:02:38,646 - network_analyzer.gui.main_window - INFO - 开始捕获时DataProcessor session_id已设置为: 83
+2025-09-25 18:02:38,646 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-25 18:02:39,264 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-25 18:02:39,740 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 1132 个数据包, 耗时: 1.10 秒
+2025-09-25 18:02:39,744 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-25 18:02:39,885 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-25 18:02:41,888 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-25 18:10:26,860 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-25 18:10:26,860 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-25 18:10:26,860 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-25 18:10:26,860 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-25 18:10:26,860 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-25 18:10:26,944 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-25 18:10:26,944 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-25 18:47:22,857 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-25 18:47:22,858 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-25 18:47:22,860 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-25 18:47:22,861 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-25 18:47:22,862 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-25 18:47:22,862 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-25 18:47:22,862 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-25 18:47:22,862 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-25 18:47:22,862 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-25 18:47:22,944 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-25 18:47:49,056 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-25 18:47:49,057 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-25 18:47:49,057 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-25 18:47:49,057 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-25 18:47:49,057 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-25 18:47:49,143 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-25 18:47:49,144 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-25 18:50:45,606 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-25 18:50:45,608 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-25 18:50:45,609 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-25 18:50:45,611 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-25 18:50:45,611 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-25 18:50:45,611 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-25 18:50:45,611 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-25 18:50:45,612 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-25 18:50:45,612 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-25 18:50:45,697 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-25 18:50:50,687 - network_analyzer.gui.main_window - ERROR - 打开捕获选项对话框时发生错误: unsupported operand type(s) for /: 'Settings' and 'str'
+2025-09-25 18:50:53,801 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-25 18:50:53,801 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-25 18:50:53,801 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-25 18:50:53,801 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-25 18:50:53,801 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-25 18:50:53,895 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-25 18:50:53,896 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-25 19:16:37,254 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-25 19:16:37,254 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-25 19:16:37,255 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-25 19:16:37,257 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-25 19:16:37,257 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-25 19:16:37,258 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-25 19:16:37,258 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-25 19:16:37,258 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-25 19:16:37,258 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-25 19:16:37,335 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-25 19:16:39,356 - network_analyzer.gui.components.filter_template_manager - INFO - 加载了 21 个默认过滤器模板
+2025-09-25 19:16:41,044 - network_analyzer.gui.components.interface_info_provider - INFO - 发现 13 个网络接口
+2025-09-25 19:16:41,045 - network_analyzer.gui.components.capture_options_dialog - INFO - 刷新了 13 个网络接口
+2025-09-25 19:16:48,950 - network_analyzer.gui.components.capture_options_dialog - ERROR - 应用过滤器模板失败: 'FilterTemplateManager' object has no attribute 'get_template_by_name'
+2025-09-25 19:17:11,716 - network_analyzer.gui.main_window - INFO - 用户取消了捕获选项配置
+2025-09-25 19:17:44,478 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-25 19:17:44,478 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-25 19:17:44,478 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-25 19:17:44,478 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-25 19:17:44,478 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-25 19:17:44,559 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-25 19:17:44,561 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
