@@ -276,8 +276,8 @@ class ReportGenerator:
                 
                 elif format_type == ReportFormat.CSV:
                     self._update_progress("导出CSV数据...", 0.8)
-                    csv_files = self.csv_generator.export_to_multiple_files(full_report_data)
-                    generated_files.update(csv_files)
+                    csv_path = self.csv_generator.export_report_data(full_report_data)
+                    generated_files['csv'] = csv_path
                 
                 elif format_type == ReportFormat.ALL:
                     # 生成所有格式
@@ -290,8 +290,8 @@ class ReportGenerator:
                     generated_files['html'] = html_path
                     
                     self._update_progress("导出CSV数据...", 0.8)
-                    csv_files = self.csv_generator.export_to_multiple_files(full_report_data)
-                    generated_files.update(csv_files)
+                    csv_path = self.csv_generator.export_report_data(full_report_data)
+                    generated_files['csv'] = csv_path
             
             return generated_files
             

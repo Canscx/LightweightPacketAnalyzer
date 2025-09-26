@@ -250,7 +250,7 @@ class DataCollector:
             
             # 计算各种统计指标
             total_packets = len(packets)
-            total_bytes = sum(p.get('size', 0) for p in packets)
+            total_bytes = sum(p.get('length', 0) for p in packets)
             
             # 计算平均包大小
             avg_packet_size = total_bytes / total_packets if total_packets > 0 else 0

@@ -67,11 +67,41 @@ class StatisticsVisualizer:
         plt.rcParams['font.size'] = self.config.font_size
         plt.rcParams['axes.unicode_minus'] = False
         
-        # 尝试设置中文字体
+        # 设置中文字体
         try:
-            plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'DejaVu Sans']
-        except:
-            pass
+            import matplotlib.font_manager as fm
+            
+            # 检查系统可用字体
+            available_fonts = [f.name for f in fm.fontManager.ttflist]
+            
+            # 优先级排序的中文字体列表
+            chinese_fonts = [
+                'Microsoft YaHei',
+                'SimHei', 
+                'SimSun',
+                'Microsoft YaHei UI',
+                'PingFang SC',
+                'Hiragino Sans GB',
+                'Source Han Sans CN',
+                'Noto Sans CJK SC',
+                'WenQuanYi Micro Hei'
+            ]
+            
+            # 查找可用的中文字体
+            selected_font = None
+            for font_name in chinese_fonts:
+                if font_name in available_fonts:
+                    selected_font = font_name
+                    break
+            
+            if selected_font:
+                plt.rcParams['font.sans-serif'] = [selected_font, 'DejaVu Sans']
+                plt.rcParams['font.family'] = 'sans-serif'
+            else:
+                plt.rcParams['font.sans-serif'] = ['DejaVu Sans', 'Arial', 'sans-serif']
+                
+        except Exception:
+            plt.rcParams['font.sans-serif'] = ['DejaVu Sans', 'Arial']
     
     def create_protocol_pie_chart(self, 
                                  distribution: ProtocolDistribution,

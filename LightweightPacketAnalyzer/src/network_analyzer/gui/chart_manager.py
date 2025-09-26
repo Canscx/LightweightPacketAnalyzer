@@ -16,8 +16,48 @@ import matplotlib.dates as mdates
 import numpy as np
 
 # 设置matplotlib中文字体支持
-plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'DejaVu Sans']
-plt.rcParams['axes.unicode_minus'] = False
+import matplotlib.font_manager as fm
+
+def setup_chinese_font():
+    """设置中文字体支持"""
+    try:
+        # 检查系统可用字体
+        available_fonts = [f.name for f in fm.fontManager.ttflist]
+        
+        # 优先级排序的中文字体列表
+        chinese_fonts = [
+            'Microsoft YaHei',
+            'SimHei', 
+            'SimSun',
+            'Microsoft YaHei UI',
+            'PingFang SC',
+            'Hiragino Sans GB',
+            'Source Han Sans CN',
+            'Noto Sans CJK SC',
+            'WenQuanYi Micro Hei'
+        ]
+        
+        # 查找可用的中文字体
+        selected_font = None
+        for font_name in chinese_fonts:
+            if font_name in available_fonts:
+                selected_font = font_name
+                break
+        
+        if selected_font:
+            plt.rcParams['font.sans-serif'] = [selected_font, 'DejaVu Sans']
+            plt.rcParams['axes.unicode_minus'] = False
+            plt.rcParams['font.family'] = 'sans-serif'
+        else:
+            plt.rcParams['font.sans-serif'] = ['DejaVu Sans', 'Arial', 'sans-serif']
+            plt.rcParams['axes.unicode_minus'] = False
+            
+    except Exception:
+        plt.rcParams['font.sans-serif'] = ['DejaVu Sans', 'Arial']
+        plt.rcParams['axes.unicode_minus'] = False
+
+# 初始化字体设置
+setup_chinese_font()
 
 
 class ChartManager:

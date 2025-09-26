@@ -48,22 +48,78 @@ class ChartGenerator:
     def _setup_chinese_font(self):
         """设置中文字体支持"""
         try:
-            # 尝试设置中文字体
-            chinese_fonts = ['Microsoft YaHei', 'SimHei', 'SimSun', 'DejaVu Sans']
+            # 方法1: 尝试直接使用字体文件路径
+            font_paths = [
+                r"C:\Windows\Fonts\msyh.ttc",  # 微软雅黑
+                r"C:\Windows\Fonts\simhei.ttf",  # 黑体
+                r"C:\Windows\Fonts\simsun.ttc",  # 宋体
+            ]
             
-            for font_name in chinese_fonts:
-                try:
-                    plt.rcParams['font.sans-serif'] = [font_name]
-                    plt.rcParams['axes.unicode_minus'] = False
-                    self.logger.info(f"成功设置中文字体: {font_name}")
+            self.font_path = None
+            for font_path in font_paths:
+                if os.path.exists(font_path):
+                    self.font_path = font_path
+                    self.logger.info(f"找到中文字体文件: {font_path}")
                     break
-                except:
-                    continue
-            else:
-                self.logger.warning("未找到合适的中文字体，可能显示乱码")
+            
+            # 方法2: 使用系统字体名称作为备选
+            available_fonts = [f.name for f in fm.fontManager.ttflist]
+            chinese_fonts = ['Microsoft YaHei', 'SimHei', 'SimSun']
+            
+            self.font_name = None
+            for font_name in chinese_fonts:
+                if font_name in available_fonts:
+                    self.font_name = font_name
+                    break
+            
+            # 应用字体设置
+            self._apply_font_settings()
                 
         except Exception as e:
             self.logger.error(f"设置中文字体失败: {e}")
+            # 设置安全的默认字体
+            plt.rcParams['font.sans-serif'] = ['DejaVu Sans', 'Arial']
+            plt.rcParams['axes.unicode_minus'] = False
+    
+    def _apply_font_settings(self):
+        """应用字体设置"""
+        try:
+            if self.font_name:
+                # 使用系统字体名称
+                plt.rcParams.update({
+                    'font.family': 'sans-serif',
+                    'font.sans-serif': [self.font_name, 'DejaVu Sans', 'Arial'],
+                    'axes.unicode_minus': False
+                })
+                self.logger.info(f"应用系统字体: {self.font_name}")
+            else:
+                # 使用默认字体
+                plt.rcParams.update({
+                    'font.family': 'sans-serif', 
+                    'font.sans-serif': ['DejaVu Sans', 'Arial'],
+                    'axes.unicode_minus': False
+                })
+                self.logger.warning("使用默认字体")
+                
+        except Exception as e:
+            self.logger.error(f"应用字体设置失败: {e}")
+    
+    def _ensure_chinese_font(self):
+        """确保中文字体设置（在每次绘图前调用）"""
+        try:
+            # 重新应用字体设置
+            self._apply_font_settings()
+            
+            # 如果有字体文件路径，创建FontProperties对象
+            if hasattr(self, 'font_path') and self.font_path:
+                from matplotlib.font_manager import FontProperties
+                self.font_prop = FontProperties(fname=self.font_path)
+            else:
+                self.font_prop = None
+                
+        except Exception as e:
+            self.logger.error(f"确保中文字体失败: {e}")
+            self.font_prop = None
     
     def _setup_chart_style(self):
         """设置图表样式"""
@@ -99,6 +155,9 @@ class ChartGenerator:
             str: 生成的图片文件路径
         """
         try:
+            # 确保中文字体设置
+            self._ensure_chinese_font()
+            
             # 准备数据
             protocols = list(protocol_data.keys())
             counts = list(protocol_data.values())
@@ -138,19 +197,35 @@ class ChartGenerator:
                 explode=[0.05] * len(filtered_protocols)  # 轻微分离
             )
             
-            # 设置标题
-            ax.set_title(title, fontsize=16, fontweight='bold', pad=20)
+            # 设置标题（使用中文字体）
+            if hasattr(self, 'font_prop') and self.font_prop:
+                ax.set_title(title, fontproperties=self.font_prop, fontsize=16, fontweight='bold', pad=20)
+            else:
+                ax.set_title(title, fontsize=16, fontweight='bold', pad=20)
             
             # 美化文本
             for autotext in autotexts:
                 autotext.set_color('white')
                 autotext.set_fontweight('bold')
+                if hasattr(self, 'font_prop') and self.font_prop:
+                    autotext.set_fontproperties(self.font_prop)
+            
+            # 设置标签字体
+            for text in texts:
+                if hasattr(self, 'font_prop') and self.font_prop:
+                    text.set_fontproperties(self.font_prop)
             
             # 添加图例
-            ax.legend(wedges, filtered_protocols, 
-                     title="协议类型",
-                     loc="center left",
-                     bbox_to_anchor=(1, 0, 0.5, 1))
+            legend = ax.legend(wedges, filtered_protocols, 
+                             title="协议类型",
+                             loc="center left",
+                             bbox_to_anchor=(1, 0, 0.5, 1))
+            
+            # 设置图例字体
+            if hasattr(self, 'font_prop') and self.font_prop:
+                legend.get_title().set_fontproperties(self.font_prop)
+                for text in legend.get_texts():
+                    text.set_fontproperties(self.font_prop)
             
             # 保存图表
             filename = f"protocol_pie_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
@@ -181,6 +256,9 @@ class ChartGenerator:
             str: 生成的图片文件路径
         """
         try:
+            # 确保中文字体设置
+            self._ensure_chinese_font()
+            
             # 转换时间数据
             timestamps = [datetime.fromtimestamp(t) for t in time_data]
             
@@ -191,10 +269,15 @@ class ChartGenerator:
             ax.plot(timestamps, packet_counts, 
                    color='#007acc', linewidth=2, marker='o', markersize=4)
             
-            # 设置标题和标签
-            ax.set_title(title, fontsize=16, fontweight='bold', pad=20)
-            ax.set_xlabel('时间', fontsize=12)
-            ax.set_ylabel('数据包数量', fontsize=12)
+            # 设置标题和标签（使用中文字体）
+            if hasattr(self, 'font_prop') and self.font_prop:
+                ax.set_title(title, fontproperties=self.font_prop, fontsize=16, fontweight='bold', pad=20)
+                ax.set_xlabel('时间', fontproperties=self.font_prop, fontsize=12)
+                ax.set_ylabel('数据包数量', fontproperties=self.font_prop, fontsize=12)
+            else:
+                ax.set_title(title, fontsize=16, fontweight='bold', pad=20)
+                ax.set_xlabel('时间', fontsize=12)
+                ax.set_ylabel('数据包数量', fontsize=12)
             
             # 格式化x轴时间显示
             fig.autofmt_xdate()
@@ -235,6 +318,9 @@ class ChartGenerator:
             str: 生成的图片文件路径
         """
         try:
+            # 确保中文字体设置
+            self._ensure_chinese_font()
+            
             # 准备数据
             protocols = [item[0] for item in protocol_data]
             counts = [item[1] for item in protocol_data]
@@ -248,10 +334,15 @@ class ChartGenerator:
             # 绘制条形图
             bars = ax.bar(protocols, counts, color=colors)
             
-            # 设置标题和标签
-            ax.set_title(title, fontsize=16, fontweight='bold', pad=20)
-            ax.set_xlabel('协议类型', fontsize=12)
-            ax.set_ylabel('数据包数量', fontsize=12)
+            # 设置标题和标签（使用中文字体）
+            if hasattr(self, 'font_prop') and self.font_prop:
+                ax.set_title(title, fontproperties=self.font_prop, fontsize=16, fontweight='bold', pad=20)
+                ax.set_xlabel('协议类型', fontproperties=self.font_prop, fontsize=12)
+                ax.set_ylabel('数据包数量', fontproperties=self.font_prop, fontsize=12)
+            else:
+                ax.set_title(title, fontsize=16, fontweight='bold', pad=20)
+                ax.set_xlabel('协议类型', fontsize=12)
+                ax.set_ylabel('数据包数量', fontsize=12)
             
             # 旋转x轴标签以避免重叠
             plt.xticks(rotation=45, ha='right')
@@ -346,9 +437,17 @@ class ChartGenerator:
             str: 生成的图片文件路径
         """
         try:
+            # 确保中文字体设置
+            self._ensure_chinese_font()
+            
             # 创建子图布局
             fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(16, 12))
-            fig.suptitle('网络流量分析仪表板', fontsize=20, fontweight='bold')
+            
+            # 设置主标题
+            if hasattr(self, 'font_prop') and self.font_prop:
+                fig.suptitle('网络流量分析仪表板', fontproperties=self.font_prop, fontsize=20, fontweight='bold')
+            else:
+                fig.suptitle('网络流量分析仪表板', fontsize=20, fontweight='bold')
             
             # 1. 协议分布饼图
             if 'protocol_distribution' in data:
@@ -356,8 +455,17 @@ class ChartGenerator:
                 protocols = list(protocol_data.keys())
                 counts = list(protocol_data.values())
                 
-                ax1.pie(counts, labels=protocols, autopct='%1.1f%%', startangle=90)
-                ax1.set_title('协议分布', fontsize=14, fontweight='bold')
+                wedges, texts, autotexts = ax1.pie(counts, labels=protocols, autopct='%1.1f%%', startangle=90)
+                
+                # 设置字体
+                if hasattr(self, 'font_prop') and self.font_prop:
+                    ax1.set_title('协议分布', fontproperties=self.font_prop, fontsize=14, fontweight='bold')
+                    for text in texts:
+                        text.set_fontproperties(self.font_prop)
+                    for autotext in autotexts:
+                        autotext.set_fontproperties(self.font_prop)
+                else:
+                    ax1.set_title('协议分布', fontsize=14, fontweight='bold')
             
             # 2. 流量趋势线图
             if 'traffic_trends' in data:
@@ -365,9 +473,15 @@ class ChartGenerator:
                 if 'time_data' in trends and 'packet_counts' in trends:
                     ax2.plot(trends['time_data'], trends['packet_counts'], 
                             color='#007acc', linewidth=2)
-                    ax2.set_title('流量趋势', fontsize=14, fontweight='bold')
-                    ax2.set_xlabel('时间')
-                    ax2.set_ylabel('数据包数量')
+                    
+                    if hasattr(self, 'font_prop') and self.font_prop:
+                        ax2.set_title('流量趋势', fontproperties=self.font_prop, fontsize=14, fontweight='bold')
+                        ax2.set_xlabel('时间', fontproperties=self.font_prop)
+                        ax2.set_ylabel('数据包数量', fontproperties=self.font_prop)
+                    else:
+                        ax2.set_title('流量趋势', fontsize=14, fontweight='bold')
+                        ax2.set_xlabel('时间')
+                        ax2.set_ylabel('数据包数量')
             
             # 3. Top协议条形图
             if 'top_protocols' in data:
@@ -376,17 +490,29 @@ class ChartGenerator:
                 counts = [item[1] for item in top_data]
                 
                 ax3.bar(protocols, counts, color='lightcoral')
-                ax3.set_title('Top协议', fontsize=14, fontweight='bold')
-                ax3.set_xlabel('协议')
-                ax3.set_ylabel('数据包数量')
+                
+                if hasattr(self, 'font_prop') and self.font_prop:
+                    ax3.set_title('Top协议', fontproperties=self.font_prop, fontsize=14, fontweight='bold')
+                    ax3.set_xlabel('协议', fontproperties=self.font_prop)
+                    ax3.set_ylabel('数据包数量', fontproperties=self.font_prop)
+                else:
+                    ax3.set_title('Top协议', fontsize=14, fontweight='bold')
+                    ax3.set_xlabel('协议')
+                    ax3.set_ylabel('数据包数量')
+                    
                 plt.setp(ax3.get_xticklabels(), rotation=45, ha='right')
             
             # 4. 数据包大小分布
             if 'packet_sizes' in data:
                 sizes = data['packet_sizes']
                 ax4.hist(sizes, bins=30, color='lightgreen', alpha=0.7)
-                ax4.set_title('数据包大小分布', fontsize=14, fontweight='bold')
-                ax4.set_xlabel('大小 (字节)')
+                
+                if hasattr(self, 'font_prop') and self.font_prop:
+                    ax4.set_title('数据包大小分布', fontproperties=self.font_prop, fontsize=14, fontweight='bold')
+                    ax4.set_xlabel('大小 (字节)', fontproperties=self.font_prop)
+                else:
+                    ax4.set_title('数据包大小分布', fontsize=14, fontweight='bold')
+                    ax4.set_xlabel('大小 (字节)')
                 ax4.set_ylabel('频次')
             
             # 调整布局

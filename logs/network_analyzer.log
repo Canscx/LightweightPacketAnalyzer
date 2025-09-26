@@ -2185,3 +2185,123 @@ sqlite3.OperationalError: no such column: packet_fingerprint
 2025-09-26 21:21:49,797 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
 2025-09-26 21:21:50,022 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
 2025-09-26 21:21:50,023 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-26 23:35:57,132 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-26 23:35:57,133 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-26 23:35:57,135 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-26 23:35:57,136 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-26 23:35:57,136 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-26 23:35:57,138 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-26 23:35:57,138 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-26 23:35:57,138 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-26 23:35:57,138 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-26 23:35:57,242 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-26 23:36:01,538 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-26 23:36:01,539 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-26 23:36:01,645 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 92, 数据包数: 1000
+2025-09-26 23:36:01,645 - network_analyzer.gui.main_window - INFO - 成功打开会话: 92
+2025-09-26 23:36:03,483 - network_analyzer.gui.chart_manager - INFO - 图表管理器初始化完成
+2025-09-26 23:36:03,493 - network_analyzer.gui.chart_manager - INFO - 开始创建趋势图表，数据: True
+2025-09-26 23:36:03,493 - network_analyzer.gui.chart_manager - INFO - 时间戳数量: 301, 协议数量: 4
+2025-09-26 23:36:03,554 - network_analyzer.gui.chart_manager - INFO - 共创建 4 条趋势线
+2025-09-26 23:36:03,603 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已启动
+2025-09-26 23:36:03,603 - network_analyzer.gui.traffic_trends_dialog - INFO - 流量趋势对话框初始化完成
+2025-09-26 23:36:03,609 - network_analyzer.gui.main_window - INFO - 流量趋势对话框已打开
+2025-09-26 23:36:04,631 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已停止
+2025-09-26 23:36:04,633 - network_analyzer.gui.chart_manager - INFO - 图表管理器已销毁
+2025-09-26 23:36:04,721 - network_analyzer.gui.traffic_trends_dialog - INFO - 流量趋势对话框已关闭
+2025-09-26 23:36:12,548 - network_analyzer.utils.font_config - INFO - 成功设置中文字体: Microsoft YaHei
+2025-09-26 23:36:12,548 - network_analyzer.utils.font_config - WARNING - 清理字体缓存失败: module 'matplotlib.font_manager' has no attribute '_rebuild'
+2025-09-26 23:36:12,656 - network_analyzer.reports.generators.pdf_generator - INFO - 成功注册中文字体: C:/Windows/Fonts/msyh.ttc
+2025-09-26 23:36:12,657 - network_analyzer.reports.report_generator - INFO - 报告生成器子模块初始化完成
+2025-09-26 23:36:28,029 - network_analyzer.reports.data_collector - INFO - 开始收集会话 88 的报告数据
+2025-09-26 23:36:28,041 - network_analyzer.reports.data_collector - INFO - 会话 88 数据收集完成
+2025-09-26 23:36:32,854 - network_analyzer.reports.report_generator - INFO - 开始生成会话 88 的报告
+2025-09-26 23:36:32,858 - network_analyzer.reports.data_collector - INFO - 开始收集会话 88 的报告数据
+2025-09-26 23:36:32,871 - network_analyzer.reports.data_collector - INFO - 会话 88 数据收集完成
+2025-09-26 23:36:33,189 - network_analyzer.reports.charts.chart_generator - INFO - 协议饼图生成成功: D:\项目\计算机网络课设\reports\charts\protocol_pie_20250926_233632.png
+2025-09-26 23:36:33,544 - network_analyzer.reports.charts.chart_generator - INFO - 流量趋势图生成成功: D:\项目\计算机网络课设\reports\charts\traffic_trend_20250926_233633.png
+2025-09-26 23:36:33,831 - network_analyzer.reports.charts.chart_generator - INFO - Top协议条形图生成成功: D:\项目\计算机网络课设\reports\charts\top_protocols_20250926_233633.png
+2025-09-26 23:36:34,821 - network_analyzer.reports.charts.chart_generator - INFO - 组合图表生成成功: D:\项目\计算机网络课设\reports\charts\dashboard_20250926_233633.png
+2025-09-26 23:36:34,822 - network_analyzer.reports.report_generator - INFO - 生成了 4 个图表
+2025-09-26 23:36:35,288 - network_analyzer.reports.generators.pdf_generator - INFO - PDF报告生成成功: D:\项目\计算机网络课设\reports\network_analysis_report_20250926_233634.pdf
+2025-09-26 23:36:35,292 - network_analyzer.reports.generators.html_generator - INFO - HTML报告生成成功: D:\项目\计算机网络课设\reports\network_analysis_report_20250926_233635.html
+2025-09-26 23:36:35,293 - network_analyzer.reports.generators.csv_generator - INFO - 协议统计CSV导出成功: D:\项目\计算机网络课设\reports\network_analysis_20250926_233635_protocols.csv
+2025-09-26 23:36:35,299 - network_analyzer.reports.generators.csv_generator - INFO - 流量趋势CSV导出成功: D:\项目\计算机网络课设\reports\network_analysis_20250926_233635_traffic.csv
+2025-09-26 23:36:35,300 - network_analyzer.reports.generators.csv_generator - INFO - 会话汇总CSV导出成功: D:\项目\计算机网络课设\reports\network_analysis_20250926_233635_summary.csv
+2025-09-26 23:36:35,300 - network_analyzer.reports.generators.csv_generator - INFO - 多文件CSV导出完成: 3 个文件
+2025-09-26 23:36:35,300 - network_analyzer.reports.report_generator - INFO - 会话 88 报告生成完成
+2025-09-26 23:39:11,373 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-26 23:39:11,373 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-26 23:39:11,374 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-26 23:39:11,374 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-26 23:39:11,374 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-26 23:51:12,067 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-26 23:51:12,067 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-26 23:51:12,069 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-26 23:51:12,070 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-26 23:51:12,070 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-26 23:51:12,072 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-26 23:51:12,072 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-26 23:51:12,072 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-26 23:51:12,072 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-26 23:51:12,159 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-26 23:51:17,707 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-26 23:51:17,707 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-26 23:51:17,723 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 89, 数据包数: 160
+2025-09-26 23:51:17,724 - network_analyzer.gui.main_window - INFO - 成功打开会话: 89
+2025-09-26 23:51:19,611 - network_analyzer.reports.charts.chart_generator - INFO - 成功设置中文字体: Microsoft YaHei
+2025-09-26 23:51:19,719 - network_analyzer.reports.generators.pdf_generator - INFO - 成功注册中文字体: C:/Windows/Fonts/msyh.ttc
+2025-09-26 23:51:19,719 - network_analyzer.reports.report_generator - INFO - 报告生成器子模块初始化完成
+2025-09-26 23:51:34,538 - network_analyzer.reports.data_collector - INFO - 开始收集会话 88 的报告数据
+2025-09-26 23:51:34,552 - network_analyzer.reports.data_collector - INFO - 会话 88 数据收集完成
+2025-09-26 23:51:38,134 - network_analyzer.reports.report_generator - INFO - 开始生成会话 88 的报告
+2025-09-26 23:51:38,138 - network_analyzer.reports.data_collector - INFO - 开始收集会话 88 的报告数据
+2025-09-26 23:51:38,152 - network_analyzer.reports.data_collector - INFO - 会话 88 数据收集完成
+2025-09-26 23:51:38,473 - network_analyzer.reports.charts.chart_generator - INFO - 协议饼图生成成功: D:\项目\计算机网络课设\reports\charts\protocol_pie_20250926_235138.png
+2025-09-26 23:51:38,845 - network_analyzer.reports.charts.chart_generator - INFO - 流量趋势图生成成功: D:\项目\计算机网络课设\reports\charts\traffic_trend_20250926_235138.png
+2025-09-26 23:51:39,125 - network_analyzer.reports.charts.chart_generator - INFO - Top协议条形图生成成功: D:\项目\计算机网络课设\reports\charts\top_protocols_20250926_235138.png
+2025-09-26 23:51:40,088 - network_analyzer.reports.charts.chart_generator - INFO - 组合图表生成成功: D:\项目\计算机网络课设\reports\charts\dashboard_20250926_235139.png
+2025-09-26 23:51:40,088 - network_analyzer.reports.report_generator - INFO - 生成了 4 个图表
+2025-09-26 23:51:40,554 - network_analyzer.reports.generators.pdf_generator - INFO - PDF报告生成成功: D:\项目\计算机网络课设\reports\network_analysis_report_20250926_235140.pdf
+2025-09-26 23:51:40,559 - network_analyzer.reports.generators.html_generator - INFO - HTML报告生成成功: D:\项目\计算机网络课设\reports\network_analysis_report_20250926_235140.html
+2025-09-26 23:51:40,561 - network_analyzer.reports.generators.csv_generator - INFO - CSV报告导出成功: D:\项目\计算机网络课设\reports\network_analysis_data_20250926_235140.csv
+2025-09-26 23:51:40,562 - network_analyzer.reports.report_generator - INFO - 会话 88 报告生成完成
+2025-09-27 00:01:17,409 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-27 00:01:17,409 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-27 00:01:17,410 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-27 00:01:17,410 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-27 00:01:17,410 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-27 00:01:17,576 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-27 00:01:17,577 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-27 00:02:11,045 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-27 00:02:11,045 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-27 00:02:11,047 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-27 00:02:11,049 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-27 00:02:11,050 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-27 00:02:11,050 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-27 00:02:11,051 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-27 00:02:11,051 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-27 00:02:11,051 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-27 00:02:11,146 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-27 00:02:13,707 - network_analyzer.reports.charts.chart_generator - INFO - 找到中文字体文件: C:\Windows\Fonts\msyh.ttc
+2025-09-27 00:02:13,709 - network_analyzer.reports.charts.chart_generator - INFO - 应用系统字体: Microsoft YaHei
+2025-09-27 00:02:13,814 - network_analyzer.reports.generators.pdf_generator - INFO - 成功注册中文字体: C:/Windows/Fonts/msyh.ttc
+2025-09-27 00:02:13,815 - network_analyzer.reports.report_generator - INFO - 报告生成器子模块初始化完成
+2025-09-27 00:02:19,590 - network_analyzer.reports.data_collector - INFO - 开始收集会话 86 的报告数据
+2025-09-27 00:02:19,597 - network_analyzer.reports.data_collector - INFO - 会话 86 数据收集完成
+2025-09-27 00:02:20,874 - network_analyzer.reports.report_generator - INFO - 开始生成会话 86 的报告
+2025-09-27 00:02:20,878 - network_analyzer.reports.data_collector - INFO - 开始收集会话 86 的报告数据
+2025-09-27 00:02:20,887 - network_analyzer.reports.data_collector - INFO - 会话 86 数据收集完成
+2025-09-27 00:02:20,887 - network_analyzer.reports.charts.chart_generator - INFO - 应用系统字体: Microsoft YaHei
+2025-09-27 00:02:21,239 - network_analyzer.reports.charts.chart_generator - INFO - 协议饼图生成成功: D:\项目\计算机网络课设\reports\charts\protocol_pie_20250927_000220.png
+2025-09-27 00:02:21,239 - network_analyzer.reports.charts.chart_generator - INFO - 应用系统字体: Microsoft YaHei
+2025-09-27 00:02:21,631 - network_analyzer.reports.charts.chart_generator - INFO - 流量趋势图生成成功: D:\项目\计算机网络课设\reports\charts\traffic_trend_20250927_000221.png
+2025-09-27 00:02:21,632 - network_analyzer.reports.charts.chart_generator - INFO - 应用系统字体: Microsoft YaHei
+2025-09-27 00:02:21,934 - network_analyzer.reports.charts.chart_generator - INFO - Top协议条形图生成成功: D:\项目\计算机网络课设\reports\charts\top_protocols_20250927_000221.png
+2025-09-27 00:02:21,935 - network_analyzer.reports.charts.chart_generator - INFO - 应用系统字体: Microsoft YaHei
+2025-09-27 00:02:22,966 - network_analyzer.reports.charts.chart_generator - INFO - 组合图表生成成功: D:\项目\计算机网络课设\reports\charts\dashboard_20250927_000222.png
+2025-09-27 00:02:22,966 - network_analyzer.reports.report_generator - INFO - 生成了 4 个图表
+2025-09-27 00:02:23,454 - network_analyzer.reports.generators.pdf_generator - INFO - PDF报告生成成功: D:\项目\计算机网络课设\reports\network_analysis_report_20250927_000222.pdf
+2025-09-27 00:02:23,461 - network_analyzer.reports.generators.html_generator - INFO - HTML报告生成成功: D:\项目\计算机网络课设\reports\network_analysis_report_20250927_000223.html
+2025-09-27 00:02:23,463 - network_analyzer.reports.generators.csv_generator - INFO - CSV报告导出成功: D:\项目\计算机网络课设\reports\network_analysis_data_20250927_000223.csv
+2025-09-27 00:02:23,472 - network_analyzer.reports.report_generator - INFO - 会话 86 报告生成完成
