@@ -21,6 +21,7 @@ from network_analyzer.analysis.protocol_parser import ProtocolParser
 from network_analyzer.analysis.packet_formatter import PacketFormatter
 from network_analyzer.analysis.packet_cache import packet_cache
 from network_analyzer.gui.components.capture_options_dialog import show_capture_options_dialog
+from network_analyzer.gui.dialogs.settings_dialog import SettingsDialog
 
 
 class SessionDialog:
@@ -1493,8 +1494,60 @@ class MainWindow:
             messagebox.showinfo("完成", f"已清理 {deleted_count} 条旧记录")
     
     def _show_settings(self) -> None:
-        """显示设置"""
-        messagebox.showinfo("提示", "设置功能将在后续版本中实现")
+        """显示设置对话框"""
+        try:
+            dialog = SettingsDialog(self.root, self.settings, self)
+            result = dialog.show()
+            
+            if result:
+                # 设置已保存，重新加载配置
+                self.reload_settings()
+                self.logger.info("设置已更新并应用")
+                
+        except Exception as e:
+            self.logger.error(f"显示设置对话框失败: {e}")
+            messagebox.showerror("错误", f"显示设置对话框失败: {e}")
+    
+    def reload_settings(self) -> None:
+        """重新加载设置"""
+        try:
+            # 重新创建Settings实例
+            old_env_file = self.settings.env_file
+            self.settings = Settings(old_env_file)
+            
+            # 应用立即生效的设置
+            self._apply_immediate_settings()
+            
+            self.logger.info("设置已重新加载")
+            
+        except Exception as e:
+            self.logger.error(f"重新加载设置失败: {e}")
+    
+    def _apply_immediate_settings(self) -> None:
+        """应用立即生效的设置"""
+        try:
+            immediate_settings = self.settings.get_immediate_settings()
+            
+            # 应用窗口大小
+            if 'WINDOW_WIDTH' in immediate_settings and 'WINDOW_HEIGHT' in immediate_settings:
+                width = immediate_settings['WINDOW_WIDTH']
+                height = immediate_settings['WINDOW_HEIGHT']
+                self.root.geometry(f"{width}x{height}")
+                self.logger.info(f"窗口大小已更新为: {width}x{height}")
+            
+            # 应用主题（如果支持）
+            if 'THEME' in immediate_settings:
+                theme = immediate_settings['THEME']
+                try:
+                    style = ttk.Style()
+                    if theme in style.theme_names():
+                        style.theme_use(theme)
+                        self.logger.info(f"主题已更新为: {theme}")
+                except Exception as theme_error:
+                    self.logger.warning(f"应用主题失败: {theme_error}")
+            
+        except Exception as error:
+            self.logger.error(f"应用立即生效设置失败: {error}")
     
     def _show_help(self) -> None:
         """显示帮助"""

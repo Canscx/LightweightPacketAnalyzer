@@ -1953,3 +1953,138 @@ sqlite3.OperationalError: no such column: packet_fingerprint
 2025-09-25 23:29:58,644 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
 2025-09-25 23:29:58,644 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
 2025-09-25 23:29:58,644 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-26 19:48:57,427 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-26 19:48:57,428 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-26 19:48:57,429 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-26 19:48:57,437 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-26 19:48:57,437 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-26 19:48:57,437 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-26 19:48:57,437 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-26 19:48:57,438 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-26 19:48:57,438 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-26 19:48:57,619 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-26 19:49:05,840 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-26 19:49:05,842 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-26 19:49:05,847 - network_analyzer.gui.main_window - INFO - DataProcessor session_id已更新为: 89
+2025-09-26 19:49:06,388 - root - INFO - 新会话创建成功: 123 (ID: 89)
+2025-09-26 19:49:07,139 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-26 19:49:07,139 - network_analyzer.gui.main_window - INFO - 开始捕获时DataProcessor session_id已设置为: 89
+2025-09-26 19:49:07,140 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-26 19:49:07,479 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 19:49:07,782 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 19:49:07,818 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 247 个数据包, 耗时: 0.68 秒
+2025-09-26 19:49:07,824 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-26 19:49:07,992 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 19:49:10,006 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 19:49:36,410 - network_analyzer.gui.main_window - INFO - 会话数据保存成功: ID=89, 数据包=160, 字节数=77162
+2025-09-26 19:49:37,219 - network_analyzer.gui.main_window - INFO - 通过菜单保存会话成功
+2025-09-26 19:49:39,772 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-26 19:49:39,773 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-26 19:49:39,785 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 89, 数据包数: 160
+2025-09-26 19:49:39,785 - network_analyzer.gui.main_window - INFO - 成功打开会话: 89
+2025-09-26 19:50:21,064 - network_analyzer.gui.components.filter_template_manager - INFO - 加载了 21 个默认过滤器模板
+2025-09-26 19:50:23,738 - network_analyzer.gui.components.interface_info_provider - INFO - 发现 13 个网络接口
+2025-09-26 19:50:23,738 - network_analyzer.gui.components.capture_options_dialog - INFO - 刷新了 13 个网络接口
+2025-09-26 19:50:27,998 - network_analyzer.gui.main_window - INFO - 用户取消了捕获选项配置
+2025-09-26 19:51:25,160 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-26 19:51:25,160 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-26 19:51:25,162 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-26 19:51:25,162 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-26 19:51:25,162 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-26 19:56:15,672 - root - INFO - 用户中断程序
+2025-09-26 19:56:15,775 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-26 19:56:15,777 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-26 20:37:33,980 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-26 20:37:33,981 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-26 20:37:33,983 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-26 20:37:33,985 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-26 20:37:33,985 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-26 20:37:33,985 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-26 20:37:33,985 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-26 20:37:33,985 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-26 20:37:33,986 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-26 20:37:34,088 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-26 20:37:36,544 - network_analyzer.gui.dialogs.settings_dialog - INFO - 当前配置已加载到设置对话框
+2025-09-26 20:37:39,740 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-26 20:37:39,740 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-26 20:37:39,740 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-26 20:38:26,489 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-26 20:38:26,492 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-26 20:38:26,492 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-26 20:38:26,492 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-26 20:38:31,208 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-26 20:38:31,211 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-26 20:38:31,211 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-26 20:38:31,211 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-26 20:38:34,437 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-26 20:38:34,440 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-26 20:38:34,440 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-26 20:38:34,440 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-26 20:38:39,103 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-26 20:38:39,105 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-26 20:38:39,106 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-26 20:38:39,106 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-26 20:38:42,069 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-26 20:38:42,071 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-26 20:38:42,072 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-26 20:38:42,072 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-26 20:39:01,083 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-26 20:39:01,086 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-26 20:39:01,086 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-26 20:39:01,086 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-26 20:39:01,152 - network_analyzer.gui.main_window - INFO - 窗口大小已更新为: 1600x1000
+2025-09-26 20:39:01,152 - network_analyzer.gui.main_window - INFO - 主题已更新为: clam
+2025-09-26 20:39:01,152 - network_analyzer.gui.main_window - INFO - 设置已重新加载
+2025-09-26 20:39:01,152 - network_analyzer.gui.main_window - INFO - 设置已更新并应用
+2025-09-26 20:39:10,893 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-26 20:39:10,893 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-26 20:39:10,897 - network_analyzer.gui.main_window - INFO - DataProcessor session_id已更新为: 90
+2025-09-26 20:39:11,720 - root - INFO - 新会话创建成功: 1122331 (ID: 90)
+2025-09-26 20:39:12,413 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-26 20:39:12,414 - network_analyzer.gui.main_window - INFO - 开始捕获时DataProcessor session_id已设置为: 90
+2025-09-26 20:39:12,414 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-26 20:39:12,824 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 20:39:13,027 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 20:39:13,128 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 187 个数据包, 耗时: 0.72 秒
+2025-09-26 20:39:13,133 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-26 20:39:13,277 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 20:39:15,284 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 20:39:23,534 - network_analyzer.gui.dialogs.settings_dialog - INFO - 当前配置已加载到设置对话框
+2025-09-26 20:39:26,223 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-26 20:39:26,225 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-26 20:39:26,226 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-26 20:39:26,226 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-26 20:39:26,291 - network_analyzer.gui.main_window - INFO - 窗口大小已更新为: 1600x1000
+2025-09-26 20:39:26,291 - network_analyzer.gui.main_window - INFO - 主题已更新为: clam
+2025-09-26 20:39:26,291 - network_analyzer.gui.main_window - INFO - 设置已重新加载
+2025-09-26 20:39:26,291 - network_analyzer.gui.main_window - INFO - 设置已更新并应用
+2025-09-26 20:39:28,757 - network_analyzer.gui.dialogs.settings_dialog - INFO - 当前配置已加载到设置对话框
+2025-09-26 20:39:30,746 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-26 20:39:30,748 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-26 20:39:30,748 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-26 20:39:30,748 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-26 20:39:33,433 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-26 20:39:33,435 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-26 20:39:33,435 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-26 20:39:33,436 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-26 20:39:38,911 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-26 20:39:38,913 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-26 20:39:38,915 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-26 20:39:38,915 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-26 20:39:38,974 - network_analyzer.gui.main_window - INFO - 窗口大小已更新为: 1600x1000
+2025-09-26 20:39:38,974 - network_analyzer.gui.main_window - INFO - 主题已更新为: clam
+2025-09-26 20:39:38,976 - network_analyzer.gui.main_window - INFO - 设置已重新加载
+2025-09-26 20:39:38,976 - network_analyzer.gui.main_window - INFO - 设置已更新并应用
+2025-09-26 20:39:43,563 - network_analyzer.gui.dialogs.settings_dialog - INFO - 当前配置已加载到设置对话框
+2025-09-26 20:39:48,288 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-26 20:39:48,290 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-26 20:39:48,291 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-26 20:39:48,292 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-26 20:40:25,143 - network_analyzer.gui.dialogs.settings_dialog - INFO - 当前配置已加载到设置对话框
+2025-09-26 20:40:42,346 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-26 20:40:42,346 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-26 20:40:42,346 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-26 20:40:42,346 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-26 20:40:42,347 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-26 20:40:42,473 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-26 20:40:42,474 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭

@@ -1,0 +1,96 @@
+Date : 2025-09-25 23:30:56
+Directory : d:\项目\计算机网络课设
+Total : 49 files,  8119 codes, 1183 comments, 2068 blanks, all 11370 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| Python   |         22 |      4,029 |      1,183 |      1,066 |      6,278 |
+| Markdown |         25 |      3,816 |          0 |      1,002 |      4,818 |
+| Log      |          1 |        268 |          0 |          0 |        268 |
+| JSON     |          1 |          6 |          0 |          0 |          6 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                   | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                      |         49 |      8,119 |      1,183 |      2,068 |     11,370 |
+| .cunzhi-memory                                                                                         |          5 |         10 |          0 |          8 |         18 |
+| LightweightPacketAnalyzer                                                                              |         34 |      5,999 |      1,183 |      1,565 |      8,747 |
+| LightweightPacketAnalyzer (Files)                                                                      |          8 |      1,372 |        248 |        404 |      2,024 |
+| LightweightPacketAnalyzer\docs                                                                         |         12 |      1,970 |          0 |        499 |      2,469 |
+| LightweightPacketAnalyzer\docs\协议统计                                                                    |          3 |        406 |          0 |         96 |        502 |
+| LightweightPacketAnalyzer\docs\导出数据统计指标修复                                                              |          2 |        230 |          0 |         71 |        301 |
+| LightweightPacketAnalyzer\docs\捕获选项功能                                                                  |          7 |      1,334 |          0 |        332 |      1,666 |
+| LightweightPacketAnalyzer\src                                                                          |         13 |      2,360 |        864 |        582 |      3,806 |
+| LightweightPacketAnalyzer\src\network_analyzer                                                         |         13 |      2,360 |        864 |        582 |      3,806 |
+| LightweightPacketAnalyzer\src\network_analyzer\config                                                  |          1 |         23 |          9 |          3 |         35 |
+| LightweightPacketAnalyzer\src\network_analyzer\gui                                                     |          8 |      1,707 |        484 |        432 |      2,623 |
+| LightweightPacketAnalyzer\src\network_analyzer\gui (Files)                                             |          1 |        159 |          0 |          0 |        159 |
+| LightweightPacketAnalyzer\src\network_analyzer\gui\components                                          |          5 |      1,199 |        378 |        329 |      1,906 |
+| LightweightPacketAnalyzer\src\network_analyzer\gui\dialogs                                             |          2 |        349 |        106 |        103 |        558 |
+| LightweightPacketAnalyzer\src\network_analyzer\statistics                                              |          3 |        573 |        237 |        136 |        946 |
+| LightweightPacketAnalyzer\src\network_analyzer\storage                                                 |          1 |         57 |        134 |         11 |        202 |
+| LightweightPacketAnalyzer\tests                                                                        |          1 |        297 |         71 |         80 |        448 |
+| docs                                                                                                   |          9 |      1,842 |          0 |        495 |      2,337 |
+| docs\剩余功能实现                                                                                            |          9 |      1,842 |          0 |        495 |      2,337 |
+| logs                                                                                                   |          1 |        268 |          0 |          0 |        268 |
++--------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                               | language | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| d:\项目\计算机网络课设\.cunzhi-memory\context.md                                                                | Markdown |          1 |          0 |          2 |          3 |
+| d:\项目\计算机网络课设\.cunzhi-memory\metadata.json                                                             | JSON     |          6 |          0 |          0 |          6 |
+| d:\项目\计算机网络课设\.cunzhi-memory\patterns.md                                                               | Markdown |          1 |          0 |          2 |          3 |
+| d:\项目\计算机网络课设\.cunzhi-memory\preferences.md                                                            | Markdown |          1 |          0 |          2 |          3 |
+| d:\项目\计算机网络课设\.cunzhi-memory\rules.md                                                                  | Markdown |          1 |          0 |          2 |          3 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\docs\协议统计\ACCEPTANCE_协议统计.md                                   | Markdown |        210 |          0 |         46 |        256 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\docs\协议统计\FIX_REPORT_CSVExport.md                              | Markdown |        116 |          0 |         35 |        151 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\docs\协议统计\FIX_REPORT_ChartDisplay.md                           | Markdown |         80 |          0 |         15 |         95 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\docs\导出数据统计指标修复\FINAL_导出数据统计指标修复.md                            | Markdown |        121 |          0 |         37 |        158 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\docs\导出数据统计指标修复\TODO_导出数据统计指标修复.md                             | Markdown |        109 |          0 |         34 |        143 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\docs\捕获选项功能\ACCEPTANCE_捕获选项功能.md                               | Markdown |         99 |          0 |         21 |        120 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\docs\捕获选项功能\ALIGNMENT_捕获选项功能.md                                | Markdown |        148 |          0 |         34 |        182 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\docs\捕获选项功能\CONSENSUS_捕获选项功能.md                                | Markdown |        113 |          0 |         28 |        141 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\docs\捕获选项功能\DESIGN_捕获选项功能.md                                   | Markdown |        325 |          0 |         77 |        402 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\docs\捕获选项功能\FINAL_捕获选项功能.md                                    | Markdown |        144 |          0 |         38 |        182 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\docs\捕获选项功能\TASK_捕获选项功能.md                                     | Markdown |        360 |          0 |         90 |        450 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\docs\捕获选项功能\TODO_捕获选项功能.md                                     | Markdown |        145 |          0 |         44 |        189 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\config\settings.py                        | Python   |         23 |          9 |          3 |         35 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\gui\components\__init__.py                | Python   |          8 |          5 |          2 |         15 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\gui\components\bpf_validator.py           | Python   |        211 |         59 |         57 |        327 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\gui\components\capture_options_dialog.py  | Python   |        438 |        121 |        148 |        707 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\gui\components\filter_template_manager.py | Python   |        304 |         90 |         63 |        457 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\gui\components\interface_info_provider.py | Python   |        238 |        103 |         59 |        400 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\gui\dialogs\__init__.py                   | Python   |          2 |          6 |          2 |         10 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\gui\dialogs\protocol_stats_dialog.py      | Python   |        347 |        100 |        101 |        548 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\gui\main_window.py                        | Python   |        159 |          0 |          0 |        159 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\statistics\__init__.py                    | Python   |          3 |          5 |          2 |         10 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\statistics\protocol_statistics.py         | Python   |        259 |         91 |         53 |        403 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\statistics\statistics_visualizer.py       | Python   |        311 |        141 |         81 |        533 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\storage\data_manager.py                   | Python   |         57 |        134 |         11 |        202 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\test_csv_export_fix.py                                         | Python   |        118 |         20 |         27 |        165 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\test_protocol_statistics.py                                    | Python   |        143 |         22 |         34 |        199 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\test_protocol_statistics_core.py                               | Python   |        229 |         36 |         61 |        326 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\test_protocol_stats_comprehensive.py                           | Python   |        324 |         49 |         91 |        464 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\test_protocol_stats_dialog.py                                  | Python   |         86 |         22 |         35 |        143 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\test_protocol_stats_fix.py                                     | Python   |         72 |         16 |         23 |        111 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\test_protocol_stats_simple.py                                  | Python   |        171 |         32 |         52 |        255 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\test_statistics_visualizer.py                                  | Python   |        229 |         51 |         81 |        361 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\tests\test_capture_options.py                                  | Python   |        297 |         71 |         80 |        448 |
+| d:\项目\计算机网络课设\docs\剩余功能实现\ACCEPTANCE_协议统计.md                                                           | Markdown |        325 |          0 |         74 |        399 |
+| d:\项目\计算机网络课设\docs\剩余功能实现\ALIGNMENT_剩余功能实现.md                                                          | Markdown |        135 |          0 |         39 |        174 |
+| d:\项目\计算机网络课设\docs\剩余功能实现\APPROVAL_协议统计.md                                                             | Markdown |        167 |          0 |         57 |        224 |
+| d:\项目\计算机网络课设\docs\剩余功能实现\DESIGN_协议统计.md                                                               | Markdown |        320 |          0 |         88 |        408 |
+| d:\项目\计算机网络课设\docs\剩余功能实现\FINAL_协议统计.md                                                                | Markdown |        187 |          0 |         52 |        239 |
+| d:\项目\计算机网络课设\docs\剩余功能实现\FIX_REPORT_ChartConfig.md                                                    | Markdown |        124 |          0 |         31 |        155 |
+| d:\项目\计算机网络课设\docs\剩余功能实现\TASK_协议统计.md                                                                 | Markdown |        247 |          0 |         65 |        312 |
+| d:\项目\计算机网络课设\docs\剩余功能实现\TODO_协议统计.md                                                                 | Markdown |        169 |          0 |         40 |        209 |
+| d:\项目\计算机网络课设\docs\剩余功能实现\VERIFICATION_协议统计.md                                                         | Markdown |        168 |          0 |         49 |        217 |
+| d:\项目\计算机网络课设\logs\network_analyzer.log                                                                | Log      |        268 |          0 |          0 |        268 |
+| Total                                                                                                  |          |      8,119 |      1,183 |      2,068 |     11,370 |
++--------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
