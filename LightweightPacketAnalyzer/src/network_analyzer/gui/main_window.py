@@ -22,6 +22,7 @@ from network_analyzer.analysis.packet_formatter import PacketFormatter
 from network_analyzer.analysis.packet_cache import packet_cache
 from network_analyzer.gui.components.capture_options_dialog import show_capture_options_dialog
 from network_analyzer.gui.dialogs.settings_dialog import SettingsDialog
+from network_analyzer.gui.dialogs.report_generation_dialog import show_report_generation_dialog
 from network_analyzer.gui.traffic_trends_dialog import TrafficTrendsDialog
 
 
@@ -1484,7 +1485,12 @@ class MainWindow:
     
     def _generate_report(self) -> None:
         """生成报告"""
-        messagebox.showinfo("提示", "生成报告功能将在后续版本中实现")
+        try:
+            show_report_generation_dialog(self.root, self.data_manager)
+        except Exception as e:
+            error_msg = f"打开报告生成对话框失败: {e}"
+            self.logger.error(error_msg)
+            messagebox.showerror("错误", error_msg)
     
     def _database_management(self) -> None:
         """数据库管理"""

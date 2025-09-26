@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}网络分析报告{% endblock %}</title>
+    <link rel="stylesheet" href="static/css/report.css">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <div class="container">
+        <header class="report-header">
+            <h1>{% block header %}网络流量分析报告{% endblock %}</h1>
+            <div class="report-meta">
+                <p>生成时间: {{ generation_time }}</p>
+                <p>会话信息: {{ session_info.name }}</p>
+            </div>
+        </header>
+        
+        <main class="report-content">
+            {% block content %}{% endblock %}
+        </main>
+        
+        <footer class="report-footer">
+            <p>由轻量级数据包分析器生成</p>
+        </footer>
+    </div>
+    
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
