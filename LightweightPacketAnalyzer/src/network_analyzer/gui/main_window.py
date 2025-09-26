@@ -22,6 +22,7 @@ from network_analyzer.analysis.packet_formatter import PacketFormatter
 from network_analyzer.analysis.packet_cache import packet_cache
 from network_analyzer.gui.components.capture_options_dialog import show_capture_options_dialog
 from network_analyzer.gui.dialogs.settings_dialog import SettingsDialog
+from network_analyzer.gui.traffic_trends_dialog import TrafficTrendsDialog
 
 
 class SessionDialog:
@@ -1469,7 +1470,17 @@ class MainWindow:
     
     def _traffic_trends(self) -> None:
         """流量趋势"""
-        messagebox.showinfo("提示", "流量趋势功能将在后续版本中实现")
+        try:
+            # 创建并显示流量趋势对话框
+            trends_dialog = TrafficTrendsDialog(self.root, self.data_manager)
+            trends_dialog.show()
+            
+            self.logger.info("流量趋势对话框已打开")
+            
+        except Exception as e:
+            error_msg = f"打开流量趋势失败: {e}"
+            self.logger.error(error_msg)
+            messagebox.showerror("错误", error_msg)
     
     def _generate_report(self) -> None:
         """生成报告"""

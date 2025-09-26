@@ -665,6 +665,180 @@ class DataManager:
             self.logger.error(f"获取协议数量统计失败: {e}")
             return {}
     
+    def get_traffic_trends_data(self, 
+                               start_time: datetime, 
+                               end_time: datetime, 
+                               protocols: Optional[List[str]] = None,
+                               session_id: Optional[int] = None) -> Dict[str, Any]:
+        """
+        获取流量趋势数据，按秒聚合
+        
+        Args:
+            start_time: 开始时间
+            end_time: 结束时间
+            protocols: 协议列表，None表示所有协议
+            session_id: 会话ID过滤
+            
+        Returns:
+            {
+                'timestamps': [datetime, ...],
+                'data': {
+                    'TCP': {'counts': [int, ...], 'bytes': [int, ...]},
+                    'UDP': {'counts': [int, ...], 'bytes': [int, ...]},
+                    'ICMP': {'counts': [int, ...], 'bytes': [int, ...]},
+                    'DNS': {'counts': [int, ...], 'bytes': [int, ...]}
+                }
+            }
+        """
+        try:
+            start_timestamp = start_time.timestamp()
+            end_timestamp = end_time.timestamp()
+            
+            # 默认协议列表
+            if protocols is None:
+                protocols = ['TCP', 'UDP', 'ICMP', 'DNS']
+            
+            with self._get_connection() as conn:
+                cursor = conn.cursor()
+                
+                # 构建查询条件
+                where_conditions = ["timestamp >= ?", "timestamp <= ?"]
+                params = [start_timestamp, end_timestamp]
+                
+                if session_id is not None:
+                    where_conditions.append("session_id = ?")
+                    params.append(session_id)
+                
+                if protocols:
+                    protocol_placeholders = ','.join(['?' for _ in protocols])
+                    where_conditions.append(f"protocol IN ({protocol_placeholders})")
+                    params.extend(protocols)
+                
+                where_clause = " AND ".join(where_conditions)
+                
+                # 按秒聚合查询
+                query = f"""
+                    SELECT 
+                        CAST(timestamp AS INTEGER) as time_bucket,
+                        protocol,
+                        COUNT(*) as packet_count,
+                        SUM(length) as total_bytes
+                    FROM packets 
+                    WHERE {where_clause}
+                    GROUP BY time_bucket, protocol
+                    ORDER BY time_bucket ASC
+                """
+                
+                cursor.execute(query, params)
+                rows = cursor.fetchall()
+                
+                # 生成时间序列
+                time_range = int(end_timestamp - start_timestamp)
+                timestamps = []
+                for i in range(time_range + 1):
+                    timestamps.append(datetime.fromtimestamp(start_timestamp + i))
+                
+                # 初始化数据结构
+                data = {}
+                for protocol in protocols:
+                    data[protocol] = {
+                        'counts': [0] * len(timestamps),
+                        'bytes': [0] * len(timestamps)
+                    }
+                
+                # 填充数据
+                for row in rows:
+                    time_bucket = row[0]
+                    protocol = row[1]
+                    packet_count = row[2]
+                    total_bytes = row[3]
+                    
+                    # 计算时间索引
+                    time_index = int(time_bucket - start_timestamp)
+                    if 0 <= time_index < len(timestamps) and protocol in data:
+                        data[protocol]['counts'][time_index] = packet_count
+                        data[protocol]['bytes'][time_index] = total_bytes
+                
+                return {
+                    'timestamps': timestamps,
+                    'data': data
+                }
+                
+        except Exception as e:
+            self.logger.error(f"获取流量趋势数据失败: {e}")
+            return {
+                'timestamps': [],
+                'data': {protocol: {'counts': [], 'bytes': []} for protocol in (protocols or [])}
+            }
+    
+    def get_protocol_traffic_by_time(self, 
+                                   protocol: str,
+                                   start_time: datetime, 
+                                   end_time: datetime,
+                                   session_id: Optional[int] = None) -> List[Dict[str, Any]]:
+        """
+        获取指定协议的时间序列流量数据
+        
+        Args:
+            protocol: 协议名称
+            start_time: 开始时间
+            end_time: 结束时间
+            session_id: 会话ID过滤
+            
+        Returns:
+            [{'timestamp': datetime, 'count': int, 'bytes': int}, ...]
+        """
+        try:
+            start_timestamp = start_time.timestamp()
+            end_timestamp = end_time.timestamp()
+            
+            with self._get_connection() as conn:
+                cursor = conn.cursor()
+                
+                # 构建查询条件
+                where_conditions = [
+                    "timestamp >= ?", 
+                    "timestamp <= ?", 
+                    "protocol = ?"
+                ]
+                params = [start_timestamp, end_timestamp, protocol]
+                
+                if session_id is not None:
+                    where_conditions.append("session_id = ?")
+                    params.append(session_id)
+                
+                where_clause = " AND ".join(where_conditions)
+                
+                # 按秒聚合查询
+                query = f"""
+                    SELECT 
+                        CAST(timestamp AS INTEGER) as time_bucket,
+                        COUNT(*) as packet_count,
+                        SUM(length) as total_bytes
+                    FROM packets 
+                    WHERE {where_clause}
+                    GROUP BY time_bucket
+                    ORDER BY time_bucket ASC
+                """
+                
+                cursor.execute(query, params)
+                rows = cursor.fetchall()
+                
+                # 转换结果
+                result = []
+                for row in rows:
+                    result.append({
+                        'timestamp': datetime.fromtimestamp(row[0]),
+                        'count': row[1],
+                        'bytes': row[2]
+                    })
+                
+                return result
+                
+        except Exception as e:
+            self.logger.error(f"获取协议流量数据失败: {e}")
+            return []
+    
     def get_protocol_bytes(self, 
                           session_id: Optional[int] = None,
                           start_time: Optional[float] = None,

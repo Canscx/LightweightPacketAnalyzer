@@ -2088,3 +2088,100 @@ sqlite3.OperationalError: no such column: packet_fingerprint
 2025-09-26 20:40:42,347 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
 2025-09-26 20:40:42,473 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
 2025-09-26 20:40:42,474 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-26 21:20:57,560 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-26 21:20:57,560 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-26 21:20:57,562 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-26 21:20:57,565 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-26 21:20:57,565 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-26 21:20:57,565 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-26 21:20:57,566 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-26 21:20:57,566 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-26 21:20:57,566 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-26 21:20:57,684 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-26 21:21:01,424 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-26 21:21:01,424 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-26 21:21:01,439 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 92, 数据包数: 160
+2025-09-26 21:21:01,439 - network_analyzer.gui.main_window - INFO - 成功打开会话: 92
+2025-09-26 21:21:02,629 - network_analyzer.gui.chart_manager - INFO - 图表管理器初始化完成
+2025-09-26 21:21:02,642 - network_analyzer.gui.chart_manager - INFO - 开始创建趋势图表，数据: True
+2025-09-26 21:21:02,643 - network_analyzer.gui.chart_manager - INFO - 时间戳数量: 301, 协议数量: 4
+2025-09-26 21:21:02,747 - network_analyzer.gui.chart_manager - INFO - 共创建 4 条趋势线
+2025-09-26 21:21:02,817 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已启动
+2025-09-26 21:21:02,818 - network_analyzer.gui.traffic_trends_dialog - INFO - 流量趋势对话框初始化完成
+2025-09-26 21:21:02,826 - network_analyzer.gui.main_window - INFO - 流量趋势对话框已打开
+2025-09-26 21:21:07,199 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已停止
+2025-09-26 21:21:08,591 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已启动
+2025-09-26 21:21:12,981 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已停止
+2025-09-26 21:21:12,983 - network_analyzer.gui.chart_manager - INFO - 图表管理器已销毁
+2025-09-26 21:21:13,028 - network_analyzer.gui.traffic_trends_dialog - INFO - 流量趋势对话框已关闭
+2025-09-26 21:21:14,172 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-26 21:21:14,172 - network_analyzer.gui.main_window - INFO - 开始捕获时DataProcessor session_id已设置为: 92
+2025-09-26 21:21:14,175 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-26 21:21:14,500 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:14,793 - network_analyzer.gui.chart_manager - INFO - 图表管理器初始化完成
+2025-09-26 21:21:14,803 - network_analyzer.gui.chart_manager - INFO - 开始创建趋势图表，数据: True
+2025-09-26 21:21:14,803 - network_analyzer.gui.chart_manager - INFO - 时间戳数量: 301, 协议数量: 4
+2025-09-26 21:21:14,898 - network_analyzer.gui.chart_manager - INFO - 共创建 4 条趋势线
+2025-09-26 21:21:14,990 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已启动
+2025-09-26 21:21:14,990 - network_analyzer.gui.traffic_trends_dialog - INFO - 流量趋势对话框初始化完成
+2025-09-26 21:21:15,000 - network_analyzer.gui.main_window - INFO - 流量趋势对话框已打开
+2025-09-26 21:21:15,013 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:15,225 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:15,632 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:15,838 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:16,086 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:16,293 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:16,699 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:16,903 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:17,146 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:17,353 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:17,727 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:17,940 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:18,205 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:18,417 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:18,768 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:18,980 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:19,240 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:19,449 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:19,802 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:20,013 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:20,347 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:20,562 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:20,839 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:21,048 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:21,397 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:21,632 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:21,877 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:22,096 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:22,349 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已停止
+2025-09-26 21:21:22,350 - network_analyzer.gui.chart_manager - INFO - 图表管理器已销毁
+2025-09-26 21:21:22,400 - network_analyzer.gui.traffic_trends_dialog - INFO - 流量趋势对话框已关闭
+2025-09-26 21:21:22,490 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:22,717 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:23,031 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:23,248 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:23,536 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:23,743 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:24,016 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 3142 个数据包, 耗时: 9.84 秒
+2025-09-26 21:21:24,020 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-26 21:21:24,073 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:26,087 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-26 21:21:26,089 - network_analyzer.gui.chart_manager - INFO - 图表管理器初始化完成
+2025-09-26 21:21:26,101 - network_analyzer.gui.chart_manager - INFO - 开始创建趋势图表，数据: True
+2025-09-26 21:21:26,101 - network_analyzer.gui.chart_manager - INFO - 时间戳数量: 301, 协议数量: 4
+2025-09-26 21:21:26,196 - network_analyzer.gui.chart_manager - INFO - 共创建 4 条趋势线
+2025-09-26 21:21:26,252 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已启动
+2025-09-26 21:21:26,253 - network_analyzer.gui.traffic_trends_dialog - INFO - 流量趋势对话框初始化完成
+2025-09-26 21:21:26,265 - network_analyzer.gui.main_window - INFO - 流量趋势对话框已打开
+2025-09-26 21:21:33,837 - network_analyzer.gui.chart_manager - INFO - 图表导出成功: D:/0下载/traffic_trends_20250926_212127.png
+2025-09-26 21:21:33,837 - network_analyzer.gui.traffic_trends_dialog - INFO - 图表导出成功
+2025-09-26 21:21:48,776 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已停止
+2025-09-26 21:21:48,777 - network_analyzer.gui.chart_manager - INFO - 图表管理器已销毁
+2025-09-26 21:21:48,819 - network_analyzer.gui.traffic_trends_dialog - INFO - 流量趋势对话框已关闭
+2025-09-26 21:21:49,796 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-26 21:21:49,796 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-26 21:21:49,796 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-26 21:21:49,797 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-26 21:21:49,797 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-26 21:21:50,022 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-26 21:21:50,023 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
