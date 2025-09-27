@@ -36,7 +36,7 @@ class Settings:
     def _init_default_settings(self):
         """初始化默认配置"""
         # 应用程序基本信息
-        self.VERSION = os.getenv("VERSION", "0.1.0")
+        self.VERSION = os.getenv("VERSION", "2.0")
         self.APP_NAME = os.getenv("APP_NAME", "网络流量统计")
         self.DESCRIPTION = os.getenv("DESCRIPTION", "轻量级网络数据包分析工具")
         

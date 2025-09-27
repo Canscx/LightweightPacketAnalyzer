@@ -1,0 +1,128 @@
+Date : 2025-09-27 00:07:44
+Directory : d:\项目\计算机网络课设
+Total : 68 files,  11829 codes, 2156 comments, 2720 blanks, all 16705 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| Python     |         36 |      5,220 |      2,089 |      1,417 |      8,726 |
+| Markdown   |         18 |      3,869 |          0 |      1,081 |      4,950 |
+| HTML       |         10 |      2,247 |         54 |        193 |      2,494 |
+| Log        |          1 |        359 |          0 |          0 |        359 |
+| PostCSS    |          1 |         94 |          2 |         19 |        115 |
+| Properties |          1 |         38 |         11 |         10 |         59 |
+| toml       |          1 |          2 |          0 |          0 |          2 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                 | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                    |         68 |     11,829 |      2,156 |      2,720 |     16,705 |
+| . (Files)                                                                                            |          1 |         38 |         11 |         10 |         59 |
+| LightweightPacketAnalyzer                                                                            |         53 |      8,397 |      2,133 |      2,030 |     12,560 |
+| LightweightPacketAnalyzer (Files)                                                                    |         13 |        905 |        194 |        298 |      1,397 |
+| LightweightPacketAnalyzer\docs                                                                       |          8 |      1,518 |          0 |        459 |      1,977 |
+| LightweightPacketAnalyzer\docs\报告生成Bug修复                                                             |          1 |        131 |          0 |         40 |        171 |
+| LightweightPacketAnalyzer\docs\生成报告                                                                  |          7 |      1,387 |          0 |        419 |      1,806 |
+| LightweightPacketAnalyzer\reports                                                                    |          5 |      1,281 |         29 |        105 |      1,415 |
+| LightweightPacketAnalyzer\src                                                                        |         27 |      4,693 |      1,910 |      1,168 |      7,771 |
+| LightweightPacketAnalyzer\src\network_analyzer                                                       |         27 |      4,693 |      1,910 |      1,168 |      7,771 |
+| LightweightPacketAnalyzer\src\network_analyzer\config                                                |          1 |        205 |         90 |         31 |        326 |
+| LightweightPacketAnalyzer\src\network_analyzer\gui                                                   |          7 |      1,571 |        483 |        467 |      2,521 |
+| LightweightPacketAnalyzer\src\network_analyzer\gui (Files)                                           |          3 |        592 |        203 |        168 |        963 |
+| LightweightPacketAnalyzer\src\network_analyzer\gui\dialogs                                           |          4 |        979 |        280 |        299 |      1,558 |
+| LightweightPacketAnalyzer\src\network_analyzer\processing                                            |          1 |        142 |        117 |         49 |        308 |
+| LightweightPacketAnalyzer\src\network_analyzer\reports                                               |         16 |      2,712 |      1,088 |        612 |      4,412 |
+| LightweightPacketAnalyzer\src\network_analyzer\reports (Files)                                       |          3 |        559 |        214 |        155 |        928 |
+| LightweightPacketAnalyzer\src\network_analyzer\reports\charts                                        |          3 |        445 |        230 |        131 |        806 |
+| LightweightPacketAnalyzer\src\network_analyzer\reports\generators                                    |          4 |      1,022 |        451 |        195 |      1,668 |
+| LightweightPacketAnalyzer\src\network_analyzer\reports\templates                                     |          6 |        686 |        193 |        131 |      1,010 |
+| LightweightPacketAnalyzer\src\network_analyzer\reports\templates (Files)                             |          3 |        310 |        178 |         82 |        570 |
+| LightweightPacketAnalyzer\src\network_analyzer\reports\templates\css                                 |          1 |         94 |          2 |         19 |        115 |
+| LightweightPacketAnalyzer\src\network_analyzer\reports\templates\html                                |          2 |        282 |         13 |         30 |        325 |
+| LightweightPacketAnalyzer\src\network_analyzer\statistics                                            |          1 |         22 |          3 |          5 |         30 |
+| LightweightPacketAnalyzer\src\network_analyzer\storage                                               |          1 |         41 |        129 |          4 |        174 |
+| docs                                                                                                 |         10 |      2,351 |          0 |        622 |      2,973 |
+| docs\流量趋势                                                                                            |          4 |        811 |          0 |        199 |      1,010 |
+| docs\生成报告                                                                                            |          1 |        146 |          0 |         40 |        186 |
+| docs\设置功能                                                                                            |          5 |      1,394 |          0 |        383 |      1,777 |
+| logs                                                                                                 |          1 |        359 |          0 |          0 |        359 |
+| reports                                                                                              |          3 |        684 |         12 |         58 |        754 |
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                             | language   | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| d:\项目\计算机网络课设\.env                                                                                   | Properties |         38 |         11 |         10 |         59 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\check_sessions.py                                            | Python     |         21 |          3 |          6 |         30 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\docs\报告生成Bug修复\FINAL_报告生成Bug修复.md                            | Markdown   |        131 |          0 |         40 |        171 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\docs\生成报告\ACCEPTANCE_生成报告.md                                 | Markdown   |        153 |          0 |         62 |        215 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\docs\生成报告\APPROVAL_生成报告.md                                   | Markdown   |        153 |          0 |         60 |        213 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\docs\生成报告\DESIGN_生成报告.md                                     | Markdown   |        287 |          0 |         72 |        359 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\docs\生成报告\FINAL_生成报告.md                                      | Markdown   |        156 |          0 |         57 |        213 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\docs\生成报告\TASK_生成报告.md                                       | Markdown   |        382 |          0 |         85 |        467 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\docs\生成报告\TODO_生成报告.md                                       | Markdown   |        165 |          0 |         54 |        219 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\docs\生成报告\UI_IMPROVEMENT_报告对话框.md                            | Markdown   |         91 |          0 |         29 |        120 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\pyproject.toml                                               | toml       |          2 |          0 |          0 |          2 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\reports\network_analysis_report_20250926_215350.html         | HTML       |        238 |          4 |         21 |        263 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\reports\network_analysis_report_20250926_220820.html         | HTML       |        232 |          4 |         20 |        256 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\reports\network_analysis_report_20250926_220904.html         | HTML       |        220 |          4 |         18 |        242 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\reports\network_analysis_report_20250926_234413.html         | HTML       |        226 |          4 |         19 |        249 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\reports\network_analysis_report_20250926_235953.html         | HTML       |        365 |         13 |         27 |        405 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\config\settings.py                      | Python     |        205 |         90 |         31 |        326 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\gui\chart_manager.py                    | Python     |        268 |        119 |         75 |        462 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\gui\dialogs\advanced_settings_tab.py    | Python     |        201 |         46 |         51 |        298 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\gui\dialogs\basic_settings_tab.py       | Python     |        217 |         39 |         62 |        318 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\gui\dialogs\report_generation_dialog.py | Python     |        319 |         92 |        109 |        520 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\gui\dialogs\settings_dialog.py          | Python     |        242 |        103 |         77 |        422 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\gui\main_window.py                      | Python     |         53 |          7 |         10 |         70 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\gui\traffic_trends_dialog.py            | Python     |        271 |         77 |         83 |        431 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\processing\traffic_data_processor.py    | Python     |        142 |        117 |         49 |        308 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\reports\__init__.py                     | Python     |          8 |         14 |          3 |         25 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\reports\charts\__init__.py              | Python     |          6 |          7 |          2 |         15 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\reports\charts\chart_generator.py       | Python     |        334 |        144 |        102 |        580 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\reports\charts\matplotlib_renderer.py   | Python     |        105 |         79 |         27 |        211 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\reports\data_collector.py               | Python     |        207 |         82 |         66 |        355 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\reports\generators\__init__.py          | Python     |          8 |          8 |          2 |         18 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\reports\generators\csv_generator.py     | Python     |        291 |        142 |         86 |        519 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\reports\generators\html_generator.py    | Python     |        425 |        134 |         60 |        619 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\reports\generators\pdf_generator.py     | Python     |        298 |        167 |         47 |        512 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\reports\report_generator.py             | Python     |        344 |        118 |         86 |        548 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\reports\templates\__init__.py           | Python     |          6 |          7 |          2 |         15 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\reports\templates\css\report.css        | PostCSS    |         94 |          2 |         19 |        115 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\reports\templates\html\base.html        | HTML       |         28 |          0 |          3 |         31 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\reports\templates\html\report.html      | HTML       |        254 |         13 |         27 |        294 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\reports\templates\jinja2_renderer.py    | Python     |        171 |         99 |         42 |        312 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\reports\templates\template_manager.py   | Python     |        133 |         72 |         38 |        243 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\statistics\statistics_visualizer.py     | Python     |         22 |          3 |          5 |         30 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\storage\data_manager.py                 | Python     |         41 |        129 |          4 |        174 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\test_chart_fix.py                                            | Python     |         47 |         10 |         14 |         71 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\test_complete_settings.py                                    | Python     |        178 |         27 |         53 |        258 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\test_font_fix.py                                             | Python     |        129 |         26 |         38 |        193 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\test_report_dialog_ui.py                                     | Python     |         43 |         14 |         17 |         74 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\test_report_fix.py                                           | Python     |         59 |         15 |         21 |         95 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\test_report_generation.py                                    | Python     |         82 |         18 |         32 |        132 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\test_settings_dialog.py                                      | Python     |         90 |         23 |         35 |        148 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\test_settings_extension.py                                   | Python     |         91 |         15 |         25 |        131 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\test_settings_integration.py                                 | Python     |         74 |         15 |         25 |        114 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\test_traffic_trends.py                                       | Python     |         26 |         10 |         11 |         47 |
+| d:\项目\计算机网络课设\LightweightPacketAnalyzer\test_traffic_trends_with_data.py                             | Python     |         63 |         18 |         21 |        102 |
+| d:\项目\计算机网络课设\docs\流量趋势\ACCEPTANCE_流量趋势.md                                                           | Markdown   |        150 |          0 |         42 |        192 |
+| d:\项目\计算机网络课设\docs\流量趋势\ALIGNMENT_流量趋势.md                                                            | Markdown   |        116 |          0 |         29 |        145 |
+| d:\项目\计算机网络课设\docs\流量趋势\DESIGN_流量趋势.md                                                               | Markdown   |        277 |          0 |         68 |        345 |
+| d:\项目\计算机网络课设\docs\流量趋势\TASK_流量趋势.md                                                                 | Markdown   |        268 |          0 |         60 |        328 |
+| d:\项目\计算机网络课设\docs\生成报告\ALIGNMENT_生成报告.md                                                            | Markdown   |        146 |          0 |         40 |        186 |
+| d:\项目\计算机网络课设\docs\设置功能\ACCEPTANCE_设置功能.md                                                           | Markdown   |        213 |          0 |         66 |        279 |
+| d:\项目\计算机网络课设\docs\设置功能\ALIGNMENT_设置功能.md                                                            | Markdown   |        169 |          0 |         46 |        215 |
+| d:\项目\计算机网络课设\docs\设置功能\APPROVAL_设置功能.md                                                             | Markdown   |        185 |          0 |         62 |        247 |
+| d:\项目\计算机网络课设\docs\设置功能\DESIGN_设置功能.md                                                               | Markdown   |        504 |          0 |        138 |        642 |
+| d:\项目\计算机网络课设\docs\设置功能\TASK_设置功能.md                                                                 | Markdown   |        323 |          0 |         71 |        394 |
+| d:\项目\计算机网络课设\logs\network_analyzer.log                                                              | Log        |        359 |          0 |          0 |        359 |
+| d:\项目\计算机网络课设\reports\network_analysis_report_20250926_233635.html                                   | HTML       |        226 |          4 |         19 |        249 |
+| d:\项目\计算机网络课设\reports\network_analysis_report_20250926_235140.html                                   | HTML       |        226 |          4 |         19 |        249 |
+| d:\项目\计算机网络课设\reports\network_analysis_report_20250927_000223.html                                   | HTML       |        232 |          4 |         20 |        256 |
+| Total                                                                                                |            |     11,829 |      2,156 |      2,720 |     16,705 |
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

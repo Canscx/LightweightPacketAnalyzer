@@ -2305,3 +2305,27 @@ sqlite3.OperationalError: no such column: packet_fingerprint
 2025-09-27 00:02:23,461 - network_analyzer.reports.generators.html_generator - INFO - HTML报告生成成功: D:\项目\计算机网络课设\reports\network_analysis_report_20250927_000223.html
 2025-09-27 00:02:23,463 - network_analyzer.reports.generators.csv_generator - INFO - CSV报告导出成功: D:\项目\计算机网络课设\reports\network_analysis_data_20250927_000223.csv
 2025-09-27 00:02:23,472 - network_analyzer.reports.report_generator - INFO - 会话 86 报告生成完成
+2025-09-27 00:06:39,501 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-27 00:06:39,501 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-27 00:06:39,501 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-27 00:06:39,502 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-27 00:06:39,502 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-27 00:06:39,687 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-27 00:06:39,688 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-27 18:05:25,264 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-27 18:05:25,264 - network_analyzer.main - INFO - 版本: 0.1.0
+2025-09-27 18:05:25,265 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-27 18:05:25,274 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-27 18:05:25,274 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-27 18:05:25,274 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-27 18:05:25,274 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-27 18:05:25,275 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-27 18:05:25,275 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-27 18:05:25,453 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-27 18:08:49,895 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-27 18:08:49,895 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-27 18:08:49,895 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-27 18:08:49,895 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-27 18:08:49,895 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-27 18:08:50,017 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-27 18:08:50,018 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭

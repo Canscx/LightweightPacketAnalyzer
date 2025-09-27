@@ -4,7 +4,7 @@
 一个轻量级的网络数据包分析器，用于计算机网络课程设计。
 """
 
-__version__ = "0.1.0"
+__version__ = "2.0"
 __author__ = "Student"
 __email__ = "student@example.com"
 __description__ = "轻量级网络数据包分析器 - 计算机网络课程设计"

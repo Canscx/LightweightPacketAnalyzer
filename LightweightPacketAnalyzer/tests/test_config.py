@@ -30,7 +30,7 @@ class TestSettings(unittest.TestCase):
         
         # 测试基本设置
         self.assertEqual(settings.APP_NAME, "网络流量统计")
-        self.assertEqual(settings.VERSION, "0.1.0")
+        self.assertEqual(settings.VERSION, "2.0")
         
         # 测试窗口设置
         self.assertEqual(settings.WINDOW_WIDTH, 1200)
