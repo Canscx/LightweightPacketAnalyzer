@@ -2329,3 +2329,778 @@ sqlite3.OperationalError: no such column: packet_fingerprint
 2025-09-27 18:08:49,895 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
 2025-09-27 18:08:50,017 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
 2025-09-27 18:08:50,018 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-27 20:16:49,426 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-27 20:16:49,426 - network_analyzer.main - INFO - 版本: 2.0
+2025-09-27 20:16:49,427 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-27 20:16:49,431 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-27 20:16:49,431 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-27 20:16:49,431 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-27 20:16:49,431 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-27 20:16:49,431 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-27 20:16:49,432 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-27 20:16:49,578 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-27 20:16:59,630 - network_analyzer.gui.dialogs.settings_dialog - INFO - 当前配置已加载到设置对话框
+2025-09-27 20:20:45,358 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-27 20:20:45,358 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-27 20:20:45,358 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-27 20:20:45,358 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-27 20:20:45,358 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-27 20:20:45,542 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-27 20:20:45,543 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-27 20:26:26,606 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-27 20:26:26,607 - network_analyzer.main - INFO - 版本: 2.0
+2025-09-27 20:26:26,609 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-27 20:26:26,611 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-27 20:26:26,611 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-27 20:26:26,611 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-27 20:26:26,611 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-27 20:26:26,611 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-27 20:26:26,612 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-27 20:26:26,724 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-27 20:26:29,269 - network_analyzer.gui.dialogs.settings_dialog - INFO - 当前配置已加载到设置对话框
+2025-09-27 20:29:08,561 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-27 20:29:08,562 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-27 20:29:08,562 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-27 20:29:08,562 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-27 20:29:08,562 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-27 20:29:08,698 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-27 20:29:08,701 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-27 21:19:48,842 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-27 21:19:48,842 - network_analyzer.main - INFO - 版本: 2.0
+2025-09-27 21:19:48,845 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-27 21:19:48,848 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-27 21:19:48,848 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-27 21:19:48,849 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-27 21:19:48,849 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-27 21:19:48,849 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-27 21:19:48,849 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-27 21:19:48,939 - network_analyzer.gui.main_window - INFO - 使用ttkbootstrap主题: clam
+2025-09-27 21:19:48,960 - root - ERROR - 程序运行出错: 'NoneType' object has no attribute 'name'
+Traceback (most recent call last):
+  File "D:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\main.py", line 92, in main
+    app = MainWindow(settings)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\gui\main_window.py", line 336, in __init__
+    self._init_ui()
+  File "D:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\gui\main_window.py", line 515, in _init_ui
+    self._create_toolbar()
+  File "D:\项目\计算机网络课设\LightweightPacketAnalyzer\src\network_analyzer\gui\main_window.py", line 579, in _create_toolbar
+    self.toolbar = ttk.Frame(self.root)
+                   ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python3\Lib\site-packages\ttkbootstrap\style.py", line 5206, in __init__
+    ttkstyle = Bootstyle.update_ttk_widget_style(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python3\Lib\site-packages\ttkbootstrap\style.py", line 5294, in update_ttk_widget_style
+    builder: StyleBuilderTTK = style._get_builder()
+                               ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python3\Lib\site-packages\ttkbootstrap\style.py", line 777, in _get_builder
+    theme_name = style.theme.name
+                 ^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'name'
+2025-09-27 21:26:56,947 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-27 21:26:56,948 - network_analyzer.main - INFO - 版本: 2.0
+2025-09-27 21:26:56,950 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-27 21:26:56,952 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-27 21:26:56,952 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-27 21:26:56,953 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-27 21:26:56,953 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-27 21:26:56,953 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-27 21:26:56,953 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-27 21:26:57,030 - network_analyzer.gui.main_window - INFO - 使用标准tkinter，主题: clam
+2025-09-27 21:26:57,170 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-27 21:27:00,185 - network_analyzer.gui.dialogs.settings_dialog - INFO - 当前配置已加载到设置对话框
+2025-09-27 21:27:06,938 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: default (classic)
+2025-09-27 21:27:06,976 - network_analyzer.gui.theme_manager - INFO - 成功应用经典主题: default
+2025-09-27 21:27:06,976 - network_analyzer.gui.main_window - INFO - 主题已切换为: default
+2025-09-27 21:27:08,298 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: default
+2025-09-27 21:27:08,298 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: default (classic)
+2025-09-27 21:27:08,314 - network_analyzer.gui.theme_manager - INFO - 成功应用经典主题: default
+2025-09-27 21:27:08,315 - network_analyzer.gui.main_window - INFO - 主题已切换为: default
+2025-09-27 21:27:08,494 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: default
+2025-09-27 21:27:09,194 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: clam (classic)
+2025-09-27 21:27:09,202 - network_analyzer.gui.theme_manager - INFO - 成功应用经典主题: clam
+2025-09-27 21:27:09,202 - network_analyzer.gui.main_window - INFO - 主题已切换为: clam
+2025-09-27 21:27:10,644 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: clam
+2025-09-27 21:27:10,645 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: clam (classic)
+2025-09-27 21:27:10,652 - network_analyzer.gui.theme_manager - INFO - 成功应用经典主题: clam
+2025-09-27 21:27:10,652 - network_analyzer.gui.main_window - INFO - 主题已切换为: clam
+2025-09-27 21:27:10,824 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: clam
+2025-09-27 21:27:11,246 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: classic (classic)
+2025-09-27 21:27:11,273 - network_analyzer.gui.theme_manager - INFO - 成功应用经典主题: classic
+2025-09-27 21:27:11,274 - network_analyzer.gui.main_window - INFO - 主题已切换为: classic
+2025-09-27 21:27:12,482 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: classic
+2025-09-27 21:27:12,483 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: classic (classic)
+2025-09-27 21:27:12,508 - network_analyzer.gui.theme_manager - INFO - 成功应用经典主题: classic
+2025-09-27 21:27:12,508 - network_analyzer.gui.main_window - INFO - 主题已切换为: classic
+2025-09-27 21:27:12,670 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: classic
+2025-09-27 21:27:13,366 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: alt (classic)
+2025-09-27 21:27:13,377 - network_analyzer.gui.theme_manager - INFO - 成功应用经典主题: alt
+2025-09-27 21:27:13,377 - network_analyzer.gui.main_window - INFO - 主题已切换为: alt
+2025-09-27 21:27:14,551 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: alt
+2025-09-27 21:27:14,552 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: alt (classic)
+2025-09-27 21:27:14,566 - network_analyzer.gui.theme_manager - INFO - 成功应用经典主题: alt
+2025-09-27 21:27:14,566 - network_analyzer.gui.main_window - INFO - 主题已切换为: alt
+2025-09-27 21:27:14,752 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: alt
+2025-09-27 21:27:18,849 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: cyborg (dark)
+2025-09-27 21:27:18,861 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: cyborg
+2025-09-27 21:27:18,861 - network_analyzer.gui.main_window - ERROR - 主题切换失败: cyborg
+2025-09-27 21:27:18,861 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: cyborg
+2025-09-27 21:27:18,861 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: cyborg (colorful)
+2025-09-27 21:27:18,868 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: cyborg
+2025-09-27 21:27:18,869 - network_analyzer.gui.main_window - ERROR - 主题切换失败: cyborg
+2025-09-27 21:27:18,869 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: cyborg
+2025-09-27 21:27:20,116 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: superhero (dark)
+2025-09-27 21:27:20,152 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: superhero
+2025-09-27 21:27:20,152 - network_analyzer.gui.main_window - ERROR - 主题切换失败: superhero
+2025-09-27 21:27:20,152 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: superhero
+2025-09-27 21:27:20,152 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: superhero (colorful)
+2025-09-27 21:27:20,160 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: superhero
+2025-09-27 21:27:20,160 - network_analyzer.gui.main_window - ERROR - 主题切换失败: superhero
+2025-09-27 21:27:20,161 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: superhero
+2025-09-27 21:28:03,402 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-27 21:28:03,402 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-27 21:28:03,402 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-27 21:28:03,402 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-27 21:28:03,402 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-27 22:09:21,074 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-27 22:09:21,075 - network_analyzer.main - INFO - 版本: 2.0
+2025-09-27 22:09:21,076 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-27 22:09:21,078 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-27 22:09:21,078 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-27 22:09:21,079 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-27 22:09:21,079 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-27 22:09:21,079 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-27 22:09:21,079 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-27 22:09:21,150 - network_analyzer.gui.main_window - INFO - 使用标准tkinter，主题: clam
+2025-09-27 22:09:21,315 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-27 22:10:06,536 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-09-27 22:10:06,536 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-09-27 22:10:06,541 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 95, 数据包数: 80
+2025-09-27 22:10:06,542 - network_analyzer.gui.main_window - INFO - 成功打开会话: 95
+2025-09-27 22:10:54,688 - network_analyzer.gui.chart_manager - INFO - 图表管理器初始化完成
+2025-09-27 22:10:54,702 - network_analyzer.gui.chart_manager - INFO - 开始创建趋势图表，数据: True
+2025-09-27 22:10:54,702 - network_analyzer.gui.chart_manager - INFO - 时间戳数量: 301, 协议数量: 4
+2025-09-27 22:10:54,798 - network_analyzer.gui.chart_manager - INFO - 共创建 4 条趋势线
+2025-09-27 22:10:54,859 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已启动
+2025-09-27 22:10:54,860 - network_analyzer.gui.traffic_trends_dialog - INFO - 流量趋势对话框初始化完成
+2025-09-27 22:10:54,869 - network_analyzer.gui.main_window - INFO - 流量趋势对话框已打开
+2025-09-27 22:10:57,112 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已停止
+2025-09-27 22:10:57,114 - network_analyzer.gui.chart_manager - INFO - 图表管理器已销毁
+2025-09-27 22:10:57,144 - network_analyzer.gui.traffic_trends_dialog - INFO - 流量趋势对话框已关闭
+2025-09-27 22:12:13,322 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-27 22:12:13,322 - network_analyzer.gui.main_window - INFO - 开始捕获时DataProcessor session_id已设置为: 95
+2025-09-27 22:12:13,323 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-27 22:12:13,910 - network_analyzer.gui.chart_manager - INFO - 图表管理器初始化完成
+2025-09-27 22:12:13,921 - network_analyzer.gui.chart_manager - INFO - 开始创建趋势图表，数据: True
+2025-09-27 22:12:13,922 - network_analyzer.gui.chart_manager - INFO - 时间戳数量: 301, 协议数量: 4
+2025-09-27 22:12:14,101 - network_analyzer.gui.chart_manager - INFO - 共创建 4 条趋势线
+2025-09-27 22:12:14,161 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已启动
+2025-09-27 22:12:14,161 - network_analyzer.gui.traffic_trends_dialog - INFO - 流量趋势对话框初始化完成
+2025-09-27 22:12:14,168 - network_analyzer.gui.main_window - INFO - 流量趋势对话框已打开
+2025-09-27 22:12:14,190 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:14,419 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:14,623 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:14,828 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:15,278 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:15,493 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:15,701 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:15,939 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:16,753 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:17,162 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:17,771 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:18,794 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:19,353 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:19,825 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:20,033 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:20,374 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:20,785 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:21,194 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:21,405 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:21,723 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:21,936 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:22,753 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:23,267 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已停止
+2025-09-27 22:12:23,270 - network_analyzer.gui.chart_manager - INFO - 图表管理器已销毁
+2025-09-27 22:12:23,309 - network_analyzer.gui.traffic_trends_dialog - INFO - 流量趋势对话框已关闭
+2025-09-27 22:12:23,324 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:23,741 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:23,950 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:24,081 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 1324 个数据包, 耗时: 10.76 秒
+2025-09-27 22:12:24,087 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-27 22:12:24,213 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:26,212 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-27 22:12:27,973 - network_analyzer.storage.data_manager - INFO - 清理了 0 条旧记录
+2025-09-27 22:12:44,905 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-27 22:12:44,906 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-27 22:12:44,906 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-27 22:12:44,906 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-27 22:12:44,907 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-28 15:37:35,247 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-28 15:37:35,248 - network_analyzer.main - INFO - 版本: 2.0
+2025-09-28 15:37:35,251 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-28 15:37:35,255 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-28 15:37:35,255 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-28 15:37:35,256 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-28 15:37:35,256 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-28 15:37:35,256 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-28 15:37:35,256 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-28 15:37:35,344 - network_analyzer.gui.main_window - INFO - 使用标准tkinter，主题: clam
+2025-09-28 15:37:35,460 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-28 15:37:39,449 - network_analyzer.gui.dialogs.settings_dialog - INFO - 当前配置已加载到设置对话框
+2025-09-28 15:37:42,259 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: vapor (dark)
+2025-09-28 15:37:42,272 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: vapor
+2025-09-28 15:37:42,272 - network_analyzer.gui.main_window - ERROR - 主题切换失败: vapor
+2025-09-28 15:37:42,273 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: vapor
+2025-09-28 15:37:42,273 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: vapor (colorful)
+2025-09-28 15:37:42,280 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: vapor
+2025-09-28 15:37:42,280 - network_analyzer.gui.main_window - ERROR - 主题切换失败: vapor
+2025-09-28 15:37:42,280 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: vapor
+2025-09-28 15:37:43,591 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: morph (colorful)
+2025-09-28 15:37:43,605 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: morph
+2025-09-28 15:37:43,606 - network_analyzer.gui.main_window - ERROR - 主题切换失败: morph
+2025-09-28 15:37:43,606 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: morph
+2025-09-28 15:37:43,606 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: morph (colorful)
+2025-09-28 15:37:43,613 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: morph
+2025-09-28 15:37:43,613 - network_analyzer.gui.main_window - ERROR - 主题切换失败: morph
+2025-09-28 15:37:43,613 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: morph
+2025-09-28 15:37:45,059 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: vapor (dark)
+2025-09-28 15:37:45,067 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: vapor
+2025-09-28 15:37:45,067 - network_analyzer.gui.main_window - ERROR - 主题切换失败: vapor
+2025-09-28 15:37:45,068 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: vapor
+2025-09-28 15:37:45,068 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: vapor (colorful)
+2025-09-28 15:37:45,073 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: vapor
+2025-09-28 15:37:45,073 - network_analyzer.gui.main_window - ERROR - 主题切换失败: vapor
+2025-09-28 15:37:45,073 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: vapor
+2025-09-28 15:37:45,717 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: cyborg (dark)
+2025-09-28 15:37:45,729 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: cyborg
+2025-09-28 15:37:45,729 - network_analyzer.gui.main_window - ERROR - 主题切换失败: cyborg
+2025-09-28 15:37:45,730 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: cyborg
+2025-09-28 15:37:45,730 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: cyborg (dark)
+2025-09-28 15:37:45,740 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: cyborg
+2025-09-28 15:37:45,740 - network_analyzer.gui.main_window - ERROR - 主题切换失败: cyborg
+2025-09-28 15:37:45,741 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: cyborg
+2025-09-28 15:37:46,811 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: minty (light)
+2025-09-28 15:37:46,819 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: minty
+2025-09-28 15:37:46,819 - network_analyzer.gui.main_window - ERROR - 主题切换失败: minty
+2025-09-28 15:37:46,819 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: minty
+2025-09-28 15:37:46,819 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: minty (light)
+2025-09-28 15:37:46,823 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: minty
+2025-09-28 15:37:46,823 - network_analyzer.gui.main_window - ERROR - 主题切换失败: minty
+2025-09-28 15:37:46,823 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: minty
+2025-09-28 15:37:54,247 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: minty
+2025-09-28 15:37:54,247 - network_analyzer.gui.main_window - ERROR - 主题切换失败: minty
+2025-09-28 15:37:54,247 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: minty
+2025-09-28 15:37:54,817 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: minty
+2025-09-28 15:37:54,817 - network_analyzer.gui.main_window - ERROR - 主题切换失败: minty
+2025-09-28 15:37:54,817 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: minty
+2025-09-28 15:37:55,771 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: superhero (dark)
+2025-09-28 15:37:55,799 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: superhero
+2025-09-28 15:37:55,800 - network_analyzer.gui.main_window - ERROR - 主题切换失败: superhero
+2025-09-28 15:37:55,800 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: superhero
+2025-09-28 15:37:55,801 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: superhero (dark)
+2025-09-28 15:37:55,807 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: superhero
+2025-09-28 15:37:55,807 - network_analyzer.gui.main_window - ERROR - 主题切换失败: superhero
+2025-09-28 15:37:55,807 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: superhero
+2025-09-28 15:37:56,820 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: superhero
+2025-09-28 15:37:56,820 - network_analyzer.gui.main_window - ERROR - 主题切换失败: superhero
+2025-09-28 15:37:56,821 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: superhero
+2025-09-28 15:37:57,233 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: superhero
+2025-09-28 15:37:57,233 - network_analyzer.gui.main_window - ERROR - 主题切换失败: superhero
+2025-09-28 15:37:57,234 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: superhero
+2025-09-28 15:37:57,346 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: superhero
+2025-09-28 15:37:57,346 - network_analyzer.gui.main_window - ERROR - 主题切换失败: superhero
+2025-09-28 15:37:57,346 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: superhero
+2025-09-28 15:38:01,607 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-28 15:38:01,607 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-28 15:38:01,608 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-28 15:38:01,608 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-28 15:38:01,608 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-28 15:38:05,680 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-28 15:38:05,680 - network_analyzer.main - INFO - 版本: 2.0
+2025-09-28 15:38:05,682 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-28 15:38:05,685 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-28 15:38:05,686 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-28 15:38:05,687 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-28 15:38:05,687 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-28 15:38:05,687 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-28 15:38:05,687 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-28 15:38:05,740 - network_analyzer.gui.main_window - INFO - 使用标准tkinter，主题: clam
+2025-09-28 15:38:05,809 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-28 15:38:08,338 - network_analyzer.gui.dialogs.settings_dialog - INFO - 当前配置已加载到设置对话框
+2025-09-28 15:38:10,142 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: minty (light)
+2025-09-28 15:38:10,147 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: minty
+2025-09-28 15:38:10,147 - network_analyzer.gui.main_window - ERROR - 主题切换失败: minty
+2025-09-28 15:38:10,147 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: minty
+2025-09-28 15:38:10,147 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: minty (light)
+2025-09-28 15:38:10,153 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: minty
+2025-09-28 15:38:10,154 - network_analyzer.gui.main_window - ERROR - 主题切换失败: minty
+2025-09-28 15:38:10,154 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: minty
+2025-09-28 15:38:10,996 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: cosmo (light)
+2025-09-28 15:38:11,008 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: cosmo
+2025-09-28 15:38:11,008 - network_analyzer.gui.main_window - ERROR - 主题切换失败: cosmo
+2025-09-28 15:38:11,008 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: cosmo
+2025-09-28 15:38:11,008 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: cosmo (light)
+2025-09-28 15:38:11,011 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: cosmo
+2025-09-28 15:38:11,012 - network_analyzer.gui.main_window - ERROR - 主题切换失败: cosmo
+2025-09-28 15:38:11,012 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: cosmo
+2025-09-28 15:38:12,111 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: journal (light)
+2025-09-28 15:38:12,126 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: journal
+2025-09-28 15:38:12,127 - network_analyzer.gui.main_window - ERROR - 主题切换失败: journal
+2025-09-28 15:38:12,127 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: journal
+2025-09-28 15:38:12,127 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: journal (light)
+2025-09-28 15:38:12,134 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: journal
+2025-09-28 15:38:12,135 - network_analyzer.gui.main_window - ERROR - 主题切换失败: journal
+2025-09-28 15:38:12,135 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: journal
+2025-09-28 15:38:12,460 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: journal (light)
+2025-09-28 15:38:12,466 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: journal
+2025-09-28 15:38:12,466 - network_analyzer.gui.main_window - ERROR - 主题切换失败: journal
+2025-09-28 15:38:12,466 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: journal
+2025-09-28 15:38:12,466 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: journal (light)
+2025-09-28 15:38:12,472 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: journal
+2025-09-28 15:38:12,473 - network_analyzer.gui.main_window - ERROR - 主题切换失败: journal
+2025-09-28 15:38:12,473 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: journal
+2025-09-28 15:38:13,587 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: flatly (light)
+2025-09-28 15:38:13,612 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: flatly
+2025-09-28 15:38:13,612 - network_analyzer.gui.main_window - ERROR - 主题切换失败: flatly
+2025-09-28 15:38:13,612 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: flatly
+2025-09-28 15:38:13,612 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: flatly (light)
+2025-09-28 15:38:13,617 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: flatly
+2025-09-28 15:38:13,617 - network_analyzer.gui.main_window - ERROR - 主题切换失败: flatly
+2025-09-28 15:38:13,617 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: flatly
+2025-09-28 15:38:15,165 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-28 15:38:15,169 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-28 15:38:15,169 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-28 15:38:15,170 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-28 15:38:15,277 - network_analyzer.gui.main_window - INFO - 窗口大小已更新为: 1200x800
+2025-09-28 15:38:15,277 - network_analyzer.gui.theme_manager - INFO - 成功应用经典主题: clam
+2025-09-28 15:38:15,277 - network_analyzer.gui.main_window - INFO - 主题已切换为: clam
+2025-09-28 15:38:15,388 - network_analyzer.gui.main_window - INFO - 设置已重新加载
+2025-09-28 15:38:15,388 - network_analyzer.gui.main_window - INFO - 设置已更新并应用
+2025-09-28 15:38:17,396 - network_analyzer.gui.dialogs.settings_dialog - INFO - 当前配置已加载到设置对话框
+2025-09-28 15:38:19,469 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: minty (light)
+2025-09-28 15:38:19,474 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: minty
+2025-09-28 15:38:19,475 - network_analyzer.gui.main_window - ERROR - 主题切换失败: minty
+2025-09-28 15:38:19,475 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: minty
+2025-09-28 15:38:19,475 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: minty (light)
+2025-09-28 15:38:19,478 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: minty
+2025-09-28 15:38:19,478 - network_analyzer.gui.main_window - ERROR - 主题切换失败: minty
+2025-09-28 15:38:19,478 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: minty
+2025-09-28 15:38:20,990 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-28 15:38:20,994 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-28 15:38:20,994 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-28 15:38:20,994 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-28 15:38:23,045 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: pulse (light)
+2025-09-28 15:38:23,053 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: pulse
+2025-09-28 15:38:23,054 - network_analyzer.gui.main_window - ERROR - 主题切换失败: pulse
+2025-09-28 15:38:23,054 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: pulse
+2025-09-28 15:38:23,054 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: pulse (light)
+2025-09-28 15:38:23,058 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: pulse
+2025-09-28 15:38:23,058 - network_analyzer.gui.main_window - ERROR - 主题切换失败: pulse
+2025-09-28 15:38:23,058 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: pulse
+2025-09-28 15:38:23,664 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-28 15:38:23,667 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-28 15:38:23,668 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-28 15:38:23,668 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-28 15:38:23,781 - network_analyzer.gui.main_window - INFO - 窗口大小已更新为: 1200x800
+2025-09-28 15:38:23,781 - network_analyzer.gui.theme_manager - INFO - 成功应用经典主题: clam
+2025-09-28 15:38:23,781 - network_analyzer.gui.main_window - INFO - 主题已切换为: clam
+2025-09-28 15:38:23,829 - network_analyzer.gui.main_window - INFO - 设置已重新加载
+2025-09-28 15:38:23,829 - network_analyzer.gui.main_window - INFO - 设置已更新并应用
+2025-09-28 15:38:26,336 - network_analyzer.gui.dialogs.settings_dialog - INFO - 当前配置已加载到设置对话框
+2025-09-28 15:38:28,179 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: minty (light)
+2025-09-28 15:38:28,185 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: minty
+2025-09-28 15:38:28,186 - network_analyzer.gui.main_window - ERROR - 主题切换失败: minty
+2025-09-28 15:38:28,186 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: minty
+2025-09-28 15:38:28,186 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: minty (light)
+2025-09-28 15:38:28,190 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: minty
+2025-09-28 15:38:28,191 - network_analyzer.gui.main_window - ERROR - 主题切换失败: minty
+2025-09-28 15:38:28,191 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: minty
+2025-09-28 15:38:29,284 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: morph (colorful)
+2025-09-28 15:38:29,291 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: morph
+2025-09-28 15:38:29,291 - network_analyzer.gui.main_window - ERROR - 主题切换失败: morph
+2025-09-28 15:38:29,291 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: morph
+2025-09-28 15:38:29,292 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: morph (colorful)
+2025-09-28 15:38:29,295 - network_analyzer.gui.theme_manager - WARNING - 无法应用主题: morph
+2025-09-28 15:38:29,295 - network_analyzer.gui.main_window - ERROR - 主题切换失败: morph
+2025-09-28 15:38:29,295 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: morph
+2025-09-28 15:38:30,053 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-28 15:38:30,056 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-28 15:38:30,056 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-28 15:38:30,056 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-28 15:38:30,158 - network_analyzer.gui.main_window - INFO - 窗口大小已更新为: 1200x800
+2025-09-28 15:38:30,158 - network_analyzer.gui.theme_manager - INFO - 成功应用经典主题: clam
+2025-09-28 15:38:30,158 - network_analyzer.gui.main_window - INFO - 主题已切换为: clam
+2025-09-28 15:38:30,192 - network_analyzer.gui.main_window - INFO - 设置已重新加载
+2025-09-28 15:38:30,192 - network_analyzer.gui.main_window - INFO - 设置已更新并应用
+2025-09-28 15:38:31,776 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-28 15:38:31,776 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-28 15:38:31,776 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-28 15:38:31,777 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-28 15:38:31,777 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-09-28 15:38:42,438 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-09-28 15:38:42,438 - network_analyzer.main - INFO - 版本: 2.0
+2025-09-28 15:38:42,439 - network_analyzer.main - INFO - 启动图形界面...
+2025-09-28 15:38:42,442 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-09-28 15:38:42,442 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-09-28 15:38:42,442 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-09-28 15:38:42,443 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-09-28 15:38:42,443 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-09-28 15:38:42,443 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-09-28 15:38:42,509 - network_analyzer.gui.main_window - INFO - 使用ttkbootstrap主题: morph
+2025-09-28 15:38:42,606 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-09-28 15:38:48,238 - network_analyzer.gui.dialogs.settings_dialog - INFO - 当前配置已加载到设置对话框
+2025-09-28 15:38:50,445 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: minty (light)
+2025-09-28 15:38:50,534 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: minty
+2025-09-28 15:38:50,534 - network_analyzer.gui.main_window - INFO - 主题已切换为: minty
+2025-09-28 15:38:50,718 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: minty
+2025-09-28 15:38:50,719 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: minty (light)
+2025-09-28 15:38:50,729 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: minty
+2025-09-28 15:38:50,730 - network_analyzer.gui.main_window - INFO - 主题已切换为: minty
+2025-09-28 15:38:50,913 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: minty
+2025-09-28 15:38:51,372 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: flatly (light)
+2025-09-28 15:38:51,414 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: flatly
+2025-09-28 15:38:51,414 - network_analyzer.gui.main_window - INFO - 主题已切换为: flatly
+2025-09-28 15:38:51,589 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: flatly
+2025-09-28 15:38:51,590 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: flatly (light)
+2025-09-28 15:38:51,596 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: flatly
+2025-09-28 15:38:51,597 - network_analyzer.gui.main_window - INFO - 主题已切换为: flatly
+2025-09-28 15:38:51,772 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: flatly
+2025-09-28 15:38:52,202 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: litera (light)
+2025-09-28 15:38:52,240 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: litera
+2025-09-28 15:38:52,240 - network_analyzer.gui.main_window - INFO - 主题已切换为: litera
+2025-09-28 15:38:52,417 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: litera
+2025-09-28 15:38:52,417 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: litera (light)
+2025-09-28 15:38:52,429 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: litera
+2025-09-28 15:38:52,429 - network_analyzer.gui.main_window - INFO - 主题已切换为: litera
+2025-09-28 15:38:52,606 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: litera
+2025-09-28 15:38:54,487 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: lumen (light)
+2025-09-28 15:38:54,512 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: lumen
+2025-09-28 15:38:54,512 - network_analyzer.gui.main_window - INFO - 主题已切换为: lumen
+2025-09-28 15:38:54,692 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: lumen
+2025-09-28 15:38:54,693 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: lumen (light)
+2025-09-28 15:38:54,706 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: lumen
+2025-09-28 15:38:54,707 - network_analyzer.gui.main_window - INFO - 主题已切换为: lumen
+2025-09-28 15:38:54,903 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: lumen
+2025-09-28 15:38:58,431 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: vapor (dark)
+2025-09-28 15:38:58,464 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: vapor
+2025-09-28 15:38:58,465 - network_analyzer.gui.main_window - INFO - 主题已切换为: vapor
+2025-09-28 15:38:58,653 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: vapor
+2025-09-28 15:38:58,653 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: vapor (dark)
+2025-09-28 15:38:58,659 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: vapor
+2025-09-28 15:38:58,660 - network_analyzer.gui.main_window - INFO - 主题已切换为: vapor
+2025-09-28 15:38:58,878 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: vapor
+2025-09-28 15:38:59,792 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: cyborg (dark)
+2025-09-28 15:38:59,823 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: cyborg
+2025-09-28 15:38:59,823 - network_analyzer.gui.main_window - INFO - 主题已切换为: cyborg
+2025-09-28 15:39:00,012 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: cyborg
+2025-09-28 15:39:00,013 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: cyborg (colorful)
+2025-09-28 15:39:00,022 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: cyborg
+2025-09-28 15:39:00,023 - network_analyzer.gui.main_window - INFO - 主题已切换为: cyborg
+2025-09-28 15:39:00,213 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: cyborg
+2025-09-28 15:39:01,186 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: superhero (dark)
+2025-09-28 15:39:01,231 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: superhero
+2025-09-28 15:39:01,231 - network_analyzer.gui.main_window - INFO - 主题已切换为: superhero
+2025-09-28 15:39:01,417 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: superhero
+2025-09-28 15:39:01,417 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: superhero (colorful)
+2025-09-28 15:39:01,425 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: superhero
+2025-09-28 15:39:01,425 - network_analyzer.gui.main_window - INFO - 主题已切换为: superhero
+2025-09-28 15:39:01,631 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: superhero
+2025-09-28 15:39:02,834 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: vapor (dark)
+2025-09-28 15:39:02,840 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: vapor
+2025-09-28 15:39:02,841 - network_analyzer.gui.main_window - INFO - 主题已切换为: vapor
+2025-09-28 15:39:03,027 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: vapor
+2025-09-28 15:39:03,027 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: vapor (colorful)
+2025-09-28 15:39:03,034 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: vapor
+2025-09-28 15:39:03,035 - network_analyzer.gui.main_window - INFO - 主题已切换为: vapor
+2025-09-28 15:39:03,232 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: vapor
+2025-09-28 15:39:03,630 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: flatly (light)
+2025-09-28 15:39:03,638 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: flatly
+2025-09-28 15:39:03,638 - network_analyzer.gui.main_window - INFO - 主题已切换为: flatly
+2025-09-28 15:39:03,840 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: flatly
+2025-09-28 15:39:03,841 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: flatly (light)
+2025-09-28 15:39:03,848 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: flatly
+2025-09-28 15:39:03,848 - network_analyzer.gui.main_window - INFO - 主题已切换为: flatly
+2025-09-28 15:39:04,041 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: flatly
+2025-09-28 15:39:04,499 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: cosmo (light)
+2025-09-28 15:39:04,529 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: cosmo
+2025-09-28 15:39:04,529 - network_analyzer.gui.main_window - INFO - 主题已切换为: cosmo
+2025-09-28 15:39:04,716 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: cosmo
+2025-09-28 15:39:04,716 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: cosmo (light)
+2025-09-28 15:39:04,725 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: cosmo
+2025-09-28 15:39:04,725 - network_analyzer.gui.main_window - INFO - 主题已切换为: cosmo
+2025-09-28 15:39:04,934 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: cosmo
+2025-09-28 15:39:05,306 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: journal (light)
+2025-09-28 15:39:05,337 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: journal
+2025-09-28 15:39:05,337 - network_analyzer.gui.main_window - INFO - 主题已切换为: journal
+2025-09-28 15:39:05,524 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: journal
+2025-09-28 15:39:05,525 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: journal (light)
+2025-09-28 15:39:05,535 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: journal
+2025-09-28 15:39:05,535 - network_analyzer.gui.main_window - INFO - 主题已切换为: journal
+2025-09-28 15:39:05,735 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: journal
+2025-09-28 15:39:06,680 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: sandstone (light)
+2025-09-28 15:39:06,710 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: sandstone
+2025-09-28 15:39:06,710 - network_analyzer.gui.main_window - INFO - 主题已切换为: sandstone
+2025-09-28 15:39:06,912 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: sandstone
+2025-09-28 15:39:06,912 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: sandstone (light)
+2025-09-28 15:39:06,921 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: sandstone
+2025-09-28 15:39:06,921 - network_analyzer.gui.main_window - INFO - 主题已切换为: sandstone
+2025-09-28 15:39:07,117 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: sandstone
+2025-09-28 15:39:08,190 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: minty (light)
+2025-09-28 15:39:08,197 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: minty
+2025-09-28 15:39:08,197 - network_analyzer.gui.main_window - INFO - 主题已切换为: minty
+2025-09-28 15:39:08,396 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: minty
+2025-09-28 15:39:08,396 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: minty (light)
+2025-09-28 15:39:08,407 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: minty
+2025-09-28 15:39:08,407 - network_analyzer.gui.main_window - INFO - 主题已切换为: minty
+2025-09-28 15:39:08,607 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: minty
+2025-09-28 15:39:09,492 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: lumen (light)
+2025-09-28 15:39:09,500 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: lumen
+2025-09-28 15:39:09,500 - network_analyzer.gui.main_window - INFO - 主题已切换为: lumen
+2025-09-28 15:39:09,691 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: lumen
+2025-09-28 15:39:09,691 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: lumen (light)
+2025-09-28 15:39:09,698 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: lumen
+2025-09-28 15:39:09,698 - network_analyzer.gui.main_window - INFO - 主题已切换为: lumen
+2025-09-28 15:39:09,917 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: lumen
+2025-09-28 15:39:11,006 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: minty (light)
+2025-09-28 15:39:11,012 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: minty
+2025-09-28 15:39:11,013 - network_analyzer.gui.main_window - INFO - 主题已切换为: minty
+2025-09-28 15:39:11,205 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: minty
+2025-09-28 15:39:11,206 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: minty (light)
+2025-09-28 15:39:11,211 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: minty
+2025-09-28 15:39:11,212 - network_analyzer.gui.main_window - INFO - 主题已切换为: minty
+2025-09-28 15:39:11,407 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: minty
+2025-09-28 15:39:13,471 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: vapor (dark)
+2025-09-28 15:39:13,477 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: vapor
+2025-09-28 15:39:13,477 - network_analyzer.gui.main_window - INFO - 主题已切换为: vapor
+2025-09-28 15:39:13,682 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: vapor
+2025-09-28 15:39:13,683 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: vapor (colorful)
+2025-09-28 15:39:13,691 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: vapor
+2025-09-28 15:39:13,691 - network_analyzer.gui.main_window - INFO - 主题已切换为: vapor
+2025-09-28 15:39:13,898 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: vapor
+2025-09-28 15:39:14,090 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: morph (colorful)
+2025-09-28 15:39:14,097 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: morph
+2025-09-28 15:39:14,097 - network_analyzer.gui.main_window - INFO - 主题已切换为: morph
+2025-09-28 15:39:14,292 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: morph
+2025-09-28 15:39:14,292 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: morph (colorful)
+2025-09-28 15:39:14,299 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: morph
+2025-09-28 15:39:14,300 - network_analyzer.gui.main_window - INFO - 主题已切换为: morph
+2025-09-28 15:39:14,497 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: morph
+2025-09-28 15:39:15,026 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: litera (light)
+2025-09-28 15:39:15,036 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: litera
+2025-09-28 15:39:15,036 - network_analyzer.gui.main_window - INFO - 主题已切换为: litera
+2025-09-28 15:39:15,229 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: litera
+2025-09-28 15:39:15,229 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: litera (light)
+2025-09-28 15:39:15,239 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: litera
+2025-09-28 15:39:15,239 - network_analyzer.gui.main_window - INFO - 主题已切换为: litera
+2025-09-28 15:39:15,432 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: litera
+2025-09-28 15:39:15,565 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: flatly (light)
+2025-09-28 15:39:15,575 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: flatly
+2025-09-28 15:39:15,576 - network_analyzer.gui.main_window - INFO - 主题已切换为: flatly
+2025-09-28 15:39:15,757 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: flatly
+2025-09-28 15:39:15,757 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: flatly (light)
+2025-09-28 15:39:15,765 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: flatly
+2025-09-28 15:39:15,768 - network_analyzer.gui.main_window - INFO - 主题已切换为: flatly
+2025-09-28 15:39:15,954 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: flatly
+2025-09-28 15:39:16,545 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: cyborg (dark)
+2025-09-28 15:39:16,554 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: cyborg
+2025-09-28 15:39:16,554 - network_analyzer.gui.main_window - INFO - 主题已切换为: cyborg
+2025-09-28 15:39:16,748 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: cyborg
+2025-09-28 15:39:16,748 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: cyborg (dark)
+2025-09-28 15:39:16,759 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: cyborg
+2025-09-28 15:39:16,759 - network_analyzer.gui.main_window - INFO - 主题已切换为: cyborg
+2025-09-28 15:39:16,961 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: cyborg
+2025-09-28 15:39:18,025 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: superhero (dark)
+2025-09-28 15:39:18,034 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: superhero
+2025-09-28 15:39:18,034 - network_analyzer.gui.main_window - INFO - 主题已切换为: superhero
+2025-09-28 15:39:18,240 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: superhero
+2025-09-28 15:39:18,240 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: superhero (dark)
+2025-09-28 15:39:18,247 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: superhero
+2025-09-28 15:39:18,248 - network_analyzer.gui.main_window - INFO - 主题已切换为: superhero
+2025-09-28 15:39:18,432 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: superhero
+2025-09-28 15:39:18,561 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: vapor (dark)
+2025-09-28 15:39:18,572 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: vapor
+2025-09-28 15:39:18,573 - network_analyzer.gui.main_window - INFO - 主题已切换为: vapor
+2025-09-28 15:39:18,753 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: vapor
+2025-09-28 15:39:18,754 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: vapor (dark)
+2025-09-28 15:39:18,759 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: vapor
+2025-09-28 15:39:18,759 - network_analyzer.gui.main_window - INFO - 主题已切换为: vapor
+2025-09-28 15:39:18,974 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: vapor
+2025-09-28 15:39:19,506 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: darkly (dark)
+2025-09-28 15:39:19,534 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: darkly
+2025-09-28 15:39:19,534 - network_analyzer.gui.main_window - INFO - 主题已切换为: darkly
+2025-09-28 15:39:19,721 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: darkly
+2025-09-28 15:39:19,721 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: darkly (dark)
+2025-09-28 15:39:19,732 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: darkly
+2025-09-28 15:39:19,732 - network_analyzer.gui.main_window - INFO - 主题已切换为: darkly
+2025-09-28 15:39:19,950 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: darkly
+2025-09-28 15:39:20,344 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: litera (light)
+2025-09-28 15:39:20,352 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: litera
+2025-09-28 15:39:20,352 - network_analyzer.gui.main_window - INFO - 主题已切换为: litera
+2025-09-28 15:39:20,536 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: litera
+2025-09-28 15:39:20,536 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: litera (light)
+2025-09-28 15:39:20,543 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: litera
+2025-09-28 15:39:20,543 - network_analyzer.gui.main_window - INFO - 主题已切换为: litera
+2025-09-28 15:39:20,733 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: litera
+2025-09-28 15:39:36,411 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-28 15:39:36,416 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-28 15:39:36,416 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-28 15:39:36,417 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-28 15:39:38,698 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-28 15:39:38,701 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-28 15:39:38,701 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-28 15:39:38,702 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-28 15:39:41,035 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-28 15:39:41,038 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-28 15:39:41,038 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-28 15:39:41,038 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-28 15:39:43,901 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-28 15:39:43,905 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-28 15:39:43,905 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-28 15:39:43,905 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-28 15:39:51,664 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: flatly (light)
+2025-09-28 15:39:51,673 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: flatly
+2025-09-28 15:39:51,673 - network_analyzer.gui.main_window - INFO - 主题已切换为: flatly
+2025-09-28 15:39:51,855 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: flatly
+2025-09-28 15:39:51,855 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: flatly (light)
+2025-09-28 15:39:51,862 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: flatly
+2025-09-28 15:39:51,862 - network_analyzer.gui.main_window - INFO - 主题已切换为: flatly
+2025-09-28 15:39:52,017 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: flatly
+2025-09-28 15:39:54,447 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: lumen (light)
+2025-09-28 15:39:54,455 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: lumen
+2025-09-28 15:39:54,456 - network_analyzer.gui.main_window - INFO - 主题已切换为: lumen
+2025-09-28 15:39:54,625 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: lumen
+2025-09-28 15:39:54,625 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: lumen (light)
+2025-09-28 15:39:54,634 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: lumen
+2025-09-28 15:39:54,634 - network_analyzer.gui.main_window - INFO - 主题已切换为: lumen
+2025-09-28 15:39:54,825 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: lumen
+2025-09-28 15:39:55,097 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: minty (light)
+2025-09-28 15:39:55,105 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: minty
+2025-09-28 15:39:55,105 - network_analyzer.gui.main_window - INFO - 主题已切换为: minty
+2025-09-28 15:39:55,253 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: minty
+2025-09-28 15:39:55,253 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: minty (light)
+2025-09-28 15:39:55,259 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: minty
+2025-09-28 15:39:55,259 - network_analyzer.gui.main_window - INFO - 主题已切换为: minty
+2025-09-28 15:39:55,407 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: minty
+2025-09-28 15:39:56,018 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-28 15:39:56,021 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-28 15:39:56,021 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-28 15:39:56,021 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-28 15:39:57,554 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-28 15:39:57,557 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-28 15:39:57,557 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-28 15:39:57,557 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-28 15:39:57,673 - network_analyzer.gui.main_window - INFO - 窗口大小已更新为: 1200x800
+2025-09-28 15:39:57,674 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: morph
+2025-09-28 15:39:57,674 - network_analyzer.gui.main_window - INFO - 主题已切换为: morph
+2025-09-28 15:39:57,731 - network_analyzer.gui.main_window - INFO - 设置已重新加载
+2025-09-28 15:39:57,732 - network_analyzer.gui.main_window - INFO - 设置已更新并应用
+2025-09-28 15:39:59,748 - network_analyzer.gui.dialogs.settings_dialog - INFO - 当前配置已加载到设置对话框
+2025-09-28 15:40:02,287 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: litera (light)
+2025-09-28 15:40:02,294 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: litera
+2025-09-28 15:40:02,294 - network_analyzer.gui.main_window - INFO - 主题已切换为: litera
+2025-09-28 15:40:02,462 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: litera
+2025-09-28 15:40:02,463 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: litera (light)
+2025-09-28 15:40:02,471 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: litera
+2025-09-28 15:40:02,472 - network_analyzer.gui.main_window - INFO - 主题已切换为: litera
+2025-09-28 15:40:02,653 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: litera
+2025-09-28 15:40:03,221 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: minty (light)
+2025-09-28 15:40:03,228 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: minty
+2025-09-28 15:40:03,228 - network_analyzer.gui.main_window - INFO - 主题已切换为: minty
+2025-09-28 15:40:03,394 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: minty
+2025-09-28 15:40:03,394 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: minty (light)
+2025-09-28 15:40:03,403 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: minty
+2025-09-28 15:40:03,403 - network_analyzer.gui.main_window - INFO - 主题已切换为: minty
+2025-09-28 15:40:03,572 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: minty
+2025-09-28 15:40:05,187 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: lumen (light)
+2025-09-28 15:40:05,192 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: lumen
+2025-09-28 15:40:05,192 - network_analyzer.gui.main_window - INFO - 主题已切换为: lumen
+2025-09-28 15:40:05,354 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: lumen
+2025-09-28 15:40:05,355 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: lumen (light)
+2025-09-28 15:40:05,365 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: lumen
+2025-09-28 15:40:05,365 - network_analyzer.gui.main_window - INFO - 主题已切换为: lumen
+2025-09-28 15:40:05,526 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: lumen
+2025-09-28 15:40:06,582 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: minty (light)
+2025-09-28 15:40:06,591 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: minty
+2025-09-28 15:40:06,591 - network_analyzer.gui.main_window - INFO - 主题已切换为: minty
+2025-09-28 15:40:06,769 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: minty
+2025-09-28 15:40:06,769 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: minty (light)
+2025-09-28 15:40:06,781 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: minty
+2025-09-28 15:40:06,781 - network_analyzer.gui.main_window - INFO - 主题已切换为: minty
+2025-09-28 15:40:06,959 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: minty
+2025-09-28 15:40:08,249 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-28 15:40:08,253 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-28 15:40:08,253 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-28 15:40:08,254 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-28 15:40:15,674 - network_analyzer.gui.dialogs.settings_dialog - INFO - 当前配置已加载到设置对话框
+2025-09-28 15:40:21,638 - network_analyzer.gui.dialogs.settings_dialog - INFO - 当前配置已加载到设置对话框
+2025-09-28 15:40:23,638 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: litera (light)
+2025-09-28 15:40:23,646 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: litera
+2025-09-28 15:40:23,646 - network_analyzer.gui.main_window - INFO - 主题已切换为: litera
+2025-09-28 15:40:23,854 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: litera
+2025-09-28 15:40:23,854 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: litera (light)
+2025-09-28 15:40:23,861 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: litera
+2025-09-28 15:40:23,861 - network_analyzer.gui.main_window - INFO - 主题已切换为: litera
+2025-09-28 15:40:24,057 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: litera
+2025-09-28 15:40:24,969 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-28 15:40:24,971 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-28 15:40:24,972 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-28 15:40:24,972 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-28 15:40:28,562 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-09-28 15:40:28,564 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-09-28 15:40:28,565 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-09-28 15:40:28,565 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-09-28 15:40:32,217 - network_analyzer.gui.main_window - INFO - 自动创建默认会话: 捕获会话_20250928_154032 (ID: 96)
+2025-09-28 15:40:32,218 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-28 15:40:32,219 - network_analyzer.gui.main_window - INFO - 开始捕获时DataProcessor session_id已设置为: 96
+2025-09-28 15:40:32,219 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-28 15:40:33,022 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 26 个数据包, 耗时: 0.80 秒
+2025-09-28 15:40:33,027 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-28 15:40:34,336 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-28 15:40:57,074 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-09-28 15:40:57,074 - network_analyzer.gui.main_window - INFO - 开始捕获时DataProcessor session_id已设置为: 96
+2025-09-28 15:40:57,075 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-09-28 15:40:57,888 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-28 15:40:58,067 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 100 个数据包, 耗时: 0.99 秒
+2025-09-28 15:40:58,073 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-09-28 15:40:59,886 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-09-28 15:41:11,003 - network_analyzer.gui.main_window - INFO - 会话数据保存成功: ID=96, 数据包=115, 字节数=21048
+2025-09-28 15:41:11,755 - network_analyzer.gui.main_window - INFO - 通过菜单保存会话成功
+2025-09-28 15:41:40,848 - network_analyzer.gui.chart_manager - INFO - 图表管理器初始化完成
+2025-09-28 15:41:40,861 - network_analyzer.gui.chart_manager - INFO - 开始创建趋势图表，数据: True
+2025-09-28 15:41:40,861 - network_analyzer.gui.chart_manager - INFO - 时间戳数量: 301, 协议数量: 4
+2025-09-28 15:41:40,926 - network_analyzer.gui.chart_manager - INFO - 共创建 4 条趋势线
+2025-09-28 15:41:40,990 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已启动
+2025-09-28 15:41:40,991 - network_analyzer.gui.traffic_trends_dialog - INFO - 流量趋势对话框初始化完成
+2025-09-28 15:41:40,997 - network_analyzer.gui.main_window - INFO - 流量趋势对话框已打开
+2025-09-28 15:41:48,237 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已停止
+2025-09-28 15:41:49,054 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已启动
+2025-09-28 15:41:50,764 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已停止
+2025-09-28 15:41:50,767 - network_analyzer.gui.chart_manager - INFO - 图表管理器已销毁
+2025-09-28 15:41:50,808 - network_analyzer.gui.traffic_trends_dialog - INFO - 流量趋势对话框已关闭
+2025-09-28 15:41:54,156 - network_analyzer.reports.charts.chart_generator - INFO - 找到中文字体文件: C:\Windows\Fonts\msyh.ttc
+2025-09-28 15:41:54,156 - network_analyzer.reports.charts.chart_generator - INFO - 应用系统字体: Microsoft YaHei
+2025-09-28 15:41:54,290 - network_analyzer.reports.generators.pdf_generator - INFO - 成功注册中文字体: C:/Windows/Fonts/msyh.ttc
+2025-09-28 15:41:54,292 - network_analyzer.reports.report_generator - INFO - 报告生成器子模块初始化完成
+2025-09-28 15:42:02,101 - network_analyzer.reports.data_collector - INFO - 开始收集会话 96 的报告数据
+2025-09-28 15:42:02,108 - network_analyzer.reports.data_collector - INFO - 会话 96 数据收集完成
+2025-09-28 15:42:04,471 - network_analyzer.reports.report_generator - INFO - 开始生成会话 96 的报告
+2025-09-28 15:42:04,474 - network_analyzer.reports.data_collector - INFO - 开始收集会话 96 的报告数据
+2025-09-28 15:42:04,481 - network_analyzer.reports.data_collector - INFO - 会话 96 数据收集完成
+2025-09-28 15:42:04,481 - network_analyzer.reports.charts.chart_generator - INFO - 应用系统字体: Microsoft YaHei
+2025-09-28 15:42:04,814 - network_analyzer.reports.charts.chart_generator - INFO - 协议饼图生成成功: D:\项目\计算机网络课设\reports\charts\protocol_pie_20250928_154204.png
+2025-09-28 15:42:04,814 - network_analyzer.reports.charts.chart_generator - INFO - 应用系统字体: Microsoft YaHei
+2025-09-28 15:42:05,180 - network_analyzer.reports.charts.chart_generator - INFO - 流量趋势图生成成功: D:\项目\计算机网络课设\reports\charts\traffic_trend_20250928_154204.png
+2025-09-28 15:42:05,181 - network_analyzer.reports.charts.chart_generator - INFO - 应用系统字体: Microsoft YaHei
+2025-09-28 15:42:05,489 - network_analyzer.reports.charts.chart_generator - INFO - Top协议条形图生成成功: D:\项目\计算机网络课设\reports\charts\top_protocols_20250928_154205.png
+2025-09-28 15:42:05,489 - network_analyzer.reports.charts.chart_generator - INFO - 应用系统字体: Microsoft YaHei
+2025-09-28 15:42:06,452 - network_analyzer.reports.charts.chart_generator - INFO - 组合图表生成成功: D:\项目\计算机网络课设\reports\charts\dashboard_20250928_154205.png
+2025-09-28 15:42:06,452 - network_analyzer.reports.report_generator - INFO - 生成了 4 个图表
+2025-09-28 15:42:06,938 - network_analyzer.reports.generators.pdf_generator - INFO - PDF报告生成成功: D:\项目\计算机网络课设\reports\network_analysis_report_20250928_154206.pdf
+2025-09-28 15:42:06,942 - network_analyzer.reports.generators.html_generator - INFO - HTML报告生成成功: D:\项目\计算机网络课设\reports\network_analysis_report_20250928_154206.html
+2025-09-28 15:42:06,945 - network_analyzer.reports.generators.csv_generator - INFO - CSV报告导出成功: D:\项目\计算机网络课设\reports\network_analysis_data_20250928_154206.csv
+2025-09-28 15:42:06,947 - network_analyzer.reports.report_generator - INFO - 会话 96 报告生成完成
+2025-09-28 15:42:44,358 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-09-28 15:42:44,358 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-09-28 15:42:44,358 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-09-28 15:42:44,358 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-09-28 15:42:44,359 - network_analyzer.gui.main_window - INFO - 应用程序正常退出

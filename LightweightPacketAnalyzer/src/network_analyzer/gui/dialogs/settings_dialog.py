@@ -12,6 +12,7 @@ from typing import Optional, Dict, Any
 from ...config.settings import Settings
 from .basic_settings_tab import BasicSettingsTab
 from .advanced_settings_tab import AdvancedSettingsTab
+from .theme_settings_tab import ThemeSettingsTab
 
 
 class SettingsDialog:
@@ -43,6 +44,7 @@ class SettingsDialog:
         self.notebook = None
         self.basic_tab = None
         self.advanced_tab = None
+        self.theme_tab = None
         self.button_frame = None
         
         # 按钮引用
@@ -85,9 +87,9 @@ class SettingsDialog:
         """创建对话框窗口"""
         self.dialog = tk.Toplevel(self.parent)
         self.dialog.title("应用程序设置")
-        self.dialog.geometry("600x500")
+        self.dialog.geometry("800x650")
         self.dialog.resizable(True, True)
-        self.dialog.minsize(500, 400)
+        self.dialog.minsize(700, 550)
         
         # 设置图标（如果有的话）
         try:
@@ -101,6 +103,12 @@ class SettingsDialog:
     
     def _create_ui(self) -> None:
         """创建用户界面"""
+        # 初始化主题配置变量（在创建UI之前）
+        if 'THEME' not in self.config_vars:
+            self.config_vars['THEME'] = tk.StringVar(value=self.settings.THEME)
+        if 'THEME_CATEGORY' not in self.config_vars:
+            self.config_vars['THEME_CATEGORY'] = tk.StringVar(value=self.settings.THEME_CATEGORY)
+        
         # 主框架
         main_frame = ttk.Frame(self.dialog, padding="10")
         main_frame.pack(fill=tk.BOTH, expand=True)
@@ -111,6 +119,9 @@ class SettingsDialog:
         
         # 创建基础设置选项卡
         self._create_basic_tab()
+        
+        # 创建主题设置选项卡
+        self._create_theme_tab()
         
         # 创建高级设置选项卡
         self._create_advanced_tab()
@@ -125,6 +136,14 @@ class SettingsDialog:
         
         # 创建基础设置选项卡内容
         self.basic_settings_tab = BasicSettingsTab(self.basic_tab, self.config_vars, self.settings)
+    
+    def _create_theme_tab(self) -> None:
+        """创建主题设置选项卡"""
+        self.theme_tab = ttk.Frame(self.notebook)
+        self.notebook.add(self.theme_tab, text="主题设置")
+        
+        # 创建主题设置选项卡内容
+        self.theme_settings_tab = ThemeSettingsTab(self.theme_tab, self.config_vars, self.settings, self.main_window)
     
     def _create_advanced_tab(self) -> None:
         """创建高级设置选项卡"""
@@ -184,7 +203,12 @@ class SettingsDialog:
         # 保存原始值用于取消操作
         self.original_values = self.settings.to_dict()
         
-        # 配置变量初始化将在T3和T4中实现
+        # 更新主题配置变量的值
+        if 'THEME' in self.config_vars:
+            self.config_vars['THEME'].set(self.settings.THEME)
+        if 'THEME_CATEGORY' in self.config_vars:
+            self.config_vars['THEME_CATEGORY'].set(self.settings.THEME_CATEGORY)
+            
         self.logger.info("当前配置已加载到设置对话框")
     
     def _setup_bindings(self) -> None:
@@ -355,10 +379,20 @@ class SettingsDialog:
             self.logger.error(f"重置设置失败: {error}")
             messagebox.showerror("重置失败", f"重置设置时发生错误: {error}")
     
+    def _cleanup_resources(self) -> None:
+        """清理资源"""
+        try:
+            # 清理主题选项卡资源
+            if hasattr(self, 'theme_settings_tab') and self.theme_settings_tab:
+                self.theme_settings_tab.cleanup()
+        except Exception as e:
+            self.logger.warning(f"清理资源时出错: {e}")
+    
     def _on_ok(self) -> None:
         """确定按钮事件处理"""
         if self._apply_settings():
             self.result = True
+            self._cleanup_resources()
             self.dialog.destroy()
     
     def _on_cancel(self) -> None:
@@ -374,13 +408,16 @@ class SettingsDialog:
             if result is True:  # 保存
                 if self._apply_settings():
                     self.result = True
+                    self._cleanup_resources()
                     self.dialog.destroy()
             elif result is False:  # 不保存
                 self.result = False
+                self._cleanup_resources()
                 self.dialog.destroy()
             # result is None: 取消关闭
         else:
             self.result = False
+            self._cleanup_resources()
             self.dialog.destroy()
     
     def _on_apply(self) -> None:

@@ -5,7 +5,7 @@
 """
 
 import tkinter as tk
-from tkinter import ttk, messagebox, simpledialog
+from tkinter import messagebox, simpledialog
 import logging
 import threading
 import queue
@@ -13,7 +13,17 @@ import time
 from datetime import datetime
 from typing import Optional, Dict, Any
 
+try:
+    import ttkbootstrap as ttk
+    from ttkbootstrap import Window
+    TTKBOOTSTRAP_AVAILABLE = True
+except ImportError:
+    import tkinter.ttk as ttk
+    Window = tk.Tk
+    TTKBOOTSTRAP_AVAILABLE = False
+
 from network_analyzer.config.settings import Settings
+from network_analyzer.gui.theme_manager import theme_manager
 from network_analyzer.storage.data_manager import DataManager
 from network_analyzer.capture.packet_capture import PacketCapture
 from network_analyzer.processing.data_processor import DataProcessor
@@ -298,7 +308,24 @@ class MainWindow:
         self.item_to_packet_features = {}
         
         # 创建主窗口
-        self.root = tk.Tk()
+        if TTKBOOTSTRAP_AVAILABLE:
+            # 检查主题类型，决定使用哪种窗口创建方式
+            theme_name = settings.THEME if theme_manager.validate_theme(settings.THEME) else theme_manager.DEFAULT_THEME
+            theme_category = theme_manager.get_theme_category(theme_name)
+            
+            if theme_category == 'classic':
+                # 经典主题使用标准tkinter
+                self.root = tk.Tk()
+                self.logger.info(f"使用标准tkinter，主题: {theme_name}")
+            else:
+                # ttkbootstrap主题使用Window
+                self.root = Window(themename=theme_name)
+                self.logger.info(f"使用ttkbootstrap主题: {theme_name}")
+        else:
+            # 回退到标准tkinter
+            self.root = tk.Tk()
+            self.logger.warning("ttkbootstrap不可用，使用标准tkinter")
+        
         self.root.title(settings.APP_NAME)
         self.root.geometry(f"{settings.WINDOW_WIDTH}x{settings.WINDOW_HEIGHT}")
         
@@ -1552,19 +1579,72 @@ class MainWindow:
                 self.root.geometry(f"{width}x{height}")
                 self.logger.info(f"窗口大小已更新为: {width}x{height}")
             
-            # 应用主题（如果支持）
+            # 应用主题
             if 'THEME' in immediate_settings:
                 theme = immediate_settings['THEME']
-                try:
-                    style = ttk.Style()
-                    if theme in style.theme_names():
-                        style.theme_use(theme)
-                        self.logger.info(f"主题已更新为: {theme}")
-                except Exception as theme_error:
-                    self.logger.warning(f"应用主题失败: {theme_error}")
+                self.apply_theme(theme)
             
         except Exception as error:
             self.logger.error(f"应用立即生效设置失败: {error}")
+    
+    def apply_theme(self, theme_name: str) -> None:
+        """
+        应用新主题
+        
+        Args:
+            theme_name: 主题名称
+        """
+        try:
+            if not theme_manager.validate_theme(theme_name):
+                self.logger.warning(f"主题 {theme_name} 无效，使用默认主题")
+                theme_name = theme_manager.DEFAULT_THEME
+            
+            # 应用主题
+            if theme_manager.apply_theme(self.root, theme_name):
+                self.logger.info(f"主题已切换为: {theme_name}")
+                
+                # 更新设置中的主题
+                category = theme_manager.get_theme_category(theme_name)
+                self.settings.THEME = theme_name
+                self.settings.THEME_CATEGORY = category
+                
+                # 触发界面刷新
+                self.root.update_idletasks()
+            else:
+                self.logger.error(f"主题切换失败: {theme_name}")
+                
+        except Exception as e:
+            self.logger.error(f"应用主题失败: {e}")
+    
+    def reload_theme_settings(self) -> None:
+        """重新加载主题设置"""
+        try:
+            # 检查是否需要迁移旧主题
+            current_theme = self.settings.THEME
+            if not theme_manager.validate_theme(current_theme):
+                migrated_theme = self.settings.migrate_legacy_theme()
+                self.logger.info(f"主题已迁移: {current_theme} -> {migrated_theme}")
+                current_theme = migrated_theme
+            
+            # 应用当前主题
+            self.apply_theme(current_theme)
+            
+        except Exception as e:
+            self.logger.error(f"重新加载主题设置失败: {e}")
+    
+    def get_current_theme_info(self) -> Dict[str, str]:
+        """
+        获取当前主题信息
+        
+        Returns:
+            Dict: 当前主题信息
+        """
+        return {
+            'theme': self.settings.THEME,
+            'category': self.settings.THEME_CATEGORY,
+            'display_name': theme_manager.get_theme_display_name(self.settings.THEME),
+            'description': theme_manager.get_theme_description(self.settings.THEME)
+        }
     
     def _show_help(self) -> None:
         """显示帮助"""

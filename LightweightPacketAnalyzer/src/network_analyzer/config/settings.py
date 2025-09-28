@@ -12,6 +12,15 @@ from pathlib import Path
 from typing import Optional, Any, Dict, Tuple, List
 from dotenv import load_dotenv
 
+# 延迟导入theme_manager以避免循环导入
+def _get_theme_validator():
+    """延迟导入ThemeValidator"""
+    try:
+        from ..gui.theme_manager import ThemeValidator
+        return ThemeValidator
+    except ImportError:
+        return None
+
 
 class Settings:
     """应用程序配置管理类"""
@@ -55,7 +64,8 @@ class Settings:
         # GUI配置
         self.WINDOW_WIDTH = int(os.getenv("WINDOW_WIDTH", "1200"))
         self.WINDOW_HEIGHT = int(os.getenv("WINDOW_HEIGHT", "800"))
-        self.THEME = os.getenv("THEME", "default")
+        self.THEME = os.getenv("THEME", "litera")  # 默认使用litera主题
+        self.THEME_CATEGORY = os.getenv("THEME_CATEGORY", "light")  # 主题分类
         
         # 日志配置
         self.LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
@@ -223,6 +233,7 @@ class Settings:
             "WINDOW_WIDTH": self.WINDOW_WIDTH,
             "WINDOW_HEIGHT": self.WINDOW_HEIGHT,
             "THEME": self.THEME,
+            "THEME_CATEGORY": self.THEME_CATEGORY,
             
             # 日志配置
             "LOG_LEVEL": self.LOG_LEVEL,
@@ -317,6 +328,7 @@ class Settings:
             f"WINDOW_WIDTH={self.WINDOW_WIDTH}",
             f"WINDOW_HEIGHT={self.WINDOW_HEIGHT}",
             f"THEME={self.THEME}",
+            f"THEME_CATEGORY={self.THEME_CATEGORY}",
             "",
             "# 数据包捕获配置",
             f"CAPTURE_INTERFACE={self.CAPTURE_INTERFACE}",
@@ -379,6 +391,7 @@ class Settings:
             'WINDOW_WIDTH': self.WINDOW_WIDTH,
             'WINDOW_HEIGHT': self.WINDOW_HEIGHT,
             'THEME': self.THEME,
+            'THEME_CATEGORY': self.THEME_CATEGORY,
         }
     
     def get_restart_required_settings(self) -> Dict[str, Any]:
@@ -497,9 +510,19 @@ class Settings:
                 if not isinstance(value, int) or not (1 <= value <= 300):
                     return False, "捕获超时时间必须在1-300秒之间"
             elif key == 'THEME':
-                valid_themes = ['default', 'clam', 'alt', 'classic']
-                if value not in valid_themes:
-                    return False, f"主题必须是{', '.join(valid_themes)}之一"
+                # 使用theme_manager验证主题
+                theme_validator = _get_theme_validator()
+                if theme_validator:
+                    # 检查是否为有效的主题（tkinter或ttkbootstrap）
+                    is_valid_theme = (theme_validator.is_tkinter_theme(value) or 
+                                    theme_validator.is_ttkbootstrap_theme(value))
+                    if not is_valid_theme:
+                        return False, "主题名称无效，请选择有效的主题"
+                else:
+                    # 回退到经典主题验证
+                    valid_themes = ['default', 'clam', 'alt', 'classic']
+                    if value not in valid_themes:
+                        return False, f"主题必须是{', '.join(valid_themes)}之一"
             
             return True, ""
             
@@ -566,6 +589,108 @@ class Settings:
             if env_key in settings_dict:
                 self.CAPTURE_OPTIONS[option_key] = settings_dict[env_key]
 
+    def get_theme_config(self) -> Dict[str, str]:
+        """
+        获取主题配置
+        
+        Returns:
+            Dict: 主题配置字典
+        """
+        return {
+            'theme': self.THEME,
+            'category': self.THEME_CATEGORY
+        }
+    
+    def save_theme_config(self, theme: str, category: str) -> bool:
+        """
+        保存主题配置
+        
+        Args:
+            theme: 主题名称
+            category: 主题分类
+            
+        Returns:
+            bool: 是否保存成功
+        """
+        try:
+            # 更新内存中的配置
+            self.THEME = theme
+            self.THEME_CATEGORY = category
+            
+            # 保存到文件
+            return self.save_to_file()
+            
+        except Exception as e:
+            logging.getLogger(__name__).error(f"保存主题配置失败: {e}")
+            return False
+    
+    def migrate_legacy_theme(self) -> str:
+        """
+        迁移旧主题配置
+        
+        Returns:
+            str: 迁移后的主题名称
+        """
+        # 主题迁移映射
+        migration_map = {
+            'default': 'litera',
+            'clam': 'flatly',
+            'alt': 'cosmo',
+            'classic': 'journal'
+        }
+        
+        current_theme = self.THEME
+        
+        # 如果是旧主题，进行迁移
+        if current_theme in migration_map:
+            new_theme = migration_map[current_theme]
+            logging.getLogger(__name__).info(f"主题迁移: {current_theme} -> {new_theme}")
+            
+            # 更新配置
+            self.THEME = new_theme
+            self.THEME_CATEGORY = 'light'  # 迁移的主题默认为浅色
+            
+            # 保存配置
+            self.save_to_file()
+            
+            return new_theme
+        
+        return current_theme
+    
+    def validate_theme_config(self, theme: str, category: str) -> Tuple[bool, str]:
+        """
+        验证主题配置
+        
+        Args:
+            theme: 主题名称
+            category: 主题分类
+            
+        Returns:
+            Tuple[bool, str]: (是否有效, 错误信息)
+        """
+        # 验证主题名称
+        if not theme or not isinstance(theme, str):
+            return False, "主题名称不能为空"
+        
+        # 验证主题分类
+        valid_categories = {'light', 'dark', 'colorful', 'classic'}
+        if category not in valid_categories:
+            return False, f"主题分类必须是: {', '.join(valid_categories)}"
+        
+        return True, ""
+    
+    def get_theme_settings_for_immediate_apply(self) -> Dict[str, Any]:
+        """
+        获取需要立即生效的主题设置
+        
+        Returns:
+            Dict: 立即生效的主题设置
+        """
+        return {
+            'THEME': self.THEME,
+            'THEME_CATEGORY': self.THEME_CATEGORY
+        }
+
     def __repr__(self) -> str:
         """配置的字符串表示"""
-        return f"Settings(version={self.VERSION}, debug={self.DEBUG})"
+        return f"Settings(version={self.VERSION}, debug={self.DEBUG}, theme={self.THEME})"
