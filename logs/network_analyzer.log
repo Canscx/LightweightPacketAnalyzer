@@ -3104,3 +3104,336 @@ AttributeError: 'NoneType' object has no attribute 'name'
 2025-09-28 15:42:44,358 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
 2025-09-28 15:42:44,358 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
 2025-09-28 15:42:44,359 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-10-08 22:59:49,416 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-10-08 22:59:49,418 - network_analyzer.main - INFO - 版本: 2.0
+2025-10-08 22:59:49,420 - network_analyzer.main - INFO - 启动图形界面...
+2025-10-08 22:59:49,424 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-10-08 22:59:49,424 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-10-08 22:59:49,425 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-10-08 22:59:49,425 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-10-08 22:59:49,425 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-10-08 22:59:49,425 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-10-08 22:59:49,521 - network_analyzer.gui.main_window - INFO - 使用ttkbootstrap主题: litera
+2025-10-08 22:59:49,624 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-10-08 23:00:12,934 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-10-08 23:00:12,934 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-10-08 23:00:12,934 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-10-08 23:00:12,934 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-10-08 23:00:12,935 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-10-08 23:00:13,311 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-10-08 23:00:13,313 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-10-08 23:03:39,289 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-10-08 23:03:39,290 - network_analyzer.main - INFO - 版本: 2.0
+2025-10-08 23:03:39,292 - network_analyzer.main - INFO - 启动图形界面...
+2025-10-08 23:03:39,295 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-10-08 23:03:39,295 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-10-08 23:03:39,296 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-10-08 23:03:39,296 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-10-08 23:03:39,296 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-10-08 23:03:39,296 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-10-08 23:03:39,381 - network_analyzer.gui.main_window - INFO - 使用ttkbootstrap主题: litera
+2025-10-08 23:03:39,472 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-10-08 23:03:41,040 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-10-08 23:03:41,040 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-10-08 23:03:41,040 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-10-08 23:03:41,041 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-10-08 23:03:41,041 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-10-08 23:03:41,460 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-10-08 23:03:41,461 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-10-08 23:04:08,469 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-10-08 23:04:08,470 - network_analyzer.main - INFO - 版本: 2.0
+2025-10-08 23:04:08,472 - network_analyzer.main - INFO - 启动图形界面...
+2025-10-08 23:04:08,475 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-10-08 23:04:08,475 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-10-08 23:04:08,475 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-10-08 23:04:08,475 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-10-08 23:04:08,475 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-10-08 23:04:08,475 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-10-08 23:04:08,548 - network_analyzer.gui.main_window - INFO - 使用ttkbootstrap主题: litera
+2025-10-08 23:04:08,625 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-10-08 23:04:15,809 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-10-08 23:04:15,810 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-10-08 23:04:15,810 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-10-08 23:04:15,810 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-10-08 23:04:15,810 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-10-08 23:04:16,160 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-10-08 23:04:16,161 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-10-08 23:04:55,015 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-10-08 23:04:55,015 - network_analyzer.main - INFO - 版本: 2.0
+2025-10-08 23:04:55,018 - network_analyzer.main - INFO - 启动图形界面...
+2025-10-08 23:04:55,020 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-10-08 23:04:55,022 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-10-08 23:04:55,022 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-10-08 23:04:55,022 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-10-08 23:04:55,023 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-10-08 23:04:55,023 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-10-08 23:04:55,100 - network_analyzer.gui.main_window - INFO - 使用ttkbootstrap主题: litera
+2025-10-08 23:04:55,165 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-10-08 23:05:00,710 - network_analyzer.gui.main_window - INFO - 创建临时会话: 临时会话 (ID: 99)
+2025-10-08 23:05:00,715 - network_analyzer.gui.main_window - INFO - 会话数据保存成功: ID=99, 数据包=0, 字节数=0
+2025-10-08 23:05:08,387 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-10-08 23:05:08,387 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-10-08 23:05:08,393 - network_analyzer.gui.main_window - INFO - DataProcessor session_id已更新为: 100
+2025-10-08 23:05:09,690 - root - INFO - 新会话创建成功: 测试123 (ID: 100)
+2025-10-08 23:05:11,923 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-10-08 23:05:11,924 - network_analyzer.gui.main_window - INFO - 开始捕获时DataProcessor session_id已设置为: 100
+2025-10-08 23:05:11,924 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-10-08 23:05:13,904 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:05:14,352 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:05:14,902 - network_analyzer.gui.chart_manager - INFO - 图表管理器初始化完成
+2025-10-08 23:05:14,953 - network_analyzer.gui.chart_manager - INFO - 开始创建趋势图表，数据: True
+2025-10-08 23:05:14,953 - network_analyzer.gui.chart_manager - INFO - 时间戳数量: 301, 协议数量: 4
+2025-10-08 23:05:15,030 - network_analyzer.gui.chart_manager - INFO - 共创建 4 条趋势线
+2025-10-08 23:05:15,088 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已启动
+2025-10-08 23:05:15,088 - network_analyzer.gui.traffic_trends_dialog - INFO - 流量趋势对话框初始化完成
+2025-10-08 23:05:15,104 - network_analyzer.gui.main_window - INFO - 流量趋势对话框已打开
+2025-10-08 23:05:16,001 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:05:16,403 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:05:16,608 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:05:16,812 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:05:17,214 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:05:17,418 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:05:17,659 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:05:19,684 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:05:21,685 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:05:23,702 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:05:25,811 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:05:27,818 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:05:28,966 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:05:29,396 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:05:29,614 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:05:30,934 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:05:31,142 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:05:31,910 - network_analyzer.gui.chart_manager - INFO - 图表导出成功: D:/0下载/traffic_trends_20251008_230526.png
+2025-10-08 23:05:31,910 - network_analyzer.gui.traffic_trends_dialog - INFO - 图表导出成功
+2025-10-08 23:05:32,512 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已停止
+2025-10-08 23:05:32,515 - network_analyzer.gui.chart_manager - INFO - 图表管理器已销毁
+2025-10-08 23:05:32,568 - network_analyzer.gui.traffic_trends_dialog - INFO - 流量趋势对话框已关闭
+2025-10-08 23:05:32,855 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:05:33,418 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 930 个数据包, 耗时: 21.50 秒
+2025-10-08 23:05:33,423 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-10-08 23:05:34,855 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:05:34,948 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-10-08 23:05:34,948 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-10-08 23:05:34,948 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-10-08 23:05:34,949 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-10-08 23:05:34,949 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-10-08 23:05:35,227 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-10-08 23:05:35,228 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-10-08 23:06:00,849 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-10-08 23:06:00,849 - network_analyzer.main - INFO - 版本: 2.0
+2025-10-08 23:06:00,851 - network_analyzer.main - INFO - 启动图形界面...
+2025-10-08 23:06:00,855 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-10-08 23:06:00,855 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-10-08 23:06:00,856 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-10-08 23:06:00,856 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-10-08 23:06:00,856 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-10-08 23:06:00,857 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-10-08 23:06:00,971 - network_analyzer.gui.main_window - INFO - 使用ttkbootstrap主题: litera
+2025-10-08 23:06:01,078 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-10-08 23:06:04,618 - network_analyzer.gui.main_window - INFO - 创建临时会话: 临时会话 (ID: 101)
+2025-10-08 23:06:04,622 - network_analyzer.gui.main_window - INFO - 会话数据保存成功: ID=101, 数据包=0, 字节数=0
+2025-10-08 23:06:08,219 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-10-08 23:06:08,219 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-10-08 23:06:08,224 - network_analyzer.gui.main_window - INFO - DataProcessor session_id已更新为: 102
+2025-10-08 23:06:10,022 - root - INFO - 新会话创建成功: 测试222 (ID: 102)
+2025-10-08 23:06:11,061 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-10-08 23:06:11,062 - network_analyzer.gui.main_window - INFO - 开始捕获时DataProcessor session_id已设置为: 102
+2025-10-08 23:06:11,062 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-10-08 23:06:13,047 - network_analyzer.gui.chart_manager - INFO - 图表管理器初始化完成
+2025-10-08 23:06:13,071 - network_analyzer.gui.chart_manager - INFO - 开始创建趋势图表，数据: True
+2025-10-08 23:06:13,072 - network_analyzer.gui.chart_manager - INFO - 时间戳数量: 301, 协议数量: 4
+2025-10-08 23:06:13,180 - network_analyzer.gui.chart_manager - INFO - 共创建 4 条趋势线
+2025-10-08 23:06:13,264 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已启动
+2025-10-08 23:06:13,264 - network_analyzer.gui.traffic_trends_dialog - INFO - 流量趋势对话框初始化完成
+2025-10-08 23:06:13,271 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:06:13,284 - network_analyzer.gui.main_window - INFO - 流量趋势对话框已打开
+2025-10-08 23:06:14,683 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:06:16,465 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:06:18,466 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:06:19,632 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:06:19,838 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:06:21,451 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:06:21,662 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:06:21,922 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:06:23,180 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已停止
+2025-10-08 23:06:23,183 - network_analyzer.gui.chart_manager - INFO - 图表管理器已销毁
+2025-10-08 23:06:23,250 - network_analyzer.gui.traffic_trends_dialog - INFO - 流量趋势对话框已关闭
+2025-10-08 23:06:23,966 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:06:24,471 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 485 个数据包, 耗时: 13.41 秒
+2025-10-08 23:06:24,476 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-10-08 23:06:25,985 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:06:52,107 - network_analyzer.gui.main_window - INFO - 会话数据保存成功: ID=102, 数据包=485, 字节数=87124
+2025-10-08 23:06:53,093 - network_analyzer.gui.main_window - INFO - 通过菜单保存会话成功
+2025-10-08 23:07:22,029 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-10-08 23:07:22,029 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-10-08 23:07:22,031 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 101, 数据包数: 0
+2025-10-08 23:07:22,032 - network_analyzer.gui.main_window - INFO - 成功打开会话: 101
+2025-10-08 23:07:24,255 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-10-08 23:07:24,256 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-10-08 23:07:24,372 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 100, 数据包数: 930
+2025-10-08 23:07:24,373 - network_analyzer.gui.main_window - INFO - 成功打开会话: 100
+2025-10-08 23:07:26,630 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-10-08 23:07:26,630 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-10-08 23:07:26,636 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 96, 数据包数: 115
+2025-10-08 23:07:26,636 - network_analyzer.gui.main_window - INFO - 成功打开会话: 96
+2025-10-08 23:08:07,572 - network_analyzer.gui.main_window - WARNING - 计算速率时出错: unsupported operand type(s) for -: 'float' and 'str'
+2025-10-08 23:08:08,736 - network_analyzer.gui.main_window - INFO - 数据导出成功: D:/项目/计算机网络课设/演示/1.csv
+2025-10-08 23:08:18,704 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-10-08 23:08:18,704 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-10-08 23:08:18,705 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-10-08 23:08:18,705 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-10-08 23:08:18,705 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
+2025-10-08 23:08:25,930 - root - INFO - 用户中断程序
+2025-10-08 23:08:26,069 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-10-08 23:08:26,070 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-10-08 23:08:36,213 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-10-08 23:08:36,213 - network_analyzer.main - INFO - 版本: 2.0
+2025-10-08 23:08:36,216 - network_analyzer.main - INFO - 启动图形界面...
+2025-10-08 23:08:36,221 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-10-08 23:08:36,221 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-10-08 23:08:36,221 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-10-08 23:08:36,221 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-10-08 23:08:36,222 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-10-08 23:08:36,222 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-10-08 23:08:36,288 - network_analyzer.gui.main_window - INFO - 使用ttkbootstrap主题: litera
+2025-10-08 23:08:36,357 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-10-08 23:08:42,500 - network_analyzer.gui.main_window - INFO - 创建临时会话: 临时会话 (ID: 103)
+2025-10-08 23:08:42,504 - network_analyzer.gui.main_window - INFO - 会话数据保存成功: ID=103, 数据包=0, 字节数=0
+2025-10-08 23:08:45,989 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-10-08 23:08:45,989 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-10-08 23:08:45,993 - network_analyzer.gui.main_window - INFO - DataProcessor session_id已更新为: 104
+2025-10-08 23:08:46,999 - root - INFO - 新会话创建成功: 11223 (ID: 104)
+2025-10-08 23:08:49,473 - network_analyzer.capture.packet_capture - INFO - 开始数据包捕获 - 接口: 默认, 过滤器: 无
+2025-10-08 23:08:49,473 - network_analyzer.gui.main_window - INFO - 开始捕获时DataProcessor session_id已设置为: 104
+2025-10-08 23:08:49,474 - network_analyzer.gui.main_window - INFO - 开始数据包捕获
+2025-10-08 23:08:50,689 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:08:51,519 - network_analyzer.gui.chart_manager - INFO - 图表管理器初始化完成
+2025-10-08 23:08:51,549 - network_analyzer.gui.chart_manager - INFO - 开始创建趋势图表，数据: True
+2025-10-08 23:08:51,550 - network_analyzer.gui.chart_manager - INFO - 时间戳数量: 301, 协议数量: 4
+2025-10-08 23:08:51,634 - network_analyzer.gui.chart_manager - INFO - 共创建 4 条趋势线
+2025-10-08 23:08:51,702 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已启动
+2025-10-08 23:08:51,702 - network_analyzer.gui.traffic_trends_dialog - INFO - 流量趋势对话框初始化完成
+2025-10-08 23:08:51,718 - network_analyzer.gui.main_window - INFO - 流量趋势对话框已打开
+2025-10-08 23:08:52,650 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:08:52,852 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:08:54,856 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:08:56,863 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:08:57,962 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:08:58,460 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:08:59,372 - network_analyzer.gui.traffic_trends_dialog - INFO - 自动更新已停止
+2025-10-08 23:08:59,377 - network_analyzer.gui.chart_manager - INFO - 图表管理器已销毁
+2025-10-08 23:08:59,463 - network_analyzer.gui.traffic_trends_dialog - INFO - 流量趋势对话框已关闭
+2025-10-08 23:08:59,475 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:09:00,344 - network_analyzer.capture.packet_capture - INFO - 数据包捕获已停止 - 总计: 421 个数据包, 耗时: 10.87 秒
+2025-10-08 23:09:00,350 - network_analyzer.gui.main_window - INFO - 停止数据包捕获
+2025-10-08 23:09:01,485 - network_analyzer.storage.data_manager - WARNING - 批量插入后lastrowid为None，可能是数据库不支持lastrowid
+2025-10-08 23:09:24,073 - network_analyzer.gui.main_window - INFO - 会话数据保存成功: ID=104, 数据包=421, 字节数=116229
+2025-10-08 23:09:24,830 - network_analyzer.gui.main_window - INFO - 通过菜单保存会话成功
+2025-10-08 23:09:53,503 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-10-08 23:09:53,504 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-10-08 23:09:53,535 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 102, 数据包数: 485
+2025-10-08 23:09:53,536 - network_analyzer.gui.main_window - INFO - 成功打开会话: 102
+2025-10-08 23:09:56,766 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-10-08 23:09:56,768 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-10-08 23:09:56,886 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 98, 数据包数: 1000
+2025-10-08 23:09:56,886 - network_analyzer.gui.main_window - INFO - 成功打开会话: 98
+2025-10-08 23:09:59,212 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-10-08 23:09:59,213 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-10-08 23:09:59,236 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 104, 数据包数: 421
+2025-10-08 23:09:59,236 - network_analyzer.gui.main_window - INFO - 成功打开会话: 104
+2025-10-08 23:10:03,589 - network_analyzer.gui.main_window - WARNING - 计算速率时出错: unsupported operand type(s) for -: 'float' and 'str'
+2025-10-08 23:10:04,549 - network_analyzer.gui.main_window - INFO - 数据导出成功: D:/项目/计算机网络课设/演示/2.csv
+2025-10-08 23:10:26,863 - network_analyzer.reports.charts.chart_generator - INFO - 找到中文字体文件: C:\Windows\Fonts\msyh.ttc
+2025-10-08 23:10:26,863 - network_analyzer.reports.charts.chart_generator - INFO - 应用系统字体: Microsoft YaHei
+2025-10-08 23:10:26,929 - network_analyzer.reports.generators.pdf_generator - INFO - 成功注册中文字体: C:/Windows/Fonts/msyh.ttc
+2025-10-08 23:10:26,930 - network_analyzer.reports.report_generator - INFO - 报告生成器子模块初始化完成
+2025-10-08 23:10:32,919 - network_analyzer.reports.data_collector - INFO - 开始收集会话 104 的报告数据
+2025-10-08 23:10:32,934 - network_analyzer.reports.data_collector - INFO - 会话 104 数据收集完成
+2025-10-08 23:10:35,152 - network_analyzer.reports.report_generator - INFO - 开始生成会话 104 的报告
+2025-10-08 23:10:35,157 - network_analyzer.reports.data_collector - INFO - 开始收集会话 104 的报告数据
+2025-10-08 23:10:35,177 - network_analyzer.reports.data_collector - INFO - 会话 104 数据收集完成
+2025-10-08 23:10:35,178 - network_analyzer.reports.charts.chart_generator - INFO - 应用系统字体: Microsoft YaHei
+2025-10-08 23:10:35,574 - network_analyzer.reports.charts.chart_generator - INFO - 协议饼图生成成功: D:\项目\计算机网络课设\reports\charts\protocol_pie_20251008_231035.png
+2025-10-08 23:10:35,574 - network_analyzer.reports.charts.chart_generator - INFO - 应用系统字体: Microsoft YaHei
+2025-10-08 23:10:36,034 - network_analyzer.reports.charts.chart_generator - INFO - 流量趋势图生成成功: D:\项目\计算机网络课设\reports\charts\traffic_trend_20251008_231035.png
+2025-10-08 23:10:36,035 - network_analyzer.reports.charts.chart_generator - INFO - 应用系统字体: Microsoft YaHei
+2025-10-08 23:10:36,424 - network_analyzer.reports.charts.chart_generator - INFO - Top协议条形图生成成功: D:\项目\计算机网络课设\reports\charts\top_protocols_20251008_231036.png
+2025-10-08 23:10:36,424 - network_analyzer.reports.charts.chart_generator - INFO - 应用系统字体: Microsoft YaHei
+2025-10-08 23:10:37,647 - network_analyzer.reports.charts.chart_generator - INFO - 组合图表生成成功: D:\项目\计算机网络课设\reports\charts\dashboard_20251008_231036.png
+2025-10-08 23:10:37,647 - network_analyzer.reports.report_generator - INFO - 生成了 4 个图表
+2025-10-08 23:10:38,190 - network_analyzer.reports.generators.pdf_generator - INFO - PDF报告生成成功: D:\项目\计算机网络课设\reports\network_analysis_report_20251008_231037.pdf
+2025-10-08 23:10:38,198 - network_analyzer.reports.generators.html_generator - INFO - HTML报告生成成功: D:\项目\计算机网络课设\reports\network_analysis_report_20251008_231038.html
+2025-10-08 23:10:38,199 - network_analyzer.reports.generators.csv_generator - INFO - CSV报告导出成功: D:\项目\计算机网络课设\reports\network_analysis_data_20251008_231038.csv
+2025-10-08 23:10:38,202 - network_analyzer.reports.report_generator - INFO - 会话 104 报告生成完成
+2025-10-08 23:11:24,936 - network_analyzer.gui.dialogs.settings_dialog - INFO - 当前配置已加载到设置对话框
+2025-10-08 23:11:31,769 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-10-08 23:11:31,772 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-10-08 23:11:31,773 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-10-08 23:11:31,773 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-10-08 23:11:34,579 - network_analyzer.config.settings - INFO - 已创建配置备份: .env.backup
+2025-10-08 23:11:34,584 - network_analyzer.config.settings - INFO - 配置已保存到: .env
+2025-10-08 23:11:34,584 - network_analyzer.gui.dialogs.settings_dialog - INFO - 立即生效的设置已应用
+2025-10-08 23:11:34,584 - network_analyzer.gui.dialogs.settings_dialog - INFO - 设置已成功应用
+2025-10-08 23:11:43,922 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: cyborg (dark)
+2025-10-08 23:12:03,149 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: cyborg
+2025-10-08 23:12:03,151 - network_analyzer.gui.main_window - INFO - 主题已切换为: cyborg
+2025-10-08 23:12:03,519 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: cyborg
+2025-10-08 23:12:03,520 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: cyborg (dark)
+2025-10-08 23:12:09,088 - network_analyzer.main - INFO - 启动网络流量统计系统...
+2025-10-08 23:12:09,089 - network_analyzer.main - INFO - 版本: 2.0
+2025-10-08 23:12:09,091 - network_analyzer.main - INFO - 启动图形界面...
+2025-10-08 23:12:09,094 - network_analyzer.storage.data_manager - INFO - 数据库初始化完成
+2025-10-08 23:12:09,096 - network_analyzer.gui.main_window - INFO - 数据包捕获器初始化成功
+2025-10-08 23:12:09,097 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已启动
+2025-10-08 23:12:09,098 - network_analyzer.gui.main_window - INFO - 数据处理器初始化成功
+2025-10-08 23:12:09,098 - network_analyzer.analysis.protocol_parser - INFO - 所有协议解析器已注册
+2025-10-08 23:12:09,099 - network_analyzer.gui.main_window - INFO - 协议解析器和格式化器初始化成功
+2025-10-08 23:12:09,185 - network_analyzer.gui.main_window - INFO - 使用ttkbootstrap主题: litera
+2025-10-08 23:12:09,276 - network_analyzer.gui.main_window - INFO - 主窗口初始化完成
+2025-10-08 23:12:13,611 - network_analyzer.processing.data_processor - INFO - 统计信息已重置
+2025-10-08 23:12:13,612 - network_analyzer.gui.main_window - INFO - GUI组件重置完成
+2025-10-08 23:12:13,637 - network_analyzer.gui.main_window - INFO - 成功加载会话数据: 104, 数据包数: 421
+2025-10-08 23:12:13,637 - network_analyzer.gui.main_window - INFO - 成功打开会话: 104
+2025-10-08 23:12:25,465 - network_analyzer.gui.dialogs.settings_dialog - INFO - 当前配置已加载到设置对话框
+2025-10-08 23:12:42,781 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: vapor (dark)
+2025-10-08 23:12:42,884 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: vapor
+2025-10-08 23:12:42,885 - network_analyzer.gui.main_window - INFO - 主题已切换为: vapor
+2025-10-08 23:12:43,171 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: vapor
+2025-10-08 23:12:43,172 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: vapor (colorful)
+2025-10-08 23:12:43,190 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: vapor
+2025-10-08 23:12:43,190 - network_analyzer.gui.main_window - INFO - 主题已切换为: vapor
+2025-10-08 23:12:43,529 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: vapor
+2025-10-08 23:12:43,989 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: morph (colorful)
+2025-10-08 23:12:44,032 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: morph
+2025-10-08 23:12:44,032 - network_analyzer.gui.main_window - INFO - 主题已切换为: morph
+2025-10-08 23:12:44,339 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: morph
+2025-10-08 23:12:44,339 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: morph (colorful)
+2025-10-08 23:12:44,355 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: morph
+2025-10-08 23:12:44,355 - network_analyzer.gui.main_window - INFO - 主题已切换为: morph
+2025-10-08 23:12:44,679 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: morph
+2025-10-08 23:12:45,866 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: lumen (light)
+2025-10-08 23:12:45,916 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: lumen
+2025-10-08 23:12:45,916 - network_analyzer.gui.main_window - INFO - 主题已切换为: lumen
+2025-10-08 23:12:46,244 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: lumen
+2025-10-08 23:12:46,245 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: lumen (light)
+2025-10-08 23:12:46,263 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: lumen
+2025-10-08 23:12:46,264 - network_analyzer.gui.main_window - INFO - 主题已切换为: lumen
+2025-10-08 23:12:46,550 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: lumen
+2025-10-08 23:12:46,679 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: litera (light)
+2025-10-08 23:12:46,709 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: litera
+2025-10-08 23:12:46,710 - network_analyzer.gui.main_window - INFO - 主题已切换为: litera
+2025-10-08 23:12:47,019 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: litera
+2025-10-08 23:12:47,019 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 主题变化: litera (light)
+2025-10-08 23:12:47,041 - network_analyzer.gui.theme_manager - INFO - 成功应用主题: litera
+2025-10-08 23:12:47,041 - network_analyzer.gui.main_window - INFO - 主题已切换为: litera
+2025-10-08 23:12:47,376 - network_analyzer.gui.dialogs.theme_settings_tab - INFO - 在主窗口预览主题: litera
+2025-10-08 23:12:53,378 - network_analyzer.gui.components.filter_template_manager - INFO - 加载了 21 个默认过滤器模板
+2025-10-08 23:12:55,941 - network_analyzer.gui.components.interface_info_provider - INFO - 发现 12 个网络接口
+2025-10-08 23:12:55,942 - network_analyzer.gui.components.capture_options_dialog - INFO - 刷新了 12 个网络接口
+2025-10-08 23:13:05,121 - network_analyzer.gui.main_window - INFO - 用户取消了捕获选项配置
+2025-10-08 23:13:35,277 - network_analyzer.gui.main_window - INFO - 正在停止数据库线程...
+2025-10-08 23:13:35,279 - network_analyzer.processing.data_processor - INFO - 正在关闭数据处理器...
+2025-10-08 23:13:35,279 - network_analyzer.processing.data_processor - INFO - 数据库写入线程已停止
+2025-10-08 23:13:35,279 - network_analyzer.processing.data_processor - INFO - 数据处理器已关闭
+2025-10-08 23:13:35,279 - network_analyzer.gui.main_window - INFO - 应用程序正常退出
